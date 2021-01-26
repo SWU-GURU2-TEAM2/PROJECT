@@ -1,0 +1,416 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5C93B36E25C051400067A723 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C93B36D25C051400067A723 /* AppDelegate.swift */; };
+		5C93B37025C051400067A723 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C93B36F25C051400067A723 /* SceneDelegate.swift */; };
+		5C93B37225C051400067A723 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C93B37125C051400067A723 /* ViewController.swift */; };
+		5C93B37525C051400067A723 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C93B37325C051400067A723 /* Main.storyboard */; };
+		5C93B37825C051400067A723 /* MusicDiary.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5C93B37625C051400067A723 /* MusicDiary.xcdatamodeld */; };
+		5C93B37A25C051440067A723 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C93B37925C051440067A723 /* Assets.xcassets */; };
+		5C93B37D25C051440067A723 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C93B37B25C051440067A723 /* LaunchScreen.storyboard */; };
+		B09D869F15E002C6928201C1 /* Pods_MusicDiary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DECD700AB98FD6C697384A3E /* Pods_MusicDiary.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		5C93B36A25C051400067A723 /* MusicDiary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicDiary.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C93B36D25C051400067A723 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5C93B36F25C051400067A723 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		5C93B37125C051400067A723 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5C93B37425C051400067A723 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5C93B37725C051400067A723 /* MusicDiary.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MusicDiary.xcdatamodel; sourceTree = "<group>"; };
+		5C93B37925C051440067A723 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5C93B37C25C051440067A723 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5C93B37E25C051440067A723 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B12E8644763C08E3BF55B581 /* Pods-MusicDiary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicDiary.release.xcconfig"; path = "Target Support Files/Pods-MusicDiary/Pods-MusicDiary.release.xcconfig"; sourceTree = "<group>"; };
+		BA9D92E8840BDA0D9E68C182 /* Pods-MusicDiary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicDiary.debug.xcconfig"; path = "Target Support Files/Pods-MusicDiary/Pods-MusicDiary.debug.xcconfig"; sourceTree = "<group>"; };
+		DECD700AB98FD6C697384A3E /* Pods_MusicDiary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MusicDiary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5C93B36725C051400067A723 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B09D869F15E002C6928201C1 /* Pods_MusicDiary.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5C93B36125C051400067A723 = {
+			isa = PBXGroup;
+			children = (
+				5C93B36C25C051400067A723 /* MusicDiary */,
+				5C93B36B25C051400067A723 /* Products */,
+				66435E30D67DD25C48A47B4A /* Pods */,
+				866EB4CA574814D50CA1833A /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		5C93B36B25C051400067A723 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5C93B36A25C051400067A723 /* MusicDiary.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5C93B36C25C051400067A723 /* MusicDiary */ = {
+			isa = PBXGroup;
+			children = (
+				5C93B36D25C051400067A723 /* AppDelegate.swift */,
+				5C93B36F25C051400067A723 /* SceneDelegate.swift */,
+				5C93B37125C051400067A723 /* ViewController.swift */,
+				5C93B37325C051400067A723 /* Main.storyboard */,
+				5C93B37925C051440067A723 /* Assets.xcassets */,
+				5C93B37B25C051440067A723 /* LaunchScreen.storyboard */,
+				5C93B37E25C051440067A723 /* Info.plist */,
+				5C93B37625C051400067A723 /* MusicDiary.xcdatamodeld */,
+			);
+			path = MusicDiary;
+			sourceTree = "<group>";
+		};
+		66435E30D67DD25C48A47B4A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BA9D92E8840BDA0D9E68C182 /* Pods-MusicDiary.debug.xcconfig */,
+				B12E8644763C08E3BF55B581 /* Pods-MusicDiary.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		866EB4CA574814D50CA1833A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DECD700AB98FD6C697384A3E /* Pods_MusicDiary.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5C93B36925C051400067A723 /* MusicDiary */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5C93B38125C051440067A723 /* Build configuration list for PBXNativeTarget "MusicDiary" */;
+			buildPhases = (
+				BD87734E568A4842C7BC03CC /* [CP] Check Pods Manifest.lock */,
+				5C93B36625C051400067A723 /* Sources */,
+				5C93B36725C051400067A723 /* Frameworks */,
+				5C93B36825C051400067A723 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MusicDiary;
+			productName = MusicDiary;
+			productReference = 5C93B36A25C051400067A723 /* MusicDiary.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5C93B36225C051400067A723 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1230;
+				LastUpgradeCheck = 1230;
+				TargetAttributes = {
+					5C93B36925C051400067A723 = {
+						CreatedOnToolsVersion = 12.3;
+					};
+				};
+			};
+			buildConfigurationList = 5C93B36525C051400067A723 /* Build configuration list for PBXProject "MusicDiary" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5C93B36125C051400067A723;
+			productRefGroup = 5C93B36B25C051400067A723 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5C93B36925C051400067A723 /* MusicDiary */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5C93B36825C051400067A723 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5C93B37D25C051440067A723 /* LaunchScreen.storyboard in Resources */,
+				5C93B37A25C051440067A723 /* Assets.xcassets in Resources */,
+				5C93B37525C051400067A723 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		BD87734E568A4842C7BC03CC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MusicDiary-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5C93B36625C051400067A723 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5C93B37225C051400067A723 /* ViewController.swift in Sources */,
+				5C93B37825C051400067A723 /* MusicDiary.xcdatamodeld in Sources */,
+				5C93B36E25C051400067A723 /* AppDelegate.swift in Sources */,
+				5C93B37025C051400067A723 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		5C93B37325C051400067A723 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5C93B37425C051400067A723 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5C93B37B25C051440067A723 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5C93B37C25C051440067A723 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5C93B37F25C051440067A723 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		5C93B38025C051440067A723 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5C93B38225C051440067A723 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA9D92E8840BDA0D9E68C182 /* Pods-MusicDiary.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = N4RT4KGQK9;
+				INFOPLIST_FILE = MusicDiary/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.madilyn.MusicDiary;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		5C93B38325C051440067A723 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B12E8644763C08E3BF55B581 /* Pods-MusicDiary.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = N4RT4KGQK9;
+				INFOPLIST_FILE = MusicDiary/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.madilyn.MusicDiary;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5C93B36525C051400067A723 /* Build configuration list for PBXProject "MusicDiary" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5C93B37F25C051440067A723 /* Debug */,
+				5C93B38025C051440067A723 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5C93B38125C051440067A723 /* Build configuration list for PBXNativeTarget "MusicDiary" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5C93B38225C051440067A723 /* Debug */,
+				5C93B38325C051440067A723 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		5C93B37625C051400067A723 /* MusicDiary.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				5C93B37725C051400067A723 /* MusicDiary.xcdatamodel */,
+			);
+			currentVersion = 5C93B37725C051400067A723 /* MusicDiary.xcdatamodel */;
+			path = MusicDiary.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 5C93B36225C051400067A723 /* Project object */;
+}
