@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		17731DD525C2607C00A16494 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17731DD425C2607C00A16494 /* MainView.swift */; };
+		17BF998125C25E8C0041CBF4 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17BF998025C25E8C0041CBF4 /* Storyboard.storyboard */; };
 		5C93B36E25C051400067A723 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C93B36D25C051400067A723 /* AppDelegate.swift */; };
 		5C93B37025C051400067A723 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C93B36F25C051400067A723 /* SceneDelegate.swift */; };
 		5C93B37225C051400067A723 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C93B37125C051400067A723 /* ViewController.swift */; };
@@ -18,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		17731DD425C2607C00A16494 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		17BF998025C25E8C0041CBF4 /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		5C93B36A25C051400067A723 /* MusicDiary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicDiary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C93B36D25C051400067A723 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5C93B36F25C051400067A723 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -44,6 +48,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		17BF997E25C25DC30041CBF4 /* Yewon */ = {
+			isa = PBXGroup;
+			children = (
+				17BF998025C25E8C0041CBF4 /* Storyboard.storyboard */,
+				17731DD425C2607C00A16494 /* MainView.swift */,
+			);
+			path = Yewon;
+			sourceTree = "<group>";
+		};
 		5C93B36125C051400067A723 = {
 			isa = PBXGroup;
 			children = (
@@ -65,6 +78,7 @@
 		5C93B36C25C051400067A723 /* MusicDiary */ = {
 			isa = PBXGroup;
 			children = (
+				17BF997E25C25DC30041CBF4 /* Yewon */,
 				5C93B36D25C051400067A723 /* AppDelegate.swift */,
 				5C93B36F25C051400067A723 /* SceneDelegate.swift */,
 				5C93B37125C051400067A723 /* ViewController.swift */,
@@ -83,7 +97,6 @@
 				BA9D92E8840BDA0D9E68C182 /* Pods-MusicDiary.debug.xcconfig */,
 				B12E8644763C08E3BF55B581 /* Pods-MusicDiary.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -154,6 +167,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C93B37D25C051440067A723 /* LaunchScreen.storyboard in Resources */,
+				17BF998125C25E8C0041CBF4 /* Storyboard.storyboard in Resources */,
 				5C93B37A25C051440067A723 /* Assets.xcassets in Resources */,
 				5C93B37525C051400067A723 /* Main.storyboard in Resources */,
 			);
@@ -194,6 +208,7 @@
 				5C93B37225C051400067A723 /* ViewController.swift in Sources */,
 				5C93B37825C051400067A723 /* MusicDiary.xcdatamodeld in Sources */,
 				5C93B36E25C051400067A723 /* AppDelegate.swift in Sources */,
+				17731DD525C2607C00A16494 /* MainView.swift in Sources */,
 				5C93B37025C051400067A723 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
