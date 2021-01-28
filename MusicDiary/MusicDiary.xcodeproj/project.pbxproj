@@ -78,6 +78,8 @@
 		5C93B36C25C051400067A723 /* MusicDiary */ = {
 			isa = PBXGroup;
 			children = (
+				5C93B3C225C307580067A723 /* Yujin */,
+				5C93B3C125C3074C0067A723 /* Jungbin */,
 				17BF997E25C25DC30041CBF4 /* Yewon */,
 				5C93B36D25C051400067A723 /* AppDelegate.swift */,
 				5C93B36F25C051400067A723 /* SceneDelegate.swift */,
@@ -89,6 +91,20 @@
 				5C93B37625C051400067A723 /* MusicDiary.xcdatamodeld */,
 			);
 			path = MusicDiary;
+			sourceTree = "<group>";
+		};
+		5C93B3C125C3074C0067A723 /* Jungbin */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Jungbin;
+			sourceTree = "<group>";
+		};
+		5C93B3C225C307580067A723 /* Yujin */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Yujin;
 			sourceTree = "<group>";
 		};
 		66435E30D67DD25C48A47B4A /* Pods */ = {
