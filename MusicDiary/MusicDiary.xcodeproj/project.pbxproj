@@ -16,6 +16,8 @@
 		5C93B37825C051400067A723 /* MusicDiary.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5C93B37625C051400067A723 /* MusicDiary.xcdatamodeld */; };
 		5C93B37A25C051440067A723 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C93B37925C051440067A723 /* Assets.xcassets */; };
 		5C93B37D25C051440067A723 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C93B37B25C051440067A723 /* LaunchScreen.storyboard */; };
+		5C93B3C525C308060067A723 /* JungbinStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C93B3C425C308060067A723 /* JungbinStoryboard.storyboard */; };
+		5C93B3C825C3092C0067A723 /* VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C93B3C725C3092C0067A723 /* VC.swift */; };
 		B09D869F15E002C6928201C1 /* Pods_MusicDiary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DECD700AB98FD6C697384A3E /* Pods_MusicDiary.framework */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +33,8 @@
 		5C93B37925C051440067A723 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5C93B37C25C051440067A723 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5C93B37E25C051440067A723 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5C93B3C425C308060067A723 /* JungbinStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = JungbinStoryboard.storyboard; sourceTree = "<group>"; };
+		5C93B3C725C3092C0067A723 /* VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VC.swift; sourceTree = "<group>"; };
 		B12E8644763C08E3BF55B581 /* Pods-MusicDiary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicDiary.release.xcconfig"; path = "Target Support Files/Pods-MusicDiary/Pods-MusicDiary.release.xcconfig"; sourceTree = "<group>"; };
 		BA9D92E8840BDA0D9E68C182 /* Pods-MusicDiary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicDiary.debug.xcconfig"; path = "Target Support Files/Pods-MusicDiary/Pods-MusicDiary.debug.xcconfig"; sourceTree = "<group>"; };
 		DECD700AB98FD6C697384A3E /* Pods_MusicDiary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MusicDiary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -96,6 +100,7 @@
 		5C93B3C125C3074C0067A723 /* Jungbin */ = {
 			isa = PBXGroup;
 			children = (
+				5C93B3C425C308060067A723 /* JungbinStoryboard.storyboard */,
 			);
 			path = Jungbin;
 			sourceTree = "<group>";
@@ -103,6 +108,7 @@
 		5C93B3C225C307580067A723 /* Yujin */ = {
 			isa = PBXGroup;
 			children = (
+				5C93B3C725C3092C0067A723 /* VC.swift */,
 			);
 			path = Yujin;
 			sourceTree = "<group>";
@@ -185,6 +191,7 @@
 				5C93B37D25C051440067A723 /* LaunchScreen.storyboard in Resources */,
 				17BF998125C25E8C0041CBF4 /* Storyboard.storyboard in Resources */,
 				5C93B37A25C051440067A723 /* Assets.xcassets in Resources */,
+				5C93B3C525C308060067A723 /* JungbinStoryboard.storyboard in Resources */,
 				5C93B37525C051400067A723 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -223,6 +230,7 @@
 			files = (
 				5C93B37225C051400067A723 /* ViewController.swift in Sources */,
 				5C93B37825C051400067A723 /* MusicDiary.xcdatamodeld in Sources */,
+				5C93B3C825C3092C0067A723 /* VC.swift in Sources */,
 				5C93B36E25C051400067A723 /* AppDelegate.swift in Sources */,
 				17731DD525C2607C00A16494 /* MainView.swift in Sources */,
 				5C93B37025C051400067A723 /* SceneDelegate.swift in Sources */,
