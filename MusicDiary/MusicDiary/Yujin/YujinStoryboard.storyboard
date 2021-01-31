@@ -8,29 +8,112 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Intro View Controller-->
         <scene sceneID="zmU-JI-LSj">
             <objects>
-                <viewController storyboardIdentifier="IntroView" id="eQw-KO-4jb" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="IntroView" id="eQw-KO-4jb" customClass="IntroViewController" customModule="MusicDiary" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SzH-hg-1b8">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="YujinIntro" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H7q-3N-bGR">
-                                <rect key="frame" x="42" y="106" width="263" height="120"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="여기를 스와이프하여 시작" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B9z-A7-Le0">
+                                <rect key="frame" x="20" y="776" width="374" height="47"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ilk-5Y-tHR">
+                                <rect key="frame" x="144" y="77" width="127" height="84"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="LoggedPage"/>
+                                <connections>
+                                    <action selector="btnTouched:" destination="eQw-KO-4jb" eventType="touchUpInside" id="CI3-D8-DWx"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vY9-rN-HEt">
+                                <rect key="frame" x="20" y="407" width="374" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="LogOut"/>
+                                <connections>
+                                    <action selector="logoutbtnTouched:" destination="eQw-KO-4jb" eventType="touchUpInside" id="wLt-97-ggT"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="r4X-DU-ZQq"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="B9z-A7-Le0" secondAttribute="trailing" id="8oA-YP-XAj"/>
+                            <constraint firstItem="B9z-A7-Le0" firstAttribute="leading" secondItem="SzH-hg-1b8" secondAttribute="leadingMargin" id="IwW-te-Xj6"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="B9z-A7-Le0" secondAttribute="bottom" constant="10" id="vEe-7V-rML"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="XIN-3A-DlU"/>
+                    <connections>
+                        <outlet property="swipeLable" destination="B9z-A7-Le0" id="GV9-lQ-wty"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YEe-px-arc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="40.579710144927539" y="16.741071428571427"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="WXM-Ur-kkS">
+            <objects>
+                <viewController storyboardIdentifier="LoggedView" id="zbx-UY-dKd" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VbZ-kB-pXr">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="자동 로그인됨" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Ff-2l-7b7">
+                                <rect key="frame" x="139" y="406" width="100" height="75"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="r4X-DU-ZQq"/>
+                        <viewLayoutGuide key="safeArea" id="1sh-gj-JJH"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="3Ff-2l-7b7" firstAttribute="top" secondItem="VbZ-kB-pXr" secondAttribute="topMargin" constant="100" id="7PK-pX-4kg"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="3Ff-2l-7b7" secondAttribute="trailing" id="95f-3U-XB6"/>
+                            <constraint firstItem="3Ff-2l-7b7" firstAttribute="leading" secondItem="VbZ-kB-pXr" secondAttribute="leadingMargin" id="ZD7-4l-5Uj"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Pr8-PE-wwF"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gzf-gW-Ghh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1356.521739130435" y="16.741071428571427"/>
+        </scene>
+        <!--Search View Controller-->
+        <scene sceneID="4V4-lN-Lst">
+            <objects>
+                <viewController id="IPH-9v-jSQ" customClass="SearchViewController" customModule="MusicDiary" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Gdu-Q0-s9v">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Say-IT-0HO"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="YEe-px-arc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5hT-9d-PNe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="40.579710144927539" y="16.741071428571427"/>
+            <point key="canvasLocation" x="65" y="859"/>
+        </scene>
+        <!--Search Result View Controller-->
+        <scene sceneID="sU8-cp-qQf">
+            <objects>
+                <viewController id="f2i-DU-VmF" customClass="SearchResultViewController" customModule="MusicDiary" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Hru-R1-1gH">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="XNh-QP-bAz"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1ud-YC-5nG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="854" y="858"/>
         </scene>
     </scenes>
     <resources>
