@@ -11,6 +11,10 @@
 		17BF998125C25E8C0041CBF4 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17BF998025C25E8C0041CBF4 /* Storyboard.storyboard */; };
 		5C0DC0EE25C67E2500D766FB /* WriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0DC0ED25C67E2500D766FB /* WriteViewController.swift */; };
 		5C0DC0F125C67E4F00D766FB /* DailyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0DC0F025C67E4F00D766FB /* DailyViewController.swift */; };
+		5C0DC0FE25C6939C00D766FB /* WriteSubVC1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0DC0FD25C6939C00D766FB /* WriteSubVC1.swift */; };
+		5C0DC10225C693A500D766FB /* WriteSubVC2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0DC10125C693A500D766FB /* WriteSubVC2.swift */; };
+		5C0DC10525C69DC800D766FB /* UserStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0DC10425C69DC800D766FB /* UserStructure.swift */; };
+		5C0DC10A25C69F3C00D766FB /* SelectPageScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0DC10925C69F3C00D766FB /* SelectPageScrollView.swift */; };
 		5C93B36E25C051400067A723 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C93B36D25C051400067A723 /* AppDelegate.swift */; };
 		5C93B37025C051400067A723 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C93B36F25C051400067A723 /* SceneDelegate.swift */; };
 		5C93B37225C051400067A723 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C93B37125C051400067A723 /* ViewController.swift */; };
@@ -29,6 +33,10 @@
 		17BF998025C25E8C0041CBF4 /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		5C0DC0ED25C67E2500D766FB /* WriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteViewController.swift; sourceTree = "<group>"; };
 		5C0DC0F025C67E4F00D766FB /* DailyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyViewController.swift; sourceTree = "<group>"; };
+		5C0DC0FD25C6939C00D766FB /* WriteSubVC1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteSubVC1.swift; sourceTree = "<group>"; };
+		5C0DC10125C693A500D766FB /* WriteSubVC2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteSubVC2.swift; sourceTree = "<group>"; };
+		5C0DC10425C69DC800D766FB /* UserStructure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStructure.swift; sourceTree = "<group>"; };
+		5C0DC10925C69F3C00D766FB /* SelectPageScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPageScrollView.swift; sourceTree = "<group>"; };
 		5C93B36A25C051400067A723 /* MusicDiary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicDiary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C93B36D25C051400067A723 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5C93B36F25C051400067A723 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -71,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				5C0DC0F025C67E4F00D766FB /* DailyViewController.swift */,
+				5C0DC10925C69F3C00D766FB /* SelectPageScrollView.swift */,
 			);
 			path = DailyView;
 			sourceTree = "<group>";
@@ -79,6 +88,8 @@
 			isa = PBXGroup;
 			children = (
 				5C0DC0ED25C67E2500D766FB /* WriteViewController.swift */,
+				5C0DC0FD25C6939C00D766FB /* WriteSubVC1.swift */,
+				5C0DC10125C693A500D766FB /* WriteSubVC2.swift */,
 			);
 			path = WriteView;
 			sourceTree = "<group>";
@@ -104,6 +115,7 @@
 		5C93B36C25C051400067A723 /* MusicDiary */ = {
 			isa = PBXGroup;
 			children = (
+				5C0DC10425C69DC800D766FB /* UserStructure.swift */,
 				5C93B3C125C3074C0067A723 /* Jungbin */,
 				5C93B3C225C307580067A723 /* Yujin */,
 				17BF997E25C25DC30041CBF4 /* Yewon */,
@@ -254,14 +266,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C0DC10A25C69F3C00D766FB /* SelectPageScrollView.swift in Sources */,
 				5C93B37225C051400067A723 /* ViewController.swift in Sources */,
 				5C93B37825C051400067A723 /* MusicDiary.xcdatamodeld in Sources */,
+				5C0DC10525C69DC800D766FB /* UserStructure.swift in Sources */,
 				5C93B3C825C3092C0067A723 /* VC.swift in Sources */,
 				5C93B36E25C051400067A723 /* AppDelegate.swift in Sources */,
+				5C0DC0FE25C6939C00D766FB /* WriteSubVC1.swift in Sources */,
 				17731DD525C2607C00A16494 /* MainView.swift in Sources */,
 				5C93B37025C051400067A723 /* SceneDelegate.swift in Sources */,
 				5C0DC0F125C67E4F00D766FB /* DailyViewController.swift in Sources */,
 				5C0DC0EE25C67E2500D766FB /* WriteViewController.swift in Sources */,
+				5C0DC10225C693A500D766FB /* WriteSubVC2.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
