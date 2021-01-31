@@ -13,6 +13,12 @@ class ViewController: UIViewController {
         super.viewDidLoad()
     }
 
-
+    
+    
+    @IBAction func goToYujin(_ sender: Any) {
+    }
+    
+    @IBAction func goToYewon(_ sender: Any) {
+    }
 }
 
