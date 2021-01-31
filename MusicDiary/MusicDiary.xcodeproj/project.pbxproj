@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -24,6 +24,12 @@
 		5C93B37D25C051440067A723 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C93B37B25C051440067A723 /* LaunchScreen.storyboard */; };
 		5C93B3C525C308060067A723 /* JungbinStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C93B3C425C308060067A723 /* JungbinStoryboard.storyboard */; };
 		5C93B3C825C3092C0067A723 /* VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C93B3C725C3092C0067A723 /* VC.swift */; };
+		6A8AF66E25C6C7D70020D0B7 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8AF66D25C6C7D70020D0B7 /* IntroViewController.swift */; };
+		6A8AF67125C6C7E10020D0B7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8AF67025C6C7E10020D0B7 /* LoginViewController.swift */; };
+		6A8AF67425C6C7EB0020D0B7 /* spongeBob.gif in Resources */ = {isa = PBXBuildFile; fileRef = 6A8AF67325C6C7EB0020D0B7 /* spongeBob.gif */; };
+		6A8AF69A25C6CE610020D0B7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6A8AF69925C6CE610020D0B7 /* GoogleService-Info.plist */; };
+		6A8AF69D25C6DA760020D0B7 /* IntroSwipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8AF69C25C6DA760020D0B7 /* IntroSwipeViewController.swift */; };
+		6A8AF6A025C6DB250020D0B7 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8AF69F25C6DB250020D0B7 /* SearchViewController.swift */; };
 		6AC0A2C325C3EB4B0062E5A8 /* YujinStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AC0A2C225C3EB4B0062E5A8 /* YujinStoryboard.storyboard */; };
 		B09D869F15E002C6928201C1 /* Pods_MusicDiary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DECD700AB98FD6C697384A3E /* Pods_MusicDiary.framework */; };
 /* End PBXBuildFile section */
@@ -48,6 +54,12 @@
 		5C93B37E25C051440067A723 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5C93B3C425C308060067A723 /* JungbinStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = JungbinStoryboard.storyboard; sourceTree = "<group>"; };
 		5C93B3C725C3092C0067A723 /* VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VC.swift; sourceTree = "<group>"; };
+		6A8AF66D25C6C7D70020D0B7 /* IntroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
+		6A8AF67025C6C7E10020D0B7 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		6A8AF67325C6C7EB0020D0B7 /* spongeBob.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = spongeBob.gif; sourceTree = "<group>"; };
+		6A8AF69925C6CE610020D0B7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		6A8AF69C25C6DA760020D0B7 /* IntroSwipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroSwipeViewController.swift; sourceTree = "<group>"; };
+		6A8AF69F25C6DB250020D0B7 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		6AC0A2C225C3EB4B0062E5A8 /* YujinStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = YujinStoryboard.storyboard; sourceTree = "<group>"; };
 		B12E8644763C08E3BF55B581 /* Pods-MusicDiary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicDiary.release.xcconfig"; path = "Target Support Files/Pods-MusicDiary/Pods-MusicDiary.release.xcconfig"; sourceTree = "<group>"; };
 		BA9D92E8840BDA0D9E68C182 /* Pods-MusicDiary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicDiary.debug.xcconfig"; path = "Target Support Files/Pods-MusicDiary/Pods-MusicDiary.debug.xcconfig"; sourceTree = "<group>"; };
@@ -125,6 +137,7 @@
 				5C93B36F25C051400067A723 /* SceneDelegate.swift */,
 				5C93B37925C051440067A723 /* Assets.xcassets */,
 				5C93B37B25C051440067A723 /* LaunchScreen.storyboard */,
+				6A8AF69925C6CE610020D0B7 /* GoogleService-Info.plist */,
 				5C93B37E25C051440067A723 /* Info.plist */,
 				5C93B37625C051400067A723 /* MusicDiary.xcdatamodeld */,
 			);
@@ -144,8 +157,13 @@
 		5C93B3C225C307580067A723 /* Yujin */ = {
 			isa = PBXGroup;
 			children = (
+				6A8AF66D25C6C7D70020D0B7 /* IntroViewController.swift */,
+				6A8AF67025C6C7E10020D0B7 /* LoginViewController.swift */,
+				6A8AF67325C6C7EB0020D0B7 /* spongeBob.gif */,
 				5C93B3C725C3092C0067A723 /* VC.swift */,
 				6AC0A2C225C3EB4B0062E5A8 /* YujinStoryboard.storyboard */,
+				6A8AF69C25C6DA760020D0B7 /* IntroSwipeViewController.swift */,
+				6A8AF69F25C6DB250020D0B7 /* SearchViewController.swift */,
 			);
 			path = Yujin;
 			sourceTree = "<group>";
@@ -178,6 +196,8 @@
 				5C93B36625C051400067A723 /* Sources */,
 				5C93B36725C051400067A723 /* Frameworks */,
 				5C93B36825C051400067A723 /* Resources */,
+				DEF6A9E4B647799D31F79F6C /* [CP] Embed Pods Frameworks */,
+				2E606AE5E0666160AA7C7424 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -226,17 +246,36 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C93B37D25C051440067A723 /* LaunchScreen.storyboard in Resources */,
+				6A8AF69A25C6CE610020D0B7 /* GoogleService-Info.plist in Resources */,
 				17BF998125C25E8C0041CBF4 /* Storyboard.storyboard in Resources */,
 				5C93B37A25C051440067A723 /* Assets.xcassets in Resources */,
 				5C93B3C525C308060067A723 /* JungbinStoryboard.storyboard in Resources */,
 				5C93B37525C051400067A723 /* Main.storyboard in Resources */,
 				6AC0A2C325C3EB4B0062E5A8 /* YujinStoryboard.storyboard in Resources */,
+				6A8AF67425C6C7EB0020D0B7 /* spongeBob.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		2E606AE5E0666160AA7C7424 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MusicDiary/Pods-MusicDiary-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MusicDiary/Pods-MusicDiary-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MusicDiary/Pods-MusicDiary-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		BD87734E568A4842C7BC03CC /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -259,6 +298,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		DEF6A9E4B647799D31F79F6C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MusicDiary/Pods-MusicDiary-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MusicDiary/Pods-MusicDiary-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MusicDiary/Pods-MusicDiary-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -266,13 +322,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A8AF69D25C6DA760020D0B7 /* IntroSwipeViewController.swift in Sources */,
+				6A8AF67125C6C7E10020D0B7 /* LoginViewController.swift in Sources */,
 				5C0DC10A25C69F3C00D766FB /* SelectPageScrollView.swift in Sources */,
+				6A8AF66E25C6C7D70020D0B7 /* IntroViewController.swift in Sources */,
 				5C93B37225C051400067A723 /* ViewController.swift in Sources */,
 				5C93B37825C051400067A723 /* MusicDiary.xcdatamodeld in Sources */,
 				5C0DC10525C69DC800D766FB /* UserStructure.swift in Sources */,
 				5C93B3C825C3092C0067A723 /* VC.swift in Sources */,
 				5C93B36E25C051400067A723 /* AppDelegate.swift in Sources */,
 				5C0DC0FE25C6939C00D766FB /* WriteSubVC1.swift in Sources */,
+				6A8AF6A025C6DB250020D0B7 /* SearchViewController.swift in Sources */,
 				17731DD525C2607C00A16494 /* MainView.swift in Sources */,
 				5C93B37025C051400067A723 /* SceneDelegate.swift in Sources */,
 				5C0DC0F125C67E4F00D766FB /* DailyViewController.swift in Sources */,

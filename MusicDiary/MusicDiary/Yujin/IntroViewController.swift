@@ -11,12 +11,7 @@ import SwiftyGif
 class IntroViewController: UIViewController {
 
     //values
-    
-    @IBOutlet var introView: UIView!
-    @IBOutlet weak var infoLabel: UILabel!
     @IBOutlet weak var logoImageView: UIImageView!
-    @IBOutlet weak var gestureView: UIView!
-    
     
     //viewDidLoad
     override func viewDidLoad() {
@@ -28,16 +23,6 @@ class IntroViewController: UIViewController {
         } catch {
             print("not loaded")
         }
-        /* ERROR */
-        /*
-        self.view.bringSubviewToFront(gestureView)
-        let tap = UITapGestureRecognizer(target: self, action: #selector(tapped(_:)))
-        gestureView.isUserInteractionEnabled = true
-        gestureView.addGestureRecognizer(tap)
-        */
-        
-        
-        //자동 로그인 여부 확인
     }//viewDidLoad
 
     //viewDidDisappear
@@ -47,9 +32,5 @@ class IntroViewController: UIViewController {
         self.logoImageView.stopAnimatingGif()
     }//viewDidDisappear
     
-    /*
-    @objc func tapped(_ sender: UITapGestureRecognizer){
-        print(sender)
-    }
- */
+
 }
