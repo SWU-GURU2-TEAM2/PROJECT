@@ -17,9 +17,13 @@ class ViewController: UIViewController {
     
     
     @IBAction func goToYujin(_ sender: Any) {
+        let vc = UIStoryboard(name: "YujinStoryboard", bundle: nil).instantiateViewController(identifier: "IntroView")
+        self.view.addSubview(vc.view)
     }
     
     @IBAction func goToYewon(_ sender: Any) {
+        let vc = UIStoryboard(name: "YewonStoryboard", bundle: nil).instantiateViewController(identifier: "YewonMainView")
+        self.view.addSubview(vc.view)
     }
 }
 
