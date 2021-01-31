@@ -23,8 +23,11 @@
 		5C93B37A25C051440067A723 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C93B37925C051440067A723 /* Assets.xcassets */; };
 		5C93B37D25C051440067A723 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C93B37B25C051440067A723 /* LaunchScreen.storyboard */; };
 		5C93B3C525C308060067A723 /* JungbinStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C93B3C425C308060067A723 /* JungbinStoryboard.storyboard */; };
-		5C93B3C825C3092C0067A723 /* VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C93B3C725C3092C0067A723 /* VC.swift */; };
-		6AC0A2C325C3EB4B0062E5A8 /* YujinStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AC0A2C225C3EB4B0062E5A8 /* YujinStoryboard.storyboard */; };
+		5CDE671B25C6DAD6005109DE /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDE671625C6DAD6005109DE /* IntroViewController.swift */; };
+		5CDE671C25C6DAD6005109DE /* VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDE671725C6DAD6005109DE /* VC.swift */; };
+		5CDE671D25C6DAD6005109DE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDE671825C6DAD6005109DE /* LoginViewController.swift */; };
+		5CDE671E25C6DAD6005109DE /* YujinStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CDE671925C6DAD6005109DE /* YujinStoryboard.storyboard */; };
+		5CDE671F25C6DAD6005109DE /* spongeBob.gif in Resources */ = {isa = PBXBuildFile; fileRef = 5CDE671A25C6DAD6005109DE /* spongeBob.gif */; };
 		B09D869F15E002C6928201C1 /* Pods_MusicDiary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DECD700AB98FD6C697384A3E /* Pods_MusicDiary.framework */; };
 /* End PBXBuildFile section */
 
@@ -47,8 +50,11 @@
 		5C93B37C25C051440067A723 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5C93B37E25C051440067A723 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5C93B3C425C308060067A723 /* JungbinStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = JungbinStoryboard.storyboard; sourceTree = "<group>"; };
-		5C93B3C725C3092C0067A723 /* VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VC.swift; sourceTree = "<group>"; };
-		6AC0A2C225C3EB4B0062E5A8 /* YujinStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = YujinStoryboard.storyboard; sourceTree = "<group>"; };
+		5CDE671625C6DAD6005109DE /* IntroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
+		5CDE671725C6DAD6005109DE /* VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VC.swift; sourceTree = "<group>"; };
+		5CDE671825C6DAD6005109DE /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		5CDE671925C6DAD6005109DE /* YujinStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = YujinStoryboard.storyboard; sourceTree = "<group>"; };
+		5CDE671A25C6DAD6005109DE /* spongeBob.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = spongeBob.gif; sourceTree = "<group>"; };
 		B12E8644763C08E3BF55B581 /* Pods-MusicDiary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicDiary.release.xcconfig"; path = "Target Support Files/Pods-MusicDiary/Pods-MusicDiary.release.xcconfig"; sourceTree = "<group>"; };
 		BA9D92E8840BDA0D9E68C182 /* Pods-MusicDiary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicDiary.debug.xcconfig"; path = "Target Support Files/Pods-MusicDiary/Pods-MusicDiary.debug.xcconfig"; sourceTree = "<group>"; };
 		DECD700AB98FD6C697384A3E /* Pods_MusicDiary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MusicDiary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -117,7 +123,7 @@
 			children = (
 				5C0DC10425C69DC800D766FB /* UserStructure.swift */,
 				5C93B3C125C3074C0067A723 /* Jungbin */,
-				5C93B3C225C307580067A723 /* Yujin */,
+				5CDE671525C6DAD6005109DE /* Yujin */,
 				17BF997E25C25DC30041CBF4 /* Yewon */,
 				5C93B36D25C051400067A723 /* AppDelegate.swift */,
 				5C93B37125C051400067A723 /* ViewController.swift */,
@@ -141,11 +147,14 @@
 			path = Jungbin;
 			sourceTree = "<group>";
 		};
-		5C93B3C225C307580067A723 /* Yujin */ = {
+		5CDE671525C6DAD6005109DE /* Yujin */ = {
 			isa = PBXGroup;
 			children = (
-				5C93B3C725C3092C0067A723 /* VC.swift */,
-				6AC0A2C225C3EB4B0062E5A8 /* YujinStoryboard.storyboard */,
+				5CDE671625C6DAD6005109DE /* IntroViewController.swift */,
+				5CDE671725C6DAD6005109DE /* VC.swift */,
+				5CDE671825C6DAD6005109DE /* LoginViewController.swift */,
+				5CDE671925C6DAD6005109DE /* YujinStoryboard.storyboard */,
+				5CDE671A25C6DAD6005109DE /* spongeBob.gif */,
 			);
 			path = Yujin;
 			sourceTree = "<group>";
@@ -225,12 +234,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5CDE671F25C6DAD6005109DE /* spongeBob.gif in Resources */,
 				5C93B37D25C051440067A723 /* LaunchScreen.storyboard in Resources */,
+				5CDE671E25C6DAD6005109DE /* YujinStoryboard.storyboard in Resources */,
 				17BF998125C25E8C0041CBF4 /* Storyboard.storyboard in Resources */,
 				5C93B37A25C051440067A723 /* Assets.xcassets in Resources */,
 				5C93B3C525C308060067A723 /* JungbinStoryboard.storyboard in Resources */,
 				5C93B37525C051400067A723 /* Main.storyboard in Resources */,
-				6AC0A2C325C3EB4B0062E5A8 /* YujinStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,10 +277,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C0DC10A25C69F3C00D766FB /* SelectPageScrollView.swift in Sources */,
+				5CDE671B25C6DAD6005109DE /* IntroViewController.swift in Sources */,
 				5C93B37225C051400067A723 /* ViewController.swift in Sources */,
+				5CDE671D25C6DAD6005109DE /* LoginViewController.swift in Sources */,
 				5C93B37825C051400067A723 /* MusicDiary.xcdatamodeld in Sources */,
 				5C0DC10525C69DC800D766FB /* UserStructure.swift in Sources */,
-				5C93B3C825C3092C0067A723 /* VC.swift in Sources */,
+				5CDE671C25C6DAD6005109DE /* VC.swift in Sources */,
 				5C93B36E25C051400067A723 /* AppDelegate.swift in Sources */,
 				5C0DC0FE25C6939C00D766FB /* WriteSubVC1.swift in Sources */,
 				17731DD525C2607C00A16494 /* MainView.swift in Sources */,
