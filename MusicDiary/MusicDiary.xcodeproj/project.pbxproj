@@ -104,13 +104,13 @@
 		5C93B36C25C051400067A723 /* MusicDiary */ = {
 			isa = PBXGroup;
 			children = (
-				5C93B3C225C307580067A723 /* Yujin */,
 				5C93B3C125C3074C0067A723 /* Jungbin */,
+				5C93B3C225C307580067A723 /* Yujin */,
 				17BF997E25C25DC30041CBF4 /* Yewon */,
 				5C93B36D25C051400067A723 /* AppDelegate.swift */,
-				5C93B36F25C051400067A723 /* SceneDelegate.swift */,
 				5C93B37125C051400067A723 /* ViewController.swift */,
 				5C93B37325C051400067A723 /* Main.storyboard */,
+				5C93B36F25C051400067A723 /* SceneDelegate.swift */,
 				5C93B37925C051440067A723 /* Assets.xcassets */,
 				5C93B37B25C051440067A723 /* LaunchScreen.storyboard */,
 				5C93B37E25C051440067A723 /* Info.plist */,
@@ -123,8 +123,8 @@
 			isa = PBXGroup;
 			children = (
 				5C93B3C425C308060067A723 /* JungbinStoryboard.storyboard */,
-				5C0DC0EC25C67C2B00D766FB /* WriteView */,
 				5C0DC0EB25C67C2300D766FB /* DailyView */,
+				5C0DC0EC25C67C2B00D766FB /* WriteView */,
 			);
 			path = Jungbin;
 			sourceTree = "<group>";
