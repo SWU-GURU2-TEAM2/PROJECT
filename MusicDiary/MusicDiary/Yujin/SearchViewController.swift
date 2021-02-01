@@ -8,6 +8,7 @@
 import UIKit
 import Alamofire
 import SwiftyXMLParser
+import AlamofireImage
 
 class SearchViewController: UIViewController {
     

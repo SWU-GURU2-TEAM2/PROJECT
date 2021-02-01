@@ -9,6 +9,7 @@ target 'MusicDiary' do
 	pod 'SwiftyGif'
 	pod 'FirebaseUI'
 	pod 'Alamofire', '~> 5.2'
+	pod 'AlamofireImage', '~> 4.1'
 	pod "SwiftyXMLParser", :git => 'https://github.com/yahoojapan/SwiftyXMLParser.git'
 	
 end

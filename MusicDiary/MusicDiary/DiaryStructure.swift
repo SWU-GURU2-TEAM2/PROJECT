@@ -8,5 +8,5 @@
 import UIKit
 
 class DiaryStructure {
-    //var contentList = [ContentData]()
+    var contentList = [ContentData]()
 }
