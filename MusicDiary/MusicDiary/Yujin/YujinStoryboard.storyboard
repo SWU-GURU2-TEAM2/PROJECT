@@ -23,7 +23,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ilk-5Y-tHR">
-                                <rect key="frame" x="144" y="77" width="127" height="84"/>
+                                <rect key="frame" x="144" y="684" width="127" height="84"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="LoggedPage"/>
                                 <connections>
@@ -31,13 +31,17 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vY9-rN-HEt">
-                                <rect key="frame" x="20" y="407" width="374" height="44"/>
+                                <rect key="frame" x="20" y="632" width="374" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="LogOut"/>
                                 <connections>
                                     <action selector="logoutbtnTouched:" destination="eQw-KO-4jb" eventType="touchUpInside" id="wLt-97-ggT"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="spongeBob.gif" translatesAutoresizingMaskIntoConstraints="NO" id="qk7-Vk-15r">
+                                <rect key="frame" x="0.0" y="241" width="414" height="241"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="r4X-DU-ZQq"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -49,6 +53,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="XIN-3A-DlU"/>
                     <connections>
+                        <outlet property="logoImageView" destination="qk7-Vk-15r" id="nhg-vT-mK0"/>
                         <outlet property="swipeLable" destination="B9z-A7-Le0" id="GV9-lQ-wty"/>
                     </connections>
                 </viewController>
@@ -83,27 +88,55 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gzf-gW-Ghh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1356.521739130435" y="16.741071428571427"/>
+            <point key="canvasLocation" x="854" y="17"/>
         </scene>
         <!--Search View Controller-->
         <scene sceneID="4V4-lN-Lst">
             <objects>
-                <viewController id="IPH-9v-jSQ" customClass="SearchViewController" customModule="MusicDiary" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SearchView" id="IPH-9v-jSQ" customClass="SearchViewController" customModule="MusicDiary" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Gdu-Q0-s9v">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="F10-QX-onl">
+                                <rect key="frame" x="0.0" y="145" width="414" height="700"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MrJ-09-Cb1">
+                                <rect key="frame" x="316" y="73" width="78" height="39"/>
+                                <state key="normal" title="Search"/>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="오늘의 음악은 무엇인가요?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HOL-qm-71F">
+                                <rect key="frame" x="36" y="108" width="258" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Say-IT-0HO"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="F10-QX-onl" firstAttribute="top" secondItem="MrJ-09-Cb1" secondAttribute="bottom" constant="10" id="8Nw-ph-SrK"/>
+                            <constraint firstItem="HOL-qm-71F" firstAttribute="leading" secondItem="Gdu-Q0-s9v" secondAttribute="leading" constant="10" id="D83-UV-Ty0"/>
+                            <constraint firstItem="F10-QX-onl" firstAttribute="trailing" secondItem="Gdu-Q0-s9v" secondAttribute="trailingMargin" id="HXg-c7-Op3"/>
+                            <constraint firstItem="MrJ-09-Cb1" firstAttribute="leading" secondItem="Gdu-Q0-s9v" secondAttribute="leadingMargin" constant="200" id="R0G-2p-cLr"/>
+                            <constraint firstAttribute="trailing" secondItem="HOL-qm-71F" secondAttribute="trailing" constant="200" id="Rg9-Kg-xZC"/>
+                            <constraint firstItem="F10-QX-onl" firstAttribute="leading" secondItem="Gdu-Q0-s9v" secondAttribute="leadingMargin" id="WKa-P0-qAC"/>
+                            <constraint firstItem="F10-QX-onl" firstAttribute="top" secondItem="HOL-qm-71F" secondAttribute="bottom" constant="10" id="b0P-uS-9d2"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="MrJ-09-Cb1" secondAttribute="trailing" constant="10" id="cQx-Ka-5c0"/>
+                            <constraint firstItem="MrJ-09-Cb1" firstAttribute="top" secondItem="Gdu-Q0-s9v" secondAttribute="topMargin" constant="50" id="og5-aN-rbB"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="F10-QX-onl" secondAttribute="bottom" id="uft-RV-tDm"/>
+                            <constraint firstItem="HOL-qm-71F" firstAttribute="top" secondItem="Gdu-Q0-s9v" secondAttribute="top" constant="10" id="zyO-eW-Sz9"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5hT-9d-PNe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="65" y="859"/>
+            <point key="canvasLocation" x="63.768115942028992" y="858.48214285714278"/>
         </scene>
         <!--Search Result View Controller-->
         <scene sceneID="sU8-cp-qQf">
             <objects>
-                <viewController id="f2i-DU-VmF" customClass="SearchResultViewController" customModule="MusicDiary" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SearchResultView" id="f2i-DU-VmF" customClass="SearchResultViewController" customModule="MusicDiary" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Hru-R1-1gH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -117,6 +150,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="spongeBob.gif" width="480" height="270"/>
         <systemColor name="systemBackgroundColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
