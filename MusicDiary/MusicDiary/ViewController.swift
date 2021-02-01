@@ -21,9 +21,6 @@ class ViewController: UIViewController {
         self.view.addSubview(vc.view)
     }
     
-    @IBAction func goToYewon(_ sender: Any) {
-        let vc = UIStoryboard(name: "YewonStoryboard", bundle: nil).instantiateViewController(identifier: "YewonMainView")
-        self.view.addSubview(vc.view)
-    }
+
 }
 

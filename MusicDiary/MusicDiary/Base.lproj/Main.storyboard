@@ -16,7 +16,15 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kuQ-Ld-oqs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-470" y="-62"/>
+            <point key="canvasLocation" x="678" y="-91"/>
+        </scene>
+        <!--YewonViewController-->
+        <scene sceneID="S5P-sg-AiT">
+            <objects>
+                <viewControllerPlaceholder storyboardName="YewonStoryboard" referencedIdentifier="YewonViewController" id="zGU-BX-X0D" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7NS-g9-Og7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="678" y="106"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -47,7 +55,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Go to Yewon"/>
                                 <connections>
-                                    <action selector="goToYewon:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DTL-eA-Ovs"/>
+                                    <segue destination="zGU-BX-X0D" kind="presentation" identifier="YewonViewController" modalPresentationStyle="fullScreen" id="oCQ-JY-Ogc"/>
                                 </connections>
                             </button>
                         </subviews>
