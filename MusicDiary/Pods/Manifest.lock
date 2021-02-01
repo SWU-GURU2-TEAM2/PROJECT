@@ -213,6 +213,8 @@ PODS:
     - abseil/base/config
     - abseil/meta/type_traits
   - Alamofire (5.4.1)
+  - AlamofireImage (4.1.0):
+    - Alamofire (~> 5.1)
   - AppAuth (1.4.0):
     - AppAuth/Core (= 1.4.0)
     - AppAuth/ExternalUserAgent (= 1.4.0)
@@ -385,6 +387,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 5.2)
+  - AlamofireImage (~> 4.1)
   - FirebaseUI
   - SwiftyGif
   - SwiftyXMLParser (from `https://github.com/yahoojapan/SwiftyXMLParser.git`)
@@ -393,6 +396,7 @@ SPEC REPOS:
   trunk:
     - abseil
     - Alamofire
+    - AlamofireImage
     - AppAuth
     - BoringSSL-GRPC
     - FBSDKCoreKit
@@ -430,6 +434,7 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   abseil: 6c8eb7892aefa08d929b39f9bb108e5367e3228f
   Alamofire: 2291f7d21ca607c491dd17642e5d40fdcda0e65c
+  AlamofireImage: c4a2ba349885fb3064feb74d2e547bd42ce9be10
   AppAuth: 31bcec809a638d7bd2f86ea8a52bd45f6e81e7c7
   BoringSSL-GRPC: 8edf627ee524575e2f8d19d56f068b448eea3879
   FBSDKCoreKit: b46507dc8b8cefed31d644e74d7cc30e2a715ef8
@@ -456,6 +461,6 @@ SPEC CHECKSUMS:
   SwiftyGif: e466e86c660d343357ab944a819a101c4127cb40
   SwiftyXMLParser: 23b5a9321a8adf72aae29046ea58c3d097b4ac17
 
-PODFILE CHECKSUM: 4f59d914af07ca3dd75fbe9ac9d9586c646e3504
+PODFILE CHECKSUM: a6e45a8406673419c3a993691056351e78e3d012
 
 COCOAPODS: 1.10.1
