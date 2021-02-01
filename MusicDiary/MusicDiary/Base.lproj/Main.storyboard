@@ -18,6 +18,14 @@
             </objects>
             <point key="canvasLocation" x="678" y="-91"/>
         </scene>
+        <!--IntroView-->
+        <scene sceneID="wnf-Um-Csj">
+            <objects>
+                <viewControllerPlaceholder storyboardName="YujinStoryboard" referencedIdentifier="IntroView" id="l32-W7-b6T" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HcN-Tr-m8l" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="746" y="15"/>
+        </scene>
         <!--YewonViewController-->
         <scene sceneID="S5P-sg-AiT">
             <objects>
@@ -47,7 +55,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Go to Yujin"/>
                                 <connections>
-                                    <action selector="goToYujin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wX1-EU-b4D"/>
+                                    <segue destination="l32-W7-b6T" kind="presentation" modalPresentationStyle="fullScreen" id="tdj-Mj-lfG"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gqm-Qg-1VS">
