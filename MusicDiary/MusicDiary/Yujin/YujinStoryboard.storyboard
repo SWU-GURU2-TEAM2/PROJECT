@@ -160,10 +160,10 @@
                                     <outlet property="delegate" destination="IPH-9v-jSQ" id="92Q-nt-oEM"/>
                                 </connections>
                             </tableView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="오늘의 음악은 무엇인가요?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HOL-qm-71F">
-                                <rect key="frame" x="5" y="49" width="340" height="34"/>
+                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="오늘의 음악은 무엇인가요?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HOL-qm-71F">
+                                <rect key="frame" x="91" y="49" width="254" height="34"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="HOL-qm-71F" secondAttribute="height" multiplier="10:1" id="4F0-jM-xI6"/>
+                                    <constraint firstAttribute="width" secondItem="HOL-qm-71F" secondAttribute="height" multiplier="8:1" id="4F0-jM-xI6"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -175,15 +175,25 @@
                                     <action selector="searchPressed:" destination="IPH-9v-jSQ" eventType="touchUpInside" id="cQ0-yW-onR"/>
                                 </connections>
                             </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="9co-Mm-Czr">
+                                <rect key="frame" x="11" y="58" width="72" height="0.0"/>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Second"/>
+                                </segments>
+                            </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Say-IT-0HO"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="F10-QX-onl" firstAttribute="leading" secondItem="Say-IT-0HO" secondAttribute="leading" id="2XO-t5-kVK"/>
+                            <constraint firstItem="9co-Mm-Czr" firstAttribute="leading" secondItem="Gdu-Q0-s9v" secondAttribute="leading" id="Id0-9g-GAO"/>
                             <constraint firstItem="MrJ-09-Cb1" firstAttribute="top" secondItem="Say-IT-0HO" secondAttribute="top" constant="5" id="MML-ch-ShZ"/>
                             <constraint firstItem="HOL-qm-71F" firstAttribute="leading" secondItem="Say-IT-0HO" secondAttribute="leading" constant="5" id="Old-sw-16K"/>
+                            <constraint firstItem="9co-Mm-Czr" firstAttribute="top" secondItem="Gdu-Q0-s9v" secondAttribute="top" constant="5" id="V6W-XN-vgU"/>
                             <constraint firstItem="F10-QX-onl" firstAttribute="top" secondItem="MrJ-09-Cb1" secondAttribute="bottom" constant="5" id="WnT-iZ-Olt"/>
                             <constraint firstItem="F10-QX-onl" firstAttribute="top" secondItem="HOL-qm-71F" secondAttribute="bottom" constant="5" id="iyM-0s-Ntw"/>
+                            <constraint firstItem="F10-QX-onl" firstAttribute="top" secondItem="9co-Mm-Czr" secondAttribute="bottom" constant="5" id="nRv-zi-x9n"/>
                             <constraint firstItem="MrJ-09-Cb1" firstAttribute="leading" secondItem="HOL-qm-71F" secondAttribute="trailing" constant="2" id="s2i-Dk-VT5"/>
                             <constraint firstItem="HOL-qm-71F" firstAttribute="top" secondItem="Say-IT-0HO" secondAttribute="top" constant="5" id="w9c-rw-ccM"/>
                             <constraint firstItem="F10-QX-onl" firstAttribute="bottom" secondItem="Say-IT-0HO" secondAttribute="bottom" constant="2" id="wZR-yj-x7p"/>
