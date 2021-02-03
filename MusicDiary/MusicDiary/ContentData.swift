@@ -8,7 +8,7 @@
 import UIKit
 
 struct ContentData {
-    var authorID: Int?
+    var authorID: String?
     var conentText: String?
     var musicTitle: String?
     var musicArtist: String?

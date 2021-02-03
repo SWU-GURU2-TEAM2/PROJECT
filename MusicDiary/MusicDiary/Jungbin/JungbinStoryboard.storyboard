@@ -130,6 +130,9 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="XM1-UX-iz3" secondAttribute="height" multiplier="1:1" id="UA1-Mu-GmY"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="cPZ-gz-64P" appends="YES" id="avy-rg-Axi"/>
+                                </connections>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mpc-8o-fZb">
                                 <rect key="frame" x="16" y="31" width="233" height="21"/>
@@ -222,6 +225,7 @@
                     <view key="view" contentMode="scaleToFill" id="767-BQ-WLa">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="264"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="3V4-zF-HfW"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                 </viewController>
