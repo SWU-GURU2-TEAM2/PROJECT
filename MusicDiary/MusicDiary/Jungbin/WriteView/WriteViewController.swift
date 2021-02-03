@@ -6,6 +6,7 @@
 //
 
 import UIKit
+
 class WriteViewController:UIViewController{
     @IBOutlet weak var textView: UITextView!
     
@@ -21,7 +22,17 @@ class WriteViewController:UIViewController{
     }
     
     @IBAction func tapSaveBtn(_ sender: Any) {
-        // 다이어리에 저장 기능 수행 후
+        var newContent = ContentData()
+        newContent.authorID = "aaa111"
+        newContent.conentText = textView.text
+        newContent.date = Date()
+        newContent.musicArtist = "아이유"
+        newContent.musicTitle = "너랑 나"
+        newContent.musicCoverUrl = URL(string:"https://avatars.githubusercontent.com/u/4277927?s=64&v=4")
+
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.tempDiary.append(newContent)
+        print("저장된 내용 목록: ", appDelegate.tempDiary)
         self.dismiss(animated: true)
         
         
@@ -30,5 +41,5 @@ class WriteViewController:UIViewController{
     @IBAction func tapView(_ sender: Any) {
         self.dismiss(animated: true)
     }
-    
+
 }
