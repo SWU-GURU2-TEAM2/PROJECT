@@ -12,6 +12,8 @@ import AlamofireImage
 
 class SearchViewController: UIViewController {
     
+    var people: Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
