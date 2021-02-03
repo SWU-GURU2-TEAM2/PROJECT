@@ -8,5 +8,10 @@
 import UIKit
 
 class ContentData {
+    var authorID: Int?
+    var conentText: String?
+    var musicTitle: String?
+    var musicArtist: String?
+    var date: Date?
     
 }

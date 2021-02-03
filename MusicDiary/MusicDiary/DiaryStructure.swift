@@ -9,4 +9,6 @@ import UIKit
 
 class DiaryStructure {
     var contentList = [ContentData]()
+    var memberList: [Int]?
+    
 }
