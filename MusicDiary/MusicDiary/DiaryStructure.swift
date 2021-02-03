@@ -9,6 +9,7 @@ import UIKit
 
 struct DiaryStructure {
     var contentList = [ContentData]()
+    var diaryName: String?
     var memberList: [Int]?
     
 }
