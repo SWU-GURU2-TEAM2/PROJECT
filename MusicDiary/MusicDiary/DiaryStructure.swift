@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DiaryStructure {
+struct DiaryStructure {
     var contentList = [ContentData]()
     var memberList: [Int]?
     
