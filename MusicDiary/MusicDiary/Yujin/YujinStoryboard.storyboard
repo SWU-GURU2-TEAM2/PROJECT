@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,7 +22,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ilk-5Y-tHR">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ilk-5Y-tHR">
                                 <rect key="frame" x="144" y="684" width="127" height="84"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="LoggedPage"/>
@@ -29,7 +30,7 @@
                                     <action selector="btnTouched:" destination="eQw-KO-4jb" eventType="touchUpInside" id="CI3-D8-DWx"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vY9-rN-HEt">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vY9-rN-HEt">
                                 <rect key="frame" x="20" y="632" width="374" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="LogOut"/>
@@ -42,13 +43,13 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="r4X-DU-ZQq"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="B9z-A7-Le0" secondAttribute="trailing" id="8oA-YP-XAj"/>
                             <constraint firstItem="B9z-A7-Le0" firstAttribute="leading" secondItem="SzH-hg-1b8" secondAttribute="leadingMargin" id="IwW-te-Xj6"/>
                             <constraint firstAttribute="bottomMargin" secondItem="B9z-A7-Le0" secondAttribute="bottom" constant="10" id="vEe-7V-rML"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="r4X-DU-ZQq"/>
                     </view>
                     <navigationItem key="navigationItem" id="XIN-3A-DlU"/>
                     <connections>
@@ -74,7 +75,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u7D-dU-BAk">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u7D-dU-BAk">
                                 <rect key="frame" x="184" y="634" width="135" height="97"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
@@ -83,13 +84,13 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="1sh-gj-JJH"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="3Ff-2l-7b7" firstAttribute="top" secondItem="VbZ-kB-pXr" secondAttribute="topMargin" constant="100" id="7PK-pX-4kg"/>
                             <constraint firstAttribute="trailingMargin" secondItem="3Ff-2l-7b7" secondAttribute="trailing" id="95f-3U-XB6"/>
                             <constraint firstItem="3Ff-2l-7b7" firstAttribute="leading" secondItem="VbZ-kB-pXr" secondAttribute="leadingMargin" id="ZD7-4l-5Uj"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="1sh-gj-JJH"/>
                     </view>
                     <navigationItem key="navigationItem" id="Pr8-PE-wwF"/>
                 </viewController>
@@ -107,7 +108,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="F10-QX-onl">
                                 <rect key="frame" x="0.0" y="88" width="414" height="776"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="searchResultCell" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="searchResultCell" rowHeight="121" id="8JM-ad-Hus" customClass="SearchResultCell" customModule="MusicDiary" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="121"/>
@@ -154,10 +155,6 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="IPH-9v-jSQ" id="Kw9-ZL-O4T"/>
-                                    <outlet property="delegate" destination="IPH-9v-jSQ" id="92Q-nt-oEM"/>
-                                </connections>
                             </tableView>
                             <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="오늘의 음악은 무엇인가요?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HOL-qm-71F">
                                 <rect key="frame" x="87" y="49" width="251" height="34"/>
@@ -171,15 +168,13 @@
                                     <segment title="가수"/>
                                 </segments>
                             </segmentedControl>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MrJ-09-Cb1">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MrJ-09-Cb1">
                                 <rect key="frame" x="346" y="49" width="48" height="34"/>
                                 <state key="normal" title="Search"/>
-                                <connections>
-                                    <action selector="searchPressed:" destination="IPH-9v-jSQ" eventType="touchUpInside" id="cQ0-yW-onR"/>
-                                </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Say-IT-0HO"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="F10-QX-onl" firstAttribute="leading" secondItem="Say-IT-0HO" secondAttribute="leading" id="2XO-t5-kVK"/>
                             <constraint firstItem="RfK-IP-Syg" firstAttribute="leading" secondItem="Say-IT-0HO" secondAttribute="leading" constant="2" id="36z-Wl-nqm"/>
@@ -194,11 +189,7 @@
                             <constraint firstItem="F10-QX-onl" firstAttribute="bottom" secondItem="Say-IT-0HO" secondAttribute="bottom" constant="2" id="wZR-yj-x7p"/>
                             <constraint firstItem="Say-IT-0HO" firstAttribute="trailing" secondItem="F10-QX-onl" secondAttribute="trailing" id="yb7-aY-ewt"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="Say-IT-0HO"/>
                     </view>
-                    <connections>
-                        <outlet property="searchTextField" destination="HOL-qm-71F" id="K7e-KW-o9n"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5hT-9d-PNe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -211,8 +202,8 @@
                     <view key="view" contentMode="scaleToFill" id="Hru-R1-1gH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="XNh-QP-bAz"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1ud-YC-5nG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -223,5 +214,8 @@
     <resources>
         <image name="sampleAlbumImage.jpg" width="930" height="922"/>
         <image name="spongeBob.gif" width="480" height="270"/>
+        <systemColor name="systemBackgroundColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>
