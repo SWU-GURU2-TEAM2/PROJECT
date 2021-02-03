@@ -8,5 +8,8 @@
 import UIKit
 
 class UserStructure {
-    
+    var userName: String?
+    var userId: Int?
+    var userImage: UIImage?
+    var userDiaryList: [Int]?
 }
