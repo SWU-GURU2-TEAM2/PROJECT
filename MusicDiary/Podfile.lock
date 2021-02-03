@@ -226,48 +226,48 @@ PODS:
   - BoringSSL-GRPC/Implementation (0.0.7):
     - BoringSSL-GRPC/Interface (= 0.0.7)
   - BoringSSL-GRPC/Interface (0.0.7)
-  - FBSDKCoreKit (7.1.1):
-    - FBSDKCoreKit/Basics (= 7.1.1)
-    - FBSDKCoreKit/Core (= 7.1.1)
-  - FBSDKCoreKit/Basics (7.1.1)
-  - FBSDKCoreKit/Core (7.1.1):
+  - FBSDKCoreKit (9.0.0):
+    - FBSDKCoreKit/Basics (= 9.0.0)
+    - FBSDKCoreKit/Core (= 9.0.0)
+  - FBSDKCoreKit/Basics (9.0.0)
+  - FBSDKCoreKit/Core (9.0.0):
     - FBSDKCoreKit/Basics
-  - FBSDKLoginKit (7.1.1):
-    - FBSDKLoginKit/Login (= 7.1.1)
-  - FBSDKLoginKit/Login (7.1.1):
-    - FBSDKCoreKit (~> 7.1.1)
-  - Firebase/Auth (7.4.0):
+  - FBSDKLoginKit (9.0.0):
+    - FBSDKLoginKit/Login (= 9.0.0)
+  - FBSDKLoginKit/Login (9.0.0):
+    - FBSDKCoreKit (~> 9.0.0)
+  - Firebase/Auth (7.5.0):
     - Firebase/CoreOnly
-    - FirebaseAuth (~> 7.4.0)
-  - Firebase/CoreOnly (7.4.0):
-    - FirebaseCore (= 7.4.0)
-  - Firebase/Database (7.4.0):
+    - FirebaseAuth (~> 7.5.0)
+  - Firebase/CoreOnly (7.5.0):
+    - FirebaseCore (= 7.5.0)
+  - Firebase/Database (7.5.0):
     - Firebase/CoreOnly
-    - FirebaseDatabase (~> 7.4.0)
-  - Firebase/Firestore (7.4.0):
+    - FirebaseDatabase (~> 7.5.0)
+  - Firebase/Firestore (7.5.0):
     - Firebase/CoreOnly
-    - FirebaseFirestore (~> 7.4.0)
-  - Firebase/Storage (7.4.0):
+    - FirebaseFirestore (~> 7.5.0)
+  - Firebase/Storage (7.5.0):
     - Firebase/CoreOnly
-    - FirebaseStorage (~> 7.4.0)
-  - FirebaseAuth (7.4.0):
+    - FirebaseStorage (~> 7.5.0)
+  - FirebaseAuth (7.5.0):
     - FirebaseCore (~> 7.0)
     - GoogleUtilities/AppDelegateSwizzler (~> 7.0)
     - GoogleUtilities/Environment (~> 7.0)
     - GTMSessionFetcher/Core (~> 1.4)
-  - FirebaseCore (7.4.0):
+  - FirebaseCore (7.5.0):
     - FirebaseCoreDiagnostics (~> 7.4)
     - GoogleUtilities/Environment (~> 7.0)
     - GoogleUtilities/Logger (~> 7.0)
-  - FirebaseCoreDiagnostics (7.4.0):
+  - FirebaseCoreDiagnostics (7.5.0):
     - GoogleDataTransport (~> 8.0)
     - GoogleUtilities/Environment (~> 7.0)
     - GoogleUtilities/Logger (~> 7.0)
     - nanopb (~> 2.30907.0)
-  - FirebaseDatabase (7.4.0):
+  - FirebaseDatabase (7.5.0):
     - FirebaseCore (~> 7.0)
     - leveldb-library (~> 1.22)
-  - FirebaseFirestore (7.4.0):
+  - FirebaseFirestore (7.5.0):
     - abseil/algorithm (= 0.20200225.0)
     - abseil/base (= 0.20200225.0)
     - abseil/memory (= 0.20200225.0)
@@ -279,42 +279,42 @@ PODS:
     - "gRPC-C++ (~> 1.28.0)"
     - leveldb-library (~> 1.22)
     - nanopb (~> 2.30907.0)
-  - FirebaseStorage (7.4.0):
+  - FirebaseStorage (7.5.0):
     - FirebaseCore (~> 7.0)
     - GTMSessionFetcher/Core (~> 1.4)
-  - FirebaseUI (9.0.0):
-    - FirebaseUI/Anonymous (= 9.0.0)
-    - FirebaseUI/Auth (= 9.0.0)
-    - FirebaseUI/Database (= 9.0.0)
-    - FirebaseUI/Email (= 9.0.0)
-    - FirebaseUI/Facebook (= 9.0.0)
-    - FirebaseUI/Firestore (= 9.0.0)
-    - FirebaseUI/Google (= 9.0.0)
-    - FirebaseUI/OAuth (= 9.0.0)
-    - FirebaseUI/Phone (= 9.0.0)
-    - FirebaseUI/Storage (= 9.0.0)
-  - FirebaseUI/Anonymous (9.0.0):
+  - FirebaseUI (10.0.2):
+    - FirebaseUI/Anonymous (= 10.0.2)
+    - FirebaseUI/Auth (= 10.0.2)
+    - FirebaseUI/Database (= 10.0.2)
+    - FirebaseUI/Email (= 10.0.2)
+    - FirebaseUI/Facebook (= 10.0.2)
+    - FirebaseUI/Firestore (= 10.0.2)
+    - FirebaseUI/Google (= 10.0.2)
+    - FirebaseUI/OAuth (= 10.0.2)
+    - FirebaseUI/Phone (= 10.0.2)
+    - FirebaseUI/Storage (= 10.0.2)
+  - FirebaseUI/Anonymous (10.0.2):
     - FirebaseUI/Auth
-  - FirebaseUI/Auth (9.0.0):
-    - Firebase/Auth
+  - FirebaseUI/Auth (10.0.2):
+    - Firebase/Auth (>= 7.2.0)
     - GoogleUtilities/UserDefaults
-  - FirebaseUI/Database (9.0.0):
+  - FirebaseUI/Database (10.0.2):
     - Firebase/Database
-  - FirebaseUI/Email (9.0.0):
+  - FirebaseUI/Email (10.0.2):
     - FirebaseUI/Auth
-  - FirebaseUI/Facebook (9.0.0):
-    - FBSDKLoginKit (~> 7.0)
+  - FirebaseUI/Facebook (10.0.2):
+    - FBSDKLoginKit (~> 9.0)
     - FirebaseUI/Auth
-  - FirebaseUI/Firestore (9.0.0):
+  - FirebaseUI/Firestore (10.0.2):
     - Firebase/Firestore
-  - FirebaseUI/Google (9.0.0):
+  - FirebaseUI/Google (10.0.2):
     - FirebaseUI/Auth
     - GoogleSignIn (~> 5.0)
-  - FirebaseUI/OAuth (9.0.0):
+  - FirebaseUI/OAuth (10.0.2):
     - FirebaseUI/Auth
-  - FirebaseUI/Phone (9.0.0):
+  - FirebaseUI/Phone (10.0.2):
     - FirebaseUI/Auth
-  - FirebaseUI/Storage (9.0.0):
+  - FirebaseUI/Storage (10.0.2):
     - Firebase/Storage
     - SDWebImage (~> 5.6)
   - GoogleDataTransport (8.2.0):
@@ -372,6 +372,7 @@ PODS:
   - GTMSessionFetcher/Core (1.5.0)
   - GTMSessionFetcher/Full (1.5.0):
     - GTMSessionFetcher/Core (= 1.5.0)
+  - iCarousel (1.8.3)
   - leveldb-library (1.22)
   - nanopb (2.30907.0):
     - nanopb/decode (= 2.30907.0)
@@ -379,16 +380,19 @@ PODS:
   - nanopb/decode (2.30907.0)
   - nanopb/encode (2.30907.0)
   - PromisesObjC (1.2.12)
-  - SDWebImage (5.10.2):
-    - SDWebImage/Core (= 5.10.2)
-  - SDWebImage/Core (5.10.2)
-  - SwiftyGif (5.3.0)
+  - ScalingCarousel (3.2.0)
+  - SDWebImage (5.10.4):
+    - SDWebImage/Core (= 5.10.4)
+  - SDWebImage/Core (5.10.4)
+  - SwiftyGif (5.4.0)
   - SwiftyXMLParser (5.1.0)
 
 DEPENDENCIES:
   - Alamofire (~> 5.2)
   - AlamofireImage (~> 4.1)
   - FirebaseUI
+  - iCarousel
+  - ScalingCarousel
   - SwiftyGif
   - SwiftyXMLParser (from `https://github.com/yahoojapan/SwiftyXMLParser.git`)
 
@@ -416,9 +420,11 @@ SPEC REPOS:
     - gRPC-Core
     - GTMAppAuth
     - GTMSessionFetcher
+    - iCarousel
     - leveldb-library
     - nanopb
     - PromisesObjC
+    - ScalingCarousel
     - SDWebImage
     - SwiftyGif
 
@@ -437,16 +443,16 @@ SPEC CHECKSUMS:
   AlamofireImage: c4a2ba349885fb3064feb74d2e547bd42ce9be10
   AppAuth: 31bcec809a638d7bd2f86ea8a52bd45f6e81e7c7
   BoringSSL-GRPC: 8edf627ee524575e2f8d19d56f068b448eea3879
-  FBSDKCoreKit: b46507dc8b8cefed31d644e74d7cc30e2a715ef8
-  FBSDKLoginKit: 1a61d79e2b25e2fc0d03dccab1e34b38bbdf2546
-  Firebase: 09fb40287b6dfc8ee65f726fa0b788719d3f2a07
-  FirebaseAuth: d8dba8db90a1705ee2493857047282ca4f6e7598
-  FirebaseCore: 99c06e5a1e8d6952e75cb1f0a6d0b23c0f5ccdcf
-  FirebaseCoreDiagnostics: 3770093ac4f2be4590fa03cfa1d3a6e5602d4557
-  FirebaseDatabase: 0a619c887a9565bf4808eba37d2f0ed1d62f62d0
-  FirebaseFirestore: ab4e4d98aea35b4af696a96554769903123f83cc
-  FirebaseStorage: e8726dfe21ebe068ccbe8e9c332ea90688eeadae
-  FirebaseUI: f0677a1cc235f6da602cbd5c9b5fbbd24544a6b3
+  FBSDKCoreKit: ac6cc500b8e104bb9a4dd20b1527b5d199123c2e
+  FBSDKLoginKit: e9b6542fdee322333502ab497f628b011dce7d78
+  Firebase: fd5e4d2b756292c6e7ee6faac1eb320225d6e97e
+  FirebaseAuth: 13585612f93d671962682007ea8ded1d60ef0762
+  FirebaseCore: 06a2b68af8901f2244eb989419eb89edc3789b4d
+  FirebaseCoreDiagnostics: 35685db68b11fe7d19d2d8b557fd7e3a56ac81cc
+  FirebaseDatabase: ee59c5f39e49dfa6c06af6f4e541a88d9271625a
+  FirebaseFirestore: 9a4c23e979412a8557992f4515314b38fc0c888b
+  FirebaseStorage: 9cbdff7bdcdc8289c8efc20945fc91c1066d0b43
+  FirebaseUI: 59db3d833773f985550897d54ceb811ba37fb9a5
   GoogleDataTransport: 1024b1a4dfbd7a0e92cb20d7e0a6f1fb66b449a4
   GoogleSignIn: 7137d297ddc022a7e0aa4619c86d72c909fa7213
   GoogleUtilities: d866834472f1324d080496bc67ab3ce5d0d46027
@@ -454,13 +460,15 @@ SPEC CHECKSUMS:
   gRPC-Core: 4afa11bfbedf7cdecd04de535a9e046893404ed5
   GTMAppAuth: 197a8dabfea5d665224aa00d17f164fc2248dab9
   GTMSessionFetcher: b3503b20a988c4e20cc189aa798fd18220133f52
+  iCarousel: d782f635afac190c49bb8ee455882284cff8b85f
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
   nanopb: 59221d7f958fb711001e6a449489542d92ae113e
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
-  SDWebImage: b969dcfc02c40a5da71eac0b03b8f1a0c794a86f
-  SwiftyGif: e466e86c660d343357ab944a819a101c4127cb40
+  ScalingCarousel: d40f0ce438af5cfb2225e2f723f7161597961128
+  SDWebImage: c666b97e1fa9c64b4909816a903322018f0a9c84
+  SwiftyGif: 5d4af95df24caf1c570dbbcb32a3b8a0763bc6d7
   SwiftyXMLParser: 23b5a9321a8adf72aae29046ea58c3d097b4ac17
 
-PODFILE CHECKSUM: a6e45a8406673419c3a993691056351e78e3d012
+PODFILE CHECKSUM: 698c0e39e0b94cc2c43232c5742f7f15ca79f440
 
-COCOAPODS: 1.10.1
+COCOAPODS: 1.10.0
