@@ -377,6 +377,7 @@ PODS:
   - nanopb/decode (2.30907.0)
   - nanopb/encode (2.30907.0)
   - PromisesObjC (1.2.12)
+  - ScalingCarousel (3.2.0)
   - SDWebImage (5.10.2):
     - SDWebImage/Core (= 5.10.2)
   - SDWebImage/Core (5.10.2)
@@ -386,6 +387,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire (~> 5.2)
   - FirebaseUI
+  - ScalingCarousel
   - SwiftyGif
   - SwiftyXMLParser (from `https://github.com/yahoojapan/SwiftyXMLParser.git`)
 
@@ -415,6 +417,7 @@ SPEC REPOS:
     - leveldb-library
     - nanopb
     - PromisesObjC
+    - ScalingCarousel
     - SDWebImage
     - SwiftyGif
 
@@ -452,10 +455,11 @@ SPEC CHECKSUMS:
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
   nanopb: 59221d7f958fb711001e6a449489542d92ae113e
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
+  ScalingCarousel: d40f0ce438af5cfb2225e2f723f7161597961128
   SDWebImage: b969dcfc02c40a5da71eac0b03b8f1a0c794a86f
   SwiftyGif: e466e86c660d343357ab944a819a101c4127cb40
   SwiftyXMLParser: 23b5a9321a8adf72aae29046ea58c3d097b4ac17
 
-PODFILE CHECKSUM: 4f59d914af07ca3dd75fbe9ac9d9586c646e3504
+PODFILE CHECKSUM: b2f553432ea65dfc7298f1bdc5f07c1593961768
 
 COCOAPODS: 1.10.1
