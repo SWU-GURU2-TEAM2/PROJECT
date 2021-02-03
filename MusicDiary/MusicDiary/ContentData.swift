@@ -7,11 +7,12 @@
 
 import UIKit
 
-class ContentData {
+struct ContentData {
     var authorID: Int?
     var conentText: String?
     var musicTitle: String?
     var musicArtist: String?
+    var musicCoverUrl: URL?
     var date: Date?
     
 }
