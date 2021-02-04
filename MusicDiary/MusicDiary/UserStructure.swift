@@ -9,7 +9,7 @@ import UIKit
 
 struct UserStructure {
     var userName: String?
-    var userId: Int?
+    var userId: String?
     var userImage: UIImage?
     var userDiaryList: [Int]?
 }

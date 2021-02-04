@@ -6,7 +6,8 @@
 //
 
 import UIKit
+import ScalingCarousel
 
-class SelectPageScrollViewController: UIViewController {
-    // pod 'iCarousel'
+class SelectPageScrollViewController: ScalingCarouselView {
+   
 }

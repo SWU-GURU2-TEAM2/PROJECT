@@ -47,7 +47,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Go to Jungbin"/>
                                 <connections>
-                                    <segue destination="0hS-ec-YU2" kind="presentation" identifier="dailyView" modalPresentationStyle="fullScreen" id="Ja3-jE-Cyt"/>
+                                    <segue destination="0hS-ec-YU2" kind="presentation" modalPresentationStyle="fullScreen" id="OBG-DJ-h4o"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zP9-5m-2Jf">
