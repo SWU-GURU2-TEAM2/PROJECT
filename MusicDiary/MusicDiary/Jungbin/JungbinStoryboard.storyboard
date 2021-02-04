@@ -33,12 +33,6 @@
                                     <segue destination="VwC-qC-UUN" kind="presentation" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="Q6X-m6-3fa"/>
                                 </connections>
                             </button>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1mF-0b-FEE">
-                                <rect key="frame" x="0.0" y="494" width="414" height="264"/>
-                                <connections>
-                                    <segue destination="pkf-Ut-d4y" kind="embed" id="5d6-dp-Tbd"/>
-                                </connections>
-                            </containerView>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="vWu-8n-RfS">
                                 <rect key="frame" x="0.0" y="44" width="414" height="216"/>
                                 <date key="minimumDate" timeIntervalSinceReferenceDate="-978267600">
@@ -58,13 +52,9 @@
                         <constraints>
                             <constraint firstItem="vWu-8n-RfS" firstAttribute="top" secondItem="mXS-M6-D5H" secondAttribute="top" id="1f2-Yo-gzp"/>
                             <constraint firstItem="mXS-M6-D5H" firstAttribute="trailing" secondItem="q7G-p6-pjL" secondAttribute="trailing" constant="176" id="T90-1J-n5H"/>
-                            <constraint firstItem="1mF-0b-FEE" firstAttribute="top" secondItem="mXS-M6-D5H" secondAttribute="top" constant="450" id="TIB-Di-Sw8"/>
-                            <constraint firstItem="1mF-0b-FEE" firstAttribute="leading" secondItem="mXS-M6-D5H" secondAttribute="leading" id="Y3X-WT-Bt6"/>
-                            <constraint firstItem="mXS-M6-D5H" firstAttribute="bottom" secondItem="1mF-0b-FEE" secondAttribute="bottom" constant="104" id="gRW-aR-TT8"/>
                             <constraint firstItem="q7G-p6-pjL" firstAttribute="bottom" secondItem="mXS-M6-D5H" secondAttribute="bottom" id="n3S-ce-72N"/>
                             <constraint firstItem="vWu-8n-RfS" firstAttribute="trailing" secondItem="mXS-M6-D5H" secondAttribute="trailing" id="p0W-si-8Cx"/>
                             <constraint firstItem="vWu-8n-RfS" firstAttribute="leading" secondItem="mXS-M6-D5H" secondAttribute="leading" id="ph1-1U-o7T"/>
-                            <constraint firstItem="1mF-0b-FEE" firstAttribute="trailing" secondItem="mXS-M6-D5H" secondAttribute="trailing" id="u9s-ft-pmm"/>
                             <constraint firstItem="q7G-p6-pjL" firstAttribute="leading" secondItem="mXS-M6-D5H" secondAttribute="leading" constant="176" id="v6s-hY-HzE"/>
                         </constraints>
                     </view>
@@ -217,30 +207,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z57-DK-INg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1466.6666666666667" y="279.57589285714283"/>
-        </scene>
-        <!--Select Page Scroll View Controller-->
-        <scene sceneID="O4g-fG-OlR">
-            <objects>
-                <viewController id="pkf-Ut-d4y" customClass="SelectPageScrollViewController" customModule="MusicDiary" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="767-BQ-WLa">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="264"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="3V4-zF-HfW"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="number" keyPath="inset">
-                            <real key="value" value="5"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
-                    <connections>
-                        <outlet property="dataSource" destination="767-BQ-WLa" id="UAS-6c-iBA"/>
-                        <outlet property="delegate" destination="767-BQ-WLa" id="qUm-Ff-VFU"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="VhK-Tz-POS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-888.40579710144937" y="287.94642857142856"/>
         </scene>
     </scenes>
     <resources>
