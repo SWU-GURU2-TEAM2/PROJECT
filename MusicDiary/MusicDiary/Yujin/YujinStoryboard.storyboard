@@ -160,8 +160,8 @@
                                     <outlet property="delegate" destination="IPH-9v-jSQ" id="AWR-Z9-WOp"/>
                                 </connections>
                             </tableView>
-                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="오늘의 음악은 무엇인가요?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HOL-qm-71F">
-                                <rect key="frame" x="87" y="49" width="251" height="34"/>
+                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" restorationIdentifier="searchTextField" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="오늘의 음악은 무엇인가요?" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="HOL-qm-71F">
+                                <rect key="frame" x="87" y="48.5" width="251" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -202,7 +202,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="searchTextField" destination="HOL-qm-71F" id="oz2-GK-w00"/>
                         <outlet property="songArtistSegment" destination="RfK-IP-Syg" id="HGj-nK-o1N"/>
+                        <outlet property="tableView" destination="F10-QX-onl" id="77g-4d-xkA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5hT-9d-PNe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

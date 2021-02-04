@@ -11,9 +11,12 @@ import SwiftyXMLParser
 import AlamofireImage
 
 class SearchViewController: UIViewController {
-    
-    @IBOutlet weak var searchTextFied: UITextField!
+    //values
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var songArtistSegment: UISegmentedControl!
+    
+    //viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -24,6 +27,7 @@ class SearchViewController: UIViewController {
     
     @IBAction func searchButtonPressed(_ sender: Any) {
     }
+    
 }
 
 extension SearchViewController: UITableViewDataSource {
@@ -35,14 +39,28 @@ extension SearchViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "searchResultCell") as! SearchResultCell
         cell.musicTitle.text = "Name"
         cell.musicArtist.text = "Artist"
+        let url = URL(string: "https://i.pinimg.com/originals/2e/32/ee/2e32eefcb9bb70604d2ef0a88ed4329c.jpg")
+        do {
+            let data = try Data(contentsOf: url!)
+            cell.musicCover.image = UIImage(data: data)
+        } catch {
+            //스토리 보드의 기본 이미지 그대로 사용
+        }
         return cell
         
     }
-    
 }
 
 extension SearchViewController: UITableViewDelegate{
-    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let size = tableView.frame.size
+        if size.height > size.width {
+            return size.height / 10
+        } else {
+            return size.height / 5
+        }
+        
+    }
 }
 
 
