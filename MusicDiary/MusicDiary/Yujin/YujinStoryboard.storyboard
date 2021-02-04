@@ -117,7 +117,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="121"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="albumImage" image="sampleAlbumImage.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Cll-7m-EDr">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="albumImage" image="spongeBob.gif" translatesAutoresizingMaskIntoConstraints="NO" id="Cll-7m-EDr">
                                                     <rect key="frame" x="20" y="13" width="95" height="95"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="Cll-7m-EDr" secondAttribute="height" multiplier="1:1" id="lhA-Nf-QE5"/>
@@ -228,7 +228,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="sampleAlbumImage.jpg" width="930" height="922"/>
         <image name="spongeBob.gif" width="480" height="270"/>
         <systemColor name="systemBackgroundColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -10,4 +10,6 @@ struct MusicStruct {
     var musicTitle: String?
     var musicArtist: String?
     var musicCoverUrl: URL?
+    var musicLyrics: String?
+    var musicID: Int
 }
