@@ -117,7 +117,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="121"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="albumImage" image="sampleAlbumImage.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Cll-7m-EDr">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="albumImage" image="spongeBob.gif" translatesAutoresizingMaskIntoConstraints="NO" id="Cll-7m-EDr">
                                                     <rect key="frame" x="20" y="13" width="95" height="95"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="Cll-7m-EDr" secondAttribute="height" multiplier="1:1" id="lhA-Nf-QE5"/>
@@ -149,28 +149,38 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="albumImage" destination="Cll-7m-EDr" id="Sdu-OL-NYx"/>
-                                            <outlet property="artist" destination="Wax-zq-b5b" id="7wQ-NW-nRQ"/>
-                                            <outlet property="songName" destination="auB-wO-glD" id="NRT-aD-d6C"/>
+                                            <outlet property="musicArtist" destination="Wax-zq-b5b" id="Yd7-UL-vq0"/>
+                                            <outlet property="musicCover" destination="Cll-7m-EDr" id="5yH-Fo-OIQ"/>
+                                            <outlet property="musicTitle" destination="auB-wO-glD" id="Vxs-Ct-0yr"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="IPH-9v-jSQ" id="emR-4e-rcN"/>
+                                    <outlet property="delegate" destination="IPH-9v-jSQ" id="AWR-Z9-WOp"/>
+                                </connections>
                             </tableView>
-                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="오늘의 음악은 무엇인가요?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HOL-qm-71F">
-                                <rect key="frame" x="87" y="49" width="251" height="34"/>
+                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" restorationIdentifier="searchTextField" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="오늘의 음악은 무엇인가요?" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="HOL-qm-71F">
+                                <rect key="frame" x="87" y="48.5" width="251" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="RfK-IP-Syg">
                                 <rect key="frame" x="2" y="49" width="83" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="RfK-IP-Syg" secondAttribute="height" multiplier="2:1" id="1lM-tG-zKy"/>
+                                </constraints>
                                 <segments>
                                     <segment title="노래"/>
                                     <segment title="가수"/>
                                 </segments>
                             </segmentedControl>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MrJ-09-Cb1">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MrJ-09-Cb1">
                                 <rect key="frame" x="346" y="49" width="48" height="34"/>
                                 <state key="normal" title="Search"/>
+                                <connections>
+                                    <action selector="searchButtonPressed:" destination="IPH-9v-jSQ" eventType="touchUpInside" id="qo9-sz-fck"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Say-IT-0HO"/>
@@ -179,6 +189,7 @@
                             <constraint firstItem="F10-QX-onl" firstAttribute="leading" secondItem="Say-IT-0HO" secondAttribute="leading" id="2XO-t5-kVK"/>
                             <constraint firstItem="RfK-IP-Syg" firstAttribute="leading" secondItem="Say-IT-0HO" secondAttribute="leading" constant="2" id="36z-Wl-nqm"/>
                             <constraint firstItem="MrJ-09-Cb1" firstAttribute="top" secondItem="Say-IT-0HO" secondAttribute="top" constant="5" id="MML-ch-ShZ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="MrJ-09-Cb1" secondAttribute="trailing" constant="2" id="RkZ-tT-bIR"/>
                             <constraint firstItem="F10-QX-onl" firstAttribute="top" secondItem="MrJ-09-Cb1" secondAttribute="bottom" constant="5" id="WnT-iZ-Olt"/>
                             <constraint firstItem="F10-QX-onl" firstAttribute="top" secondItem="RfK-IP-Syg" secondAttribute="bottom" constant="5" id="YUd-9j-gt0"/>
                             <constraint firstItem="HOL-qm-71F" firstAttribute="leading" secondItem="RfK-IP-Syg" secondAttribute="trailing" constant="2" id="dap-cT-wK8"/>
@@ -190,6 +201,11 @@
                             <constraint firstItem="Say-IT-0HO" firstAttribute="trailing" secondItem="F10-QX-onl" secondAttribute="trailing" id="yb7-aY-ewt"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="searchTextField" destination="HOL-qm-71F" id="oz2-GK-w00"/>
+                        <outlet property="songArtistSegment" destination="RfK-IP-Syg" id="HGj-nK-o1N"/>
+                        <outlet property="tableView" destination="F10-QX-onl" id="77g-4d-xkA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5hT-9d-PNe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -212,7 +228,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="sampleAlbumImage.jpg" width="930" height="922"/>
         <image name="spongeBob.gif" width="480" height="270"/>
         <systemColor name="systemBackgroundColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

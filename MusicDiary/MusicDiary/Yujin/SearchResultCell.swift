@@ -8,9 +8,7 @@
 import UIKit
 
 class SearchResultCell: UITableViewCell {
-    
-    @IBOutlet weak var artistLabel: UILabel!
-    @IBOutlet weak var songLabel: UILabel!
-    @IBOutlet weak var albumImage: UIImageView!
-    
+    @IBOutlet weak var musicArtist: UILabel!
+    @IBOutlet weak var musicTitle: UILabel!
+    @IBOutlet weak var musicCover: UIImageView!
 }

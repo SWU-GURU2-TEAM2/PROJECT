@@ -26,6 +26,7 @@
 		5C93B3C825C3092C0067A723 /* VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C93B3C725C3092C0067A723 /* VC.swift */; };
 		5C94BC7C25C7AD1E0088B534 /* DiaryStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C94BC7B25C7AD1E0088B534 /* DiaryStructure.swift */; };
 		5C94BC7F25C7AE2F0088B534 /* ContentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C94BC7E25C7AE2F0088B534 /* ContentData.swift */; };
+		6A00EFB225CC1F9100E09D7F /* MusicStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A00EFB125CC1F9100E09D7F /* MusicStructure.swift */; };
 		6A23217025C6F0E40079A482 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6A23216F25C6F0E40079A482 /* GoogleService-Info.plist */; };
 		6A2321E125C6F1E80079A482 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2321E025C6F1E80079A482 /* IntroViewController.swift */; };
 		6A270A2A25C77BE300434321 /* spongeBob.gif in Resources */ = {isa = PBXBuildFile; fileRef = 6A270A2925C77BE300434321 /* spongeBob.gif */; };
@@ -57,6 +58,7 @@
 		5C93B3C725C3092C0067A723 /* VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VC.swift; sourceTree = "<group>"; };
 		5C94BC7B25C7AD1E0088B534 /* DiaryStructure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryStructure.swift; sourceTree = "<group>"; };
 		5C94BC7E25C7AE2F0088B534 /* ContentData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentData.swift; sourceTree = "<group>"; };
+		6A00EFB125CC1F9100E09D7F /* MusicStructure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicStructure.swift; sourceTree = "<group>"; };
 		6A23216F25C6F0E40079A482 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		6A2321E025C6F1E80079A482 /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
 		6A270A2925C77BE300434321 /* spongeBob.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = spongeBob.gif; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 				6A2321E025C6F1E80079A482 /* IntroViewController.swift */,
 				6A5613B525C7097700EC48E3 /* SearchViewController.swift */,
 				6A270A2D25C785B000434321 /* SearchResultCell.swift */,
+				6A00EFB125CC1F9100E09D7F /* MusicStructure.swift */,
 			);
 			path = Yujin;
 			sourceTree = "<group>";
@@ -333,6 +336,7 @@
 				5C93B3C825C3092C0067A723 /* VC.swift in Sources */,
 				5C93B36E25C051400067A723 /* AppDelegate.swift in Sources */,
 				5C0DC0FE25C6939C00D766FB /* WriteSubVC1.swift in Sources */,
+				6A00EFB225CC1F9100E09D7F /* MusicStructure.swift in Sources */,
 				6A270A2E25C785B000434321 /* SearchResultCell.swift in Sources */,
 				5C94BC7F25C7AE2F0088B534 /* ContentData.swift in Sources */,
 				5C94BC7C25C7AD1E0088B534 /* DiaryStructure.swift in Sources */,
