@@ -8,8 +8,10 @@
 import UIKit
 
 struct DiaryStructure {
+    var diaryId: String?
     var contentList = [ContentData]()
     var diaryName: String?
+    var diaryImageUrl: URL?
     var memberList: [Int]?
     
 }

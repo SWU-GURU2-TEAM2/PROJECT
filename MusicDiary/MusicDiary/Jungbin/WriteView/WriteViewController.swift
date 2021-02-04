@@ -26,8 +26,8 @@ class WriteViewController:UIViewController{
         newContent.authorID = "aaa111"
         newContent.conentText = textView.text
         newContent.date = Date()
-        newContent.musicArtist = "아이유"
-        newContent.musicTitle = "너랑 나"
+        newContent.musicArtist = "태진아"
+        newContent.musicTitle = "진진자라"
         newContent.musicCoverUrl = URL(string:"https://avatars.githubusercontent.com/u/4277927?s=64&v=4")
 
         let appDelegate = UIApplication.shared.delegate as! AppDelegate

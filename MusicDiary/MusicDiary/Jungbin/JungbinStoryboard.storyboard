@@ -228,10 +228,19 @@
                         <viewLayoutGuide key="safeArea" id="3V4-zF-HfW"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="inset">
+                            <real key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <outlet property="dataSource" destination="767-BQ-WLa" id="UAS-6c-iBA"/>
+                        <outlet property="delegate" destination="767-BQ-WLa" id="qUm-Ff-VFU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VhK-Tz-POS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-888" y="288"/>
+            <point key="canvasLocation" x="-888.40579710144937" y="287.94642857142856"/>
         </scene>
     </scenes>
     <resources>
