@@ -26,21 +26,50 @@ class SearchViewController: UIViewController {
     //searchButtonPressed
     @IBAction func searchButtonPressed(_ sender: Any) {
         //텍스트필드의 값 확인
+        MusicData.removeAll()
         searchKeyword = searchTextField.text ?? ""
         if searchKeyword != "" {
             //Alamofire로 필요한 정보 가져오기
             print("start Alamofire")
-            //MusicData 배열에 데이터 저장하기
             switch songArtistSegment.selectedSegmentIndex {
             case 0:
-                AF.request("http://www.maniadb.com/api/search/\(searchKeyword)/?sr=song&display=10&key=example&v=0.5", encoding: URLEncoding.httpBody, headers: nil).responseData { (response) in
+                AF.request("http://www.maniadb.com/api/search/\(searchKeyword)/?sr=song&display=100&key=jgkyj@naver.com&v=0.5", encoding: URLEncoding.httpBody, headers: nil).responseData { [self] (response) in
                     print("response SONG")
+                    //song 검색결과에서 데이터 저장
+                    if let data = response.data {
+                        let xml = XML.parse(data)
+                        print("songDatLoaded")
+                        if let totalResult = Int(xml["rss", "channel", "total"].text!), totalResult  != 0{
+                            for index in 0...totalResult - 1 {
+                                let musicID = xml["rss", "channel", "item", index].attributes["id"]
+                                let musicName = xml["rss", "channel", "item", index, "title"].text
+                                let artist = xml["rss", "channel", "item", index, "maniadb:artist", "name"].text
+                                let id = Int(musicID!)
+                                //musicCover가 있으면 넣고 아니면 없게
+                                if let musicCover = xml["rss", "channel", "item", index, "maniadb:album", "image"].text{
+                                    let url = URL(string: musicCover)
+                                    MusicData.append(MusicStruct(musicTitle: musicName!, musicArtist: artist!, musicCoverUrl: url!, musicLyrics: nil, musicID: id!))
+                                } else {
+                                    MusicData.append(MusicStruct(musicTitle: musicName!, musicArtist: artist!, musicCoverUrl: nil, musicLyrics: nil, musicID: id!))
+                                }
+                                print(MusicData.count,MusicData[index].musicTitle)
+                            }
+                        }
+                    }
                 }
             case 1:
-                AF.request("http://www.maniadb.com/api/search/\(searchKeyword)/?sr=artist&display=10&key=example&v=0.5", encoding: URLEncoding.httpBody, headers: nil).responseData { (response) in
+                AF.request("http://www.maniadb.com/api/search/\(searchKeyword)/?sr=artist&display=100&key=jgkyj@naver.com&v=0.5", encoding: URLEncoding.httpBody, headers: nil).responseData { (response) in
                     print("response ARTIST")
+                    //artist 검색결과에서 데이터 저장
+                    if let data = response.data {
+                        let xml = XML.parse(data)
+                        print("artistDataLoaded")
+                        //구조가 가수가 부른 노래들 여러개 -> 노래 정보를 다시 가져와서 따야됨.
+                        //논의 필요!
+                    }
                 }
             default:
+                //segment라서 해당 없음.
                 print("nonSelected")
             }
         }
