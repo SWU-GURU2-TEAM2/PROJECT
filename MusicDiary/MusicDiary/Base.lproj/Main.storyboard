@@ -26,13 +26,15 @@
             </objects>
             <point key="canvasLocation" x="746" y="15"/>
         </scene>
-        <!--YewonMainView-->
-        <scene sceneID="S5P-sg-AiT">
+        <!--YewonDetailView-->
+        <scene sceneID="8Ne-mf-KYy">
             <objects>
-                <viewControllerPlaceholder storyboardName="YewonStoryboard" referencedIdentifier="YewonMainView" id="zGU-BX-X0D" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7NS-g9-Og7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardIdentifier="YewonMainView" storyboardName="YewonStoryboard" referencedIdentifier="YewonDetailView" id="zh6-Tv-Sxp" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="sLb-ab-nAl"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9vy-1U-kwj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="678" y="106"/>
+            <point key="canvasLocation" x="618" y="221"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -63,7 +65,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Go to Yewon"/>
                                 <connections>
-                                    <segue destination="zGU-BX-X0D" kind="presentation" identifier="YewonViewController" modalPresentationStyle="fullScreen" id="oCQ-JY-Ogc"/>
+                                    <segue destination="zh6-Tv-Sxp" kind="presentation" id="EpS-Aa-Rgf"/>
                                 </connections>
                             </button>
                         </subviews>
