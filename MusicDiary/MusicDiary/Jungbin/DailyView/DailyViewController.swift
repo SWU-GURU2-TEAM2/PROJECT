@@ -8,7 +8,7 @@
 import UIKit
 import ScalingCarousel
 
-class Cell: ScalingCarouselCell {}
+//class Cell: ScalingCarouselCell {}
 
 class DailyViewController: UIViewController {
     //@IBOutlet weak var carousel: ScalingCarouselView!
