@@ -11,7 +11,7 @@ import ScalingCarousel
 class Cell: ScalingCarouselCell {}
 
 class DailyViewController: UIViewController {
-    @IBOutlet weak var carousel: ScalingCarouselView!
+    //@IBOutlet weak var carousel: ScalingCarouselView!
     override func viewDidLoad() {
         super.viewDidLoad()
     }
