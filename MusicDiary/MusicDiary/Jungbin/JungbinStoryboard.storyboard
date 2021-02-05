@@ -142,6 +142,10 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UiD-UC-FKO">
+                                <rect key="frame" x="0.0" y="0.0" width="334" height="109"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Obk-Rj-9Cl"/>
                         <color key="backgroundColor" red="1" green="0.95883401000000001" blue="0.69919566570000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
