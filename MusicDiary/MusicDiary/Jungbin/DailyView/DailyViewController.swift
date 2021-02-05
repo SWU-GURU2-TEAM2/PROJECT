@@ -6,23 +6,62 @@
 //
 
 import UIKit
+import ScalingCarousel
+
+class Cell: ScalingCarouselCell {}
 
 class DailyViewController: UIViewController {
-    @IBOutlet weak var datePicker: UIDatePicker!
+    @IBOutlet weak var carousel: ScalingCarouselView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        setDatePicker()
     }
     
-    @IBAction func changeDatePicker(_ sender: Any) {
-        print(datePicker.date)
-        
-        //날짜 변경할 때마다 아래에 나오는 다이어리 바뀜!
-    }
-    func setDatePicker(){
-        datePicker.preferredDatePickerStyle = .wheels
-        datePicker.minimumDate = Date(timeIntervalSinceNow: -86400)
-        datePicker.maximumDate = Date(timeIntervalSinceNow: 86400)
-    }
 }
-
+//
+//typealias CarouselDatasource = ViewController
+//extension CarouselDatasource:UICollectionViewDataSource{
+//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+//        return 10
+//    }
+//
+//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
+//
+//
+//        if let scalingCell = cell as? ScalingCarouselCell {
+//            scalingCell.mainView.backgroundColor = .red
+//            scalingCell.cornerRadius = 80
+//        }
+//
+//        DispatchQueue.main.async {
+//            cell.setNeedsLayout()
+//            cell.layoutIfNeeded()
+//        }
+//        return cell
+//}
+//
+//typealias CarouselDelegate = ViewController
+//extension ViewController: UICollectionViewDelegate {
+//
+//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+//        carousel.didScroll()
+//
+//        guard let currentCenterIndex = self.carousel.currentCenterCellIndex?.row else { return }
+//
+//        print("current index: ", String(describing: currentCenterIndex))
+//    }
+//}
+//
+//private typealias ScalingCarouselFlowDelegate = ViewController
+//extension ScalingCarouselFlowDelegate: UICollectionViewDelegateFlowLayout {
+//
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+//
+//        return 0
+//    }
+//
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+//
+//        return 0
+//    }
+//}
