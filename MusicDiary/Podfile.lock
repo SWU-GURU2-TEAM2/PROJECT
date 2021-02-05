@@ -317,6 +317,7 @@ PODS:
   - FirebaseUI/Storage (10.0.2):
     - Firebase/Storage
     - SDWebImage (~> 5.6)
+  - FSCalendar (2.8.2)
   - GoogleDataTransport (8.2.0):
     - nanopb (~> 2.30907.0)
   - GoogleSignIn (5.0.2):
@@ -391,6 +392,7 @@ DEPENDENCIES:
   - Alamofire (~> 5.2)
   - AlamofireImage (~> 4.1)
   - FirebaseUI
+  - FSCalendar
   - iCarousel
   - ScalingCarousel
   - SwiftyGif
@@ -413,6 +415,7 @@ SPEC REPOS:
     - FirebaseFirestore
     - FirebaseStorage
     - FirebaseUI
+    - FSCalendar
     - GoogleDataTransport
     - GoogleSignIn
     - GoogleUtilities
@@ -453,6 +456,7 @@ SPEC CHECKSUMS:
   FirebaseFirestore: 9a4c23e979412a8557992f4515314b38fc0c888b
   FirebaseStorage: 9cbdff7bdcdc8289c8efc20945fc91c1066d0b43
   FirebaseUI: 59db3d833773f985550897d54ceb811ba37fb9a5
+  FSCalendar: e6a2eb9c571bf0719ed797ef807e08426753c241
   GoogleDataTransport: 1024b1a4dfbd7a0e92cb20d7e0a6f1fb66b449a4
   GoogleSignIn: 7137d297ddc022a7e0aa4619c86d72c909fa7213
   GoogleUtilities: 31c5b01f978a70c6cff2afc6272b3f1921614b43
@@ -469,6 +473,6 @@ SPEC CHECKSUMS:
   SwiftyGif: 5d4af95df24caf1c570dbbcb32a3b8a0763bc6d7
   SwiftyXMLParser: 23b5a9321a8adf72aae29046ea58c3d097b4ac17
 
-PODFILE CHECKSUM: 698c0e39e0b94cc2c43232c5742f7f15ca79f440
+PODFILE CHECKSUM: d7f73814e6de8f06a92e4feb97ba62c529c22fa0
 
 COCOAPODS: 1.10.1
