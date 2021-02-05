@@ -26,10 +26,10 @@
             </objects>
             <point key="canvasLocation" x="746" y="15"/>
         </scene>
-        <!--YewonViewController-->
+        <!--YewonMainView-->
         <scene sceneID="S5P-sg-AiT">
             <objects>
-                <viewControllerPlaceholder storyboardName="YewonStoryboard" referencedIdentifier="YewonViewController" id="zGU-BX-X0D" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="YewonStoryboard" referencedIdentifier="YewonMainView" id="zGU-BX-X0D" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7NS-g9-Og7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="678" y="106"/>
