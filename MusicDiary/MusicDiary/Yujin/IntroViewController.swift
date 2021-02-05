@@ -17,7 +17,7 @@ class IntroViewController: UIViewController, FUIAuthDelegate, UIGestureRecognize
     @IBOutlet weak var swipeLable: UILabel! //swipeLabel
     let authUI = FUIAuth.defaultAuthUI() //authUI
     var handle: AuthStateDidChangeListenerHandle! //handle
-    
+    var currentUID:String! //currentUID
     //viewWillAppear
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -56,10 +56,11 @@ class IntroViewController: UIViewController, FUIAuthDelegate, UIGestureRecognize
             //만약 로그인 했다면
             if let currentUser = auth.currentUser {
                 //currentUser 정보 넘겨주기
-                print(currentUser.displayName)
                 //로그인한 유저 -> 다음 뷰로 넘어감
                 let vc = UIStoryboard(name: "YujinStoryboard", bundle: nil).instantiateViewController(identifier: "LoggedView")
                 vc.modalPresentationStyle = .fullScreen
+                self.currentUID = currentUser.uid
+                print(self.currentUID!)
                 self.present(vc, animated: true, completion:  nil)
             } else {
                 //로그인 안한 유저 -> 로그인 화면이 뜸
