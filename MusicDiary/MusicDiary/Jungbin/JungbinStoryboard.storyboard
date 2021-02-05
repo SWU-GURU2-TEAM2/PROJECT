@@ -193,7 +193,7 @@
                         <color key="backgroundColor" red="1" green="0.86249531999999995" blue="0.5189101035" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </view>
                     <connections>
-                        <outlet property="textView" destination="LkU-8t-w53" id="WR1-5s-sRp"/>
+                        <outlet property="textView" destination="LkU-8t-w53" id="rmC-Y4-6Du"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z57-DK-INg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
