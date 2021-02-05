@@ -10,7 +10,7 @@ import FirebaseUI
 import SwiftyGif
 
 
-class IntroViewController: UIViewController, FUIAuthDelegate {
+class IntroViewController: UIViewController, FUIAuthDelegate, UIGestureRecognizerDelegate {
     
     //values
     @IBOutlet weak var logoImageView: UIImageView! //logoImageView
@@ -34,11 +34,10 @@ class IntroViewController: UIViewController, FUIAuthDelegate {
         } catch {
             print("not loaded")
         }
-        /* labelTapped Test
-        let tap = UITapGestureRecognizer(target: self, action: #selector(labelTapped(_:)))
-        swipeLable.addGestureRecognizer(tap)
-        swipeLable.isEnabled = true
-         */
+        
+        let swipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(swipeGestured(_:)))
+        swipeGestureRecognizer.direction = UISwipeGestureRecognizer.Direction.up
+        self.view.addGestureRecognizer(swipeGestureRecognizer)
     }//viewDidLoad
     
     //viewDidDisappear
@@ -50,12 +49,34 @@ class IntroViewController: UIViewController, FUIAuthDelegate {
         //self.logoImageView.stopAnimatingGif()
     }//viewDidDisappear
     
-    //labelTapped
-    @objc func labelTapped (_ sender: UITapGestureRecognizer) {
-        print("tapped")
-    }//labelTapped
+    //swipeGesture
+    @IBAction func swipeGestured(_ sender: Any) {
+        print("swiped")
+        handle = Auth.auth().addStateDidChangeListener { (auth, user) in
+            //만약 로그인 했다면
+            if let currentUser = auth.currentUser {
+                //currentUser 정보 넘겨주기
+                print(currentUser.displayName)
+                //로그인한 유저 -> 다음 뷰로 넘어감
+                let vc = UIStoryboard(name: "YujinStoryboard", bundle: nil).instantiateViewController(identifier: "LoggedView")
+                vc.modalPresentationStyle = .fullScreen
+                self.present(vc, animated: true, completion:  nil)
+            } else {
+                //로그인 안한 유저 -> 로그인 화면이 뜸
+                self.authUI!.delegate = self
+                  let providers: [FUIAuthProvider] = [
+                  FUIGoogleAuth()
+                ]
+                self.authUI!.providers = providers
+                let authViewController = self.authUI!.authViewController()
+                authViewController.modalPresentationStyle = .fullScreen
+                authViewController.setNavigationBarHidden(true, animated: false)
+                self.present(authViewController, animated: true, completion: nil)
+            }//if else
+        }//handle
+    }//swipeGestured
     
-    //btnTouched
+    //btnTouched: swipe 안될 시 대비. 테스트용 추후 삭제 요망
     @IBAction func btnTouched(_ sender: Any) {
         print("touched")
         //핸들로 로그인 했는지 안했는지 추적
@@ -79,8 +100,8 @@ class IntroViewController: UIViewController, FUIAuthDelegate {
                 authViewController.modalPresentationStyle = .fullScreen
                 authViewController.setNavigationBarHidden(true, animated: false)
                 self.present(authViewController, animated: true, completion: nil)
-            }
-        }
+            }//if else
+        }//handle
     }//btnTouched
     
     //logoutbtnTouched
