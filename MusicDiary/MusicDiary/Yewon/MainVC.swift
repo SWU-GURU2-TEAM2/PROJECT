@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DiaryCollectionView:UICollectionViewController {
+class MAinVC:UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
