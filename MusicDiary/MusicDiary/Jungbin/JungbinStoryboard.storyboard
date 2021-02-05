@@ -127,7 +127,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="334" height="109"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <segue destination="OOT-A3-yK3" kind="presentation" id="6gh-fO-Do5"/>
+                                    <action selector="goSearchBtn:" destination="giH-qg-HCk" eventType="touchUpInside" id="45V-Ib-Z4H"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -147,6 +147,11 @@
                             <outletCollection property="gestureRecognizers" destination="cPZ-gz-64P" appends="YES" id="BUv-Hg-to5"/>
                         </connections>
                     </view>
+                    <connections>
+                        <outlet property="artistLabel" destination="vye-xS-v5Q" id="8KS-Hp-H5c"/>
+                        <outlet property="imageView" destination="XM1-UX-iz3" id="0nu-AK-axT"/>
+                        <outlet property="titleLabel" destination="mpc-8o-fZb" id="pWT-Zz-xun"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qSD-bA-Sqm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="cPZ-gz-64P">
@@ -156,14 +161,6 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1466.6666666666667" y="10.379464285714285"/>
-        </scene>
-        <!--SearchView-->
-        <scene sceneID="AMX-Dh-Rgs">
-            <objects>
-                <viewControllerPlaceholder storyboardName="YujinStoryboard" referencedIdentifier="SearchView" id="OOT-A3-yK3" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="eE1-a4-REK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1937" y="-28"/>
         </scene>
         <!--Write SubVC2-->
         <scene sceneID="szv-lZ-4wR">

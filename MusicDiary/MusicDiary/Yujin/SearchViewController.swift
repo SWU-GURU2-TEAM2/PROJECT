@@ -8,7 +8,9 @@
 import UIKit
 import Alamofire
 import SwiftyXMLParser
-
+protocol SendDataDelegate {
+    func sendData(data: MusicStruct)
+}
 //SearchViewController
 class SearchViewController: UIViewController {
     //values
@@ -18,6 +20,7 @@ class SearchViewController: UIViewController {
     var musicData = [MusicStruct]()
     var searchKeyword: String = ""
     var selectedMusicData:MusicStruct = MusicStruct()
+    var delegate: SendDataDelegate!
     
     //viewDidLoad
     override func viewDidLoad() {
@@ -130,10 +133,12 @@ extension SearchViewController: UITableViewDelegate{
         selectedMusicData.musicTitle = data.musicTitle
         selectedMusicData.musicArtist = data.musicArtist
         selectedMusicData.musicCoverUrl = data.musicCoverUrl
+        delegate?.sendData(data: selectedMusicData)
         self.dismiss(animated: true, completion: nil)
-        print(selectedMusicData.musicTitle)
-        print(selectedMusicData.musicArtist)
-        print(selectedMusicData.musicCoverUrl)
+        
+//        print(selectedMusicData.musicTitle)
+//        print(selectedMusicData.musicArtist)
+//        print(selectedMusicData.musicCoverUrl)
     }//didSelectRowAt
 }//SearchViewController
 

@@ -8,13 +8,18 @@
 import UIKit
 import Firebase
 
-class WriteViewController:UIViewController{
-    @IBOutlet weak var textView: UITextView!
+var newContent = ContentData(authorID: "userID123", conentText: "", musicTitle: "", musicArtist: "", musicCoverUrl: URL(fileURLWithPath: "https://"), date: Date())
+
+class WriteViewController:UIViewController, SendDataDelegate{
     
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var artistLabel: UILabel!
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var textView: UITextView!
+    var getMusic:MusicStruct!
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //        let tapGesture : UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapView(_:)))
         
     }
     
@@ -23,30 +28,24 @@ class WriteViewController:UIViewController{
     }
     
     @IBAction func tapSaveBtn(_ sender: Any) {
-        var newContent = ContentData()
-        newContent.authorID = "aaa111"
         newContent.conentText = textView.text
-        newContent.date = Date()
-        newContent.musicArtist = "태진아"
-        newContent.musicTitle = "진진자라"
-        newContent.musicCoverUrl = URL(string:"https://avatars.githubusercontent.com/u/4277927?s=64&v=4")
         
+        // 테스트 용
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.tempDiary.append(newContent)
-        print("저장된 내용 목록: ", appDelegate.tempDiary)
         
         // 데이터 firebase에 저장
         let db = Firestore.firestore()
         var ref: DocumentReference? = nil
         
-        
+        print("newContent in Save: ", newContent)
         ref = db.collection("Diary/IxLlj4mK2DKPIoBA9Qjp/Contents").addDocument(data: [
-            "authorID": "\(String(describing: newContent.authorID))",
-            "contentText":"\(String(describing: newContent.conentText))",
-            "date":"\(String(describing: newContent.date))",
-            "musicArtist":"\(String(describing: newContent.musicArtist))",
+            "authorID": "\(newContent.authorID!)",
+            "contentText":"\(newContent.conentText!)",
+            "date":"\(newContent.date!)",
+            "musicArtist":"\(newContent.musicArtist!)",
             "musicCoverUrl":"\(String(describing: newContent.musicCoverUrl))",
-            "musicTitle":"\(String(describing: newContent.musicTitle))"
+            "musicTitle":"\(newContent.musicTitle!)"
         ]) { err in
             if let err = err {
                 print("Error adding document: \(err)")
@@ -54,9 +53,14 @@ class WriteViewController:UIViewController{
                 print("Document added with ID: \(ref!.documentID)")
             }
         }
-        
         self.dismiss(animated: true)
         
+    }
+    @IBAction func goSearchBtn(_ sender: Any) {
+        let board = UIStoryboard(name: "YujinStoryboard", bundle: nil)
+        guard let vc = board.instantiateViewController(identifier: "SearchView") as? SearchViewController else {return}
+        self.present(vc, animated: true, completion: nil)
+        vc.delegate = self
         
     }
     
@@ -64,4 +68,19 @@ class WriteViewController:UIViewController{
         self.dismiss(animated: true)
     }
     
+    func sendData(data: MusicStruct) {
+        getMusic = data
+        titleLabel.text = getMusic.musicTitle
+        artistLabel.text = getMusic.musicArtist
+        DispatchQueue.global().async { let data = try? Data(contentsOf: self.getMusic.musicCoverUrl!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
+            DispatchQueue.main.async { self.imageView.image = UIImage(data: data!) }
+        }
+        self.viewDidLoad()
+        
+        newContent.musicArtist = getMusic.musicArtist
+        newContent.musicTitle = getMusic.musicTitle
+        newContent.musicCoverUrl = getMusic.musicCoverUrl
+        
+        
+    }
 }
