@@ -11,5 +11,5 @@ struct MusicStruct {
     var musicArtist: String?
     var musicCoverUrl: URL?
     var musicLyrics: String?
-    var musicID: Int
+    var musicID: Int?
 }

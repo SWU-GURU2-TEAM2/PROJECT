@@ -17,6 +17,7 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var songArtistSegment: UISegmentedControl! //songArtistSegment
     var musicData = [MusicStruct]()
     var searchKeyword: String = ""
+    var selectedMusicData:MusicStruct = MusicStruct()
     
     //viewDidLoad
     override func viewDidLoad() {
@@ -121,8 +122,19 @@ extension SearchViewController: UITableViewDelegate{
         } else {
             return size.height / 5
         }
-        
-    }
+    }//heightForRowAt
+    
+    //tableView_didSelectRowAt
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let data = musicData[indexPath.row]
+        selectedMusicData.musicTitle = data.musicTitle
+        selectedMusicData.musicArtist = data.musicArtist
+        selectedMusicData.musicCoverUrl = data.musicCoverUrl
+        self.dismiss(animated: true, completion: nil)
+        print(selectedMusicData.musicTitle)
+        print(selectedMusicData.musicArtist)
+        print(selectedMusicData.musicCoverUrl)
+    }//didSelectRowAt
 }//SearchViewController
 
 //SearchResultViewController
