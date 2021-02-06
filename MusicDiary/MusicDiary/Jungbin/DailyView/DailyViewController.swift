@@ -30,6 +30,11 @@ class DailyViewController: UIViewController, FSCalendarDelegate {
         calendar.appearance.headerMinimumDissolvedAlpha = 0
         //년 월 custom
         calendar.appearance.headerDateFormat = "YYYY년 M월"
+        
+        UIView.animate(withDuration: 0.5, animations: {
+            self.view.layoutIfNeeded()
+        })
+        
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -68,10 +73,24 @@ extension DailyViewController: UICollectionViewDataSource{
     
     
 }
-extension DailyViewController: UICollectionViewDelegate {
+extension DailyViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         dailyCarousel.didScroll()
         
+        guard let currentCenterIndex = dailyCarousel.currentCenterCellIndex?.row else { return }
+        
+        print(String(describing: currentCenterIndex))
+        
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        
+        return 0
     }
     
 }
+
