@@ -18,7 +18,6 @@ class MainCell: ScalingCarouselCell {
 class MainVC:UIViewController {
     let db = Firestore.firestore()
     var diaryData = [DiaryStructure]()
-    var diaryList = [QueryDocumentSnapshot]()
     var getDiaryList = [String]()
     @IBOutlet weak var mainCarousel: ScalingCarouselView!
     
@@ -29,6 +28,7 @@ class MainVC:UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //Users>diaryList
         db.collection("Users").getDocuments { (snapshot, error) in
             if let error = error {
                 print(error)
@@ -38,11 +38,24 @@ class MainVC:UIViewController {
                 for document in snapshot.documents {
                                 print("\(document.documentID) => \(document.data()["userDiaryList"])")
                     self.getDiaryList = document.data()["userDiaryList"] as! [String]
-            }
+                }
                 self.mainCarousel.reloadData()
+            }
         }
-    }
-        
+        //Diary>data
+        db.collection("Diary").getDocuments { (snapshot, error) in
+            if let error = error {
+                print(error)
+                return
+            }
+            if let snapshot = snapshot {
+                for document in snapshot.documents {
+                                print("\(document.documentID) => \(document.data())")
+                }
+                //받아와서 보여줘야함...
+                self.mainCarousel.reloadData()
+            }
+        }
     }
         
     
@@ -89,7 +102,6 @@ extension CarouselDatasource: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let carouselCell = collectionView.dequeueReusableCell(withReuseIdentifier: "carouselCell", for: indexPath) as! MainCell
-        
         
         carouselCell.setNeedsLayout()
         carouselCell.layoutIfNeeded()
