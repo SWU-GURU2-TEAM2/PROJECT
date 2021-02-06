@@ -36,7 +36,7 @@ class MainVC:UIViewController {
             if let snapshot = snapshot {
                 for document in snapshot.documents {
                                 print("\(document.documentID) => \(document.data()["userDiaryList"])")
-                    self.diaryList.append(document)
+                    self.diaryList.append(document) //여기를 어떻게 하지요...?
             }
                 self.mainCarousel.reloadData()
         }
@@ -46,8 +46,6 @@ class MainVC:UIViewController {
         
     
     @IBAction func addDiary(_ sender: UIButton) {
-        //self.diaryList.append()
-        //self.mainCarousel.reloadData()
 
         //firebase에 다이어리 증가 + 유저 다이어리 리스트에도 추가 됨
         var ref: DocumentReference? = nil
