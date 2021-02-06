@@ -57,7 +57,7 @@ class IntroViewController: UIViewController, FUIAuthDelegate, UIGestureRecognize
             if let currentUser = auth.currentUser {
                 //currentUser 정보 넘겨주기
                 //로그인한 유저 -> 다음 뷰로 넘어감
-                let vc = UIStoryboard(name: "YujinStoryboard", bundle: nil).instantiateViewController(identifier: "LoggedView")
+                let vc = UIStoryboard(name: "YewonStoryboard", bundle: nil).instantiateViewController(identifier: "YewonMainView")
                 vc.modalPresentationStyle = .fullScreen
                 self.currentUID = currentUser.uid
                 print(self.currentUID!)
