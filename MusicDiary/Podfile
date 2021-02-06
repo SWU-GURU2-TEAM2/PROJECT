@@ -13,5 +13,5 @@ target 'MusicDiary' do
 	pod "SwiftyXMLParser", :git => 'https://github.com/yahoojapan/SwiftyXMLParser.git'
 	pod "ScalingCarousel"
 	pod 'iCarousel'
-	
+	pod 'FSCalendar'
 end

@@ -7,7 +7,9 @@
 
 import UIKit
 class WriteSubVC2: WriteViewController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        placeholderSetting()
     }
 }
