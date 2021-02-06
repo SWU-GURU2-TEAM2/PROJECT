@@ -41,12 +41,14 @@ class SearchViewController: UIViewController {
         searchKeyword = searchTextField.text ?? ""
         if searchKeyword != "" {
             searchKeyword = searchKeyword.replacingOccurrences(of: " ", with: "%20")
-            print(searchKeyword)
+            let urlString = "http://www.maniadb.com/api/search/\(searchKeyword)/?sr=song&display=100&key=jgkyj@naver.com&v=0.5"
+            let encodedString = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+            let convertedUrl = URL(string: encodedString)!
             //Alamofire로 필요한 정보 가져오기
             print("start Alamofire")
             switch songArtistSegment.selectedSegmentIndex {
             case 0:
-                AF.request("http://www.maniadb.com/api/search/\(searchKeyword)/?sr=song&display=100&key=jgkyj@naver.com&v=0.5", encoding: URLEncoding.httpBody, headers: nil).responseData { [self] (response) in
+                AF.request(convertedUrl, encoding: URLEncoding.httpBody, headers: nil).responseData { [self] (response) in
                     print("response SONG")
                     //song 검색결과에서 데이터 저장
                     if let data = response.data {
@@ -79,8 +81,8 @@ class SearchViewController: UIViewController {
                             tableView.insertRows(at: [IndexPath(item: 0, section: 0)], with: .none)
                         }//totalResult
                         //tableView.reloadData()
-                        self.loadingIndicator.stopAnimating()
                     }//data
+                    self.loadingIndicator.stopAnimating()
                 }//AF.request
                 
             case 1:
