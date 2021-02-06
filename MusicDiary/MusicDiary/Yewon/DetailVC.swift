@@ -17,7 +17,7 @@ class DetailVC:UIViewController {
     @IBOutlet weak var contentText: UITextView!
     
     let db = Firestore.firestore()
-    var contentData = [String]()
+    //var contentData = [ContentData]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +28,7 @@ class DetailVC:UIViewController {
             if let document = document, document.exists {
                 let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
                 print("Document data: \(dataDescription)")
-                self.contentData.append(dataDescription)
+                
                 
             } else {
                 print("Document does not exist")
