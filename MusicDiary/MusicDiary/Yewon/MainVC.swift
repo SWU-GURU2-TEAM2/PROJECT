@@ -12,13 +12,14 @@ import FirebaseFirestore
 class MainCell: ScalingCarouselCell {
     @IBOutlet weak var diaryIamage: UIImageView!
     @IBOutlet weak var diaryName: UILabel!
+    
 }
 
 class MainVC:UIViewController {
     let db = Firestore.firestore()
     var diaryData = [DiaryStructure]()
     var diaryList = [QueryDocumentSnapshot]()
-
+    var getDiaryList = [String]()
     @IBOutlet weak var mainCarousel: ScalingCarouselView!
     
     
@@ -36,7 +37,7 @@ class MainVC:UIViewController {
             if let snapshot = snapshot {
                 for document in snapshot.documents {
                                 print("\(document.documentID) => \(document.data()["userDiaryList"])")
-                    self.diaryList.append(document) //여기를 어떻게 하지요...?
+                    self.getDiaryList = document.data()["userDiaryList"] as! [String]
             }
                 self.mainCarousel.reloadData()
         }
@@ -65,7 +66,8 @@ class MainVC:UIViewController {
         db.collection("Users").document("TNrcZtxj42Mfqq2KRy1A").updateData([
             "userDiaryList": FieldValue.arrayUnion([ref!.documentID])
         ])
-        
+        self.getDiaryList.append(ref!.documentID)
+        self.mainCarousel.reloadData()
         
     }
     
@@ -82,7 +84,7 @@ class MainVC:UIViewController {
 typealias CarouselDatasource = MainVC
 extension CarouselDatasource: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.diaryList.count
+        return self.getDiaryList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

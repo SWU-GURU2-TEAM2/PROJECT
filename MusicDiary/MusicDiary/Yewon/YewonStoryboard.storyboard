@@ -134,9 +134,6 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aXJ-zR-uo3">
                                 <rect key="frame" x="187" y="832" width="40" height="30"/>
                                 <state key="normal" title="Share"/>
-                                <connections>
-                                    <action selector="test:" destination="JUz-EI-bcD" eventType="touchUpInside" id="R3Z-gI-ngh"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="es4-5H-NUp">
                                 <rect key="frame" x="349" y="832" width="45" height="30"/>
@@ -177,10 +174,10 @@
             </objects>
             <point key="canvasLocation" x="1066.6666666666667" y="-3.3482142857142856"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail Sub1VC-->
         <scene sceneID="Jyf-gh-DRx">
             <objects>
-                <viewController id="1bL-Mh-PeU" sceneMemberID="viewController">
+                <viewController id="1bL-Mh-PeU" customClass="DetailSub1VC" customModule="MusicDiary" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XoH-7H-G4F">
                         <rect key="frame" x="0.0" y="0.0" width="374" height="173"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -208,15 +205,20 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <outlet property="singer" destination="x3a-Mb-7FP" id="hko-uy-jCN"/>
+                        <outlet property="songImage" destination="Cdp-bO-KJc" id="OTa-mj-79i"/>
+                        <outlet property="songTitle" destination="ixO-Qv-gSZ" id="C2o-yk-Ph9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="66D-o0-UDS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1802.8985507246377" y="-131.58482142857142"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail Sub2VC-->
         <scene sceneID="4wR-AE-uzJ">
             <objects>
-                <viewController id="lPK-Bx-uAr" sceneMemberID="viewController">
+                <viewController id="lPK-Bx-uAr" customClass="DetailSub2VC" customModule="MusicDiary" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jTq-wb-k8D">
                         <rect key="frame" x="0.0" y="0.0" width="374" height="390"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -233,6 +235,9 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <outlet property="contentText" destination="0YS-dd-ZaP" id="Fog-g1-xMf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m4r-h0-t6y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
