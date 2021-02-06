@@ -12,7 +12,7 @@
         <!--MainVC-->
         <scene sceneID="JtY-oq-1Zf">
             <objects>
-                <viewController storyboardIdentifier="YewonMainView" id="xHz-IV-Kcc" customClass="MainVC" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="YewonMainView" id="xHz-IV-Kcc" customClass="MainVC" customModule="MusicDiary" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HeF-Fq-ui5">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -27,7 +27,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="V8O-iX-Tad" customClass="carouselCell" customModule="MusicDiary" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="carouselCell" id="V8O-iX-Tad" customClass="MainCell" customModule="MusicDiary" customModuleProvider="target">
                                         <rect key="frame" x="105.5" y="0.0" width="203" height="268"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="iCV-Go-Ppk">
@@ -57,9 +57,7 @@
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="203" height="268"/>
                                         <connections>
-                                            <outlet property="diaryName" destination="Yoy-mq-mEZ" id="srO-Ua-16z"/>
-                                            <outlet property="diary_name" destination="Yoy-mq-mEZ" id="ISX-ea-lnr"/>
-                                            <outlet property="mainView" destination="iCV-Go-Ppk" id="8he-mk-xii"/>
+                                            <outlet property="mainView" destination="iCV-Go-Ppk" id="T7W-JC-hBZ"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -69,8 +67,8 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <outlet property="dataSource" destination="xHz-IV-Kcc" id="glt-mC-ofQ"/>
-                                    <outlet property="delegate" destination="xHz-IV-Kcc" id="RGc-F8-gb2"/>
+                                    <outlet property="dataSource" destination="xHz-IV-Kcc" id="Z96-mQ-Ihc"/>
+                                    <outlet property="delegate" destination="xHz-IV-Kcc" id="lgC-Ej-vge"/>
                                 </connections>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GvI-L6-JJx">
@@ -99,8 +97,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="carousel" destination="Fyk-ZM-Zzg" id="v7W-Qf-B1O"/>
-                        <outlet property="carouselBottomConstraint" destination="d9O-aj-bRk" id="wSU-cX-ho6"/>
+                        <outlet property="mainCarousel" destination="Fyk-ZM-Zzg" id="tdA-mu-o59"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kRO-vn-es0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
