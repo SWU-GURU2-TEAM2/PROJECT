@@ -44,7 +44,7 @@ class WriteViewController:UIViewController, SendDataDelegate{
             "contentText":"\(newContent.conentText!)",
             "date":newContent.date!,
             "musicArtist":"\(newContent.musicArtist!)",
-            "musicCoverUrl":"\(String(describing: newContent.musicCoverUrl))",
+            "musicCoverUrl":"\(newContent.musicCoverUrl?.absoluteString))",
             "musicTitle":"\(newContent.musicTitle!)"
         ]) { err in
             if let err = err {

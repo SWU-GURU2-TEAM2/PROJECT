@@ -13,12 +13,11 @@ import Firebase
 var currentDairyId = "IxLlj4mK2DKPIoBA9Qjp"
 class DailyCell: ScalingCarouselCell {
     
-    @IBOutlet weak var cellView: UIView!
     @IBOutlet weak var titleLabel: UILabel!
 }
 class DailyViewController: UIViewController, FSCalendarDelegate {
     
-    
+    var todayContentList:[ContentData] = [ContentData()]
     @IBOutlet weak var dailyCarousel: ScalingCarouselView!
     @IBOutlet weak var calendar: FSCalendar!
     override func viewDidLoad() {
@@ -49,49 +48,62 @@ class DailyViewController: UIViewController, FSCalendarDelegate {
     
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         // 아래 그날의 글들 보여주기
+        
         print("selected date: ", date)
         getContentsListForDaily(date: date)
+        
         
     }
     
     func getContentsListForDaily(date: Date) {
         let db = Firestore.firestore()
         let calendar = Calendar.current
+        self.todayContentList = []
+        // .whereField("date", isLessThan: calendar.startOfDay(for: date)+86400)
         db.collection("Diary").document("\(currentDairyId)").collection("Contents") .whereField("date", isGreaterThanOrEqualTo: calendar.startOfDay(for: date
-        )).getDocuments() { (querySnapshot, err) in
+        )).whereField("date", isLessThan: calendar.startOfDay(for: date)+86400).getDocuments() { (querySnapshot, err) in
             if let err = err {
                 print("Error getting documents: \(err)")
             } else {
                 for document in querySnapshot!.documents {
-                    
                     let getContent = document.data()
-                    //self.titleLabel.text = getContent["musicTitle"] as! String
-                    self.viewDidLoad()
+                    let appdelegate = AppDelegate()
+                    let newCD = ContentData(
+                        authorID: getContent["authorID"] as! String,
+                        conentText: getContent["contentText"] as! String,
+                        musicTitle: getContent["musicTitle"] as! String,
+                        musicArtist: getContent["musicArtist"] as! String,
+                        musicCoverUrl: URL(string: "\(getContent["musicCoverUrl"])"),
+                        date: getContent["date"] as? Date)
+                    appdelegate.tempDiary.append(newCD)
+                    self.todayContentList.append(newCD)
+                    print("\(document.documentID) => \(document.data())")
                     
                     
-                   // print("\(document.documentID) => \(document.data())")
                 }
+                print("today content list: ", self.todayContentList)
+                self.dailyCarousel.reloadData()
             }
         }
-
+        
     }
     
     
 }
 extension DailyViewController: UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return todayContentList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = dailyCarousel.dequeueReusableCell(withReuseIdentifier: "dailyCell", for: indexPath) as! DailyCell
-        
+        cell.titleLabel.text = todayContentList[indexPath.row].musicTitle
         
         if let dailyScalingCell = cell as? ScalingCarouselCell {
-            dailyScalingCell.contentView.backgroundColor = .gray
+            dailyScalingCell.contentView.backgroundColor = .lightGray
             dailyScalingCell.cornerRadius = 50
         }
-
+        
         DispatchQueue.main.async {
             cell.setNeedsLayout()
             cell.layoutIfNeeded()
