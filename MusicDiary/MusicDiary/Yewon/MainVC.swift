@@ -7,67 +7,113 @@
 
 import UIKit
 import ScalingCarousel
+import FirebaseFirestore
 
-class carouselCell: ScalingCarouselCell {
+class MainCell: ScalingCarouselCell {
+    @IBOutlet weak var diaryIamage: UIImageView!
     @IBOutlet weak var diaryName: UILabel!
-    
 }
 
-class MainVC: UIViewController {
+class MainVC:UIViewController {
+    let db = Firestore.firestore()
+    var diaryData = [DiaryStructure]()
+    var diaryList = [QueryDocumentSnapshot]()
+
+    @IBOutlet weak var mainCarousel: ScalingCarouselView!
     
-    @IBOutlet weak var carousel: ScalingCarouselView!
+    
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        db.collection("Users").getDocuments { (snapshot, error) in
+            if let error = error {
+                print(error)
+                return
+            }
+            if let snapshot = snapshot {
+                for document in snapshot.documents {
+                                print("\(document.documentID) => \(document.data()["userDiaryList"])")
+                    self.diaryList.append(document) //여기를 어떻게 하지요...?
+            }
+                self.mainCarousel.reloadData()
+        }
     }
+        
+    }
+        
+    
+    @IBAction func addDiary(_ sender: UIButton) {
 
+        //firebase에 다이어리 증가 + 유저 다이어리 리스트에도 추가 됨
+        var ref: DocumentReference? = nil
+
+        ref = db.collection("Diary").addDocument(data: [
+            "diaryImageUrl":"",
+            "diaryName":"",
+            "memberList":[]
+            //memberList에 currentUserId 들거갈 것 예상
+        ]) { err in
+            if let err = err {
+                print("Error adding document: \(err)")
+            } else {
+                print("Document added with ID: \(ref!.documentID)")
+            }
+        }
+        db.collection("Users").document("TNrcZtxj42Mfqq2KRy1A").updateData([
+            "userDiaryList": FieldValue.arrayUnion([ref!.documentID])
+        ])
+        
+        
+    }
+    
+    @IBAction func moveToWrite(_ sender: UIButton) {
+        
+    }
+    
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
-        carousel.deviceRotated()
+        mainCarousel.deviceRotated()
     }
 }
 
 typealias CarouselDatasource = MainVC
 extension CarouselDatasource: UICollectionViewDataSource {
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return self.diaryList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
+        let carouselCell = collectionView.dequeueReusableCell(withReuseIdentifier: "carouselCell", for: indexPath) as! MainCell
         
-
-        DispatchQueue.main.async {
-            cell.setNeedsLayout()
-            cell.layoutIfNeeded()
-        }
         
-        return cell
+        carouselCell.setNeedsLayout()
+        carouselCell.layoutIfNeeded()
+        
+        return carouselCell
     }
 }
 
 typealias CarouselDelegate = MainVC
 extension MainVC: UICollectionViewDelegate {
-    
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        carousel.didScroll()
-        
-        guard let currentCenterIndex = carousel.currentCenterCellIndex?.row else { return }
-        
+        guard let mainCurrentCenterIndex = mainCarousel.currentCenterCellIndex?.row
+        else {
+            return
+            
+        }
     }
 }
 
 private typealias ScalingCarouselFlowDelegate = MainVC
 extension ScalingCarouselFlowDelegate: UICollectionViewDelegateFlowLayout {
-    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        
         return 0
     }
-    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        
         return 0
     }
 }
+
