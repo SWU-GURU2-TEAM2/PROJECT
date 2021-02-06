@@ -17,27 +17,38 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView! //tableView
     @IBOutlet weak var searchTextField: UITextField! //searchTextField
     @IBOutlet weak var songArtistSegment: UISegmentedControl! //songArtistSegment
-    var musicData = [MusicStruct]()
-    var searchKeyword: String = ""
-    var selectedMusicData:MusicStruct = MusicStruct()
-    var delegate: SendDataDelegate!
+    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView! //loadingIndicator
+    var musicData = [MusicStruct]() //musicData
+    var searchKeyword: String = "" //searchKeyword
+    var selectedMusicData:MusicStruct = MusicStruct() //selectedMusicData
+    var delegate: SendDataDelegate! //delegate
     
     //viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadingIndicator.hidesWhenStopped = true
     }//viewDidLoad
     
     //searchButtonPressed
     @IBAction func searchButtonPressed(_ sender: Any) {
-        //텍스트필드의 값 확인
+        self.view.endEditing(true)
+        //indicator animating
+        self.loadingIndicator.startAnimating()
+        //검색결과 초기화
         musicData.removeAll()
+        tableView.reloadData()
+        //텍스트필드의 값 확인
         searchKeyword = searchTextField.text ?? ""
         if searchKeyword != "" {
+            searchKeyword = searchKeyword.replacingOccurrences(of: " ", with: "%20")
+            let urlString = "http://www.maniadb.com/api/search/\(searchKeyword)/?sr=song&display=100&key=jgkyj@naver.com&v=0.5"
+            let encodedString = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+            let convertedUrl = URL(string: encodedString)!
             //Alamofire로 필요한 정보 가져오기
             print("start Alamofire")
             switch songArtistSegment.selectedSegmentIndex {
             case 0:
-                AF.request("http://www.maniadb.com/api/search/\(searchKeyword)/?sr=song&display=100&key=jgkyj@naver.com&v=0.5", encoding: URLEncoding.httpBody, headers: nil).responseData { [self] (response) in
+                AF.request(convertedUrl, encoding: URLEncoding.httpBody, headers: nil).responseData { [self] (response) in
                     print("response SONG")
                     //song 검색결과에서 데이터 저장
                     if let data = response.data {
@@ -54,16 +65,25 @@ class SearchViewController: UIViewController {
                                 //musicCover가 있으면 넣고 아니면 없게
                                 if let musicCover = xml["rss", "channel", "item", index, "maniadb:album", "image"].text{
                                     let url = URL(string: musicCover)
-                                    musicData.append(MusicStruct(musicTitle: musicName!, musicArtist: artist!, musicCoverUrl: url!, musicLyrics: nil, musicID: id!))
+                                    musicData.append(MusicStruct(musicTitle: musicName!, musicArtist: artist!, musicCoverUrl: url, musicLyrics: nil, musicID: id!))
                                 } else {
                                     musicData.append(MusicStruct(musicTitle: musicName!, musicArtist: artist!, musicCoverUrl: nil, musicLyrics: nil, musicID: id!))
                                 }
                                 //print(musicData[index].musicID)
-                            }
-                        }
-                        tableView.reloadData()
-                    }
-                }
+                                let indexPath = IndexPath(item: index, section: 0)
+                                tableView.performBatchUpdates({
+                                    self.tableView.setContentOffset(self.tableView.contentOffset, animated: false)
+                                    tableView.insertRows(at: [indexPath], with: .none)
+                                }, completion: nil)
+                            }//for
+                        } else {
+                            musicData.append(MusicStruct(musicTitle: "검색 결과가 없습니다.", musicArtist: "", musicCoverUrl: nil, musicLyrics: nil, musicID: nil))
+                            tableView.insertRows(at: [IndexPath(item: 0, section: 0)], with: .none)
+                        }//totalResult
+                        //tableView.reloadData()
+                    }//data
+                    self.loadingIndicator.stopAnimating()
+                }//AF.request
                 
             case 1:
                 AF.request("http://www.maniadb.com/api/search/\(searchKeyword)/?sr=artist&display=100&key=jgkyj@naver.com&v=0.5", encoding: URLEncoding.httpBody, headers: nil).responseData { (response) in
@@ -101,12 +121,12 @@ extension SearchViewController: UITableViewDataSource {
         }
         cell.musicTitle.text = musicData[indexPath.row].musicTitle
         cell.musicArtist.text = musicData[indexPath.row].musicArtist
-        do {
-            let url = musicData[indexPath.row].musicCoverUrl!
-            let data = try Data(contentsOf: url)
-            cell.musicCover.image = UIImage(data: data)
-        } catch {
-            //스토리 보드의 기본 이미지 그대로 사용
+        if let url = musicData[indexPath.row].musicCoverUrl {
+            do {
+                let data = try Data(contentsOf: url)
+                cell.musicCover.image = UIImage(data: data)
+            } catch {
+            }
         }
         return cell
         
