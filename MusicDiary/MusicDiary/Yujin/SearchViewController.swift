@@ -74,6 +74,9 @@ class SearchViewController: UIViewController {
                                     tableView.insertRows(at: [indexPath], with: .none)
                                 }, completion: nil)
                             }//for
+                        } else {
+                            musicData.append(MusicStruct(musicTitle: "검색 결과가 없습니다.", musicArtist: "", musicCoverUrl: nil, musicLyrics: nil, musicID: nil))
+                            tableView.insertRows(at: [IndexPath(item: 0, section: 0)], with: .none)
                         }//totalResult
                         //tableView.reloadData()
                         self.loadingIndicator.stopAnimating()
