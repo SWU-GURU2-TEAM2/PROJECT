@@ -18,14 +18,16 @@ class DailyCell: ScalingCarouselCell {
 class DailyViewController: UIViewController, FSCalendarDelegate {
     
     var todayContentList:[ContentData] = [ContentData()]
+    @IBOutlet weak var noDataLabel: UILabel!
     @IBOutlet weak var dailyCarousel: ScalingCarouselView!
     @IBOutlet weak var calendar: FSCalendar!
     override func viewDidLoad() {
         super.viewDidLoad()
+        noDataLabel.alpha = 0
         calendar.delegate = self
-        // 달력의 평일 날짜 색깔
+        getContentsListForDaily(date: Date())
+        
         calendar.appearance.titleDefaultColor = .black
-        // 달력의 토,일 날짜 색깔
         calendar.appearance.titleWeekendColor = .black
         // 달력의 맨 위의 년도, 월의 색깔
         calendar.appearance.headerTitleColor = .black
@@ -48,7 +50,7 @@ class DailyViewController: UIViewController, FSCalendarDelegate {
     
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         // 아래 그날의 글들 보여주기
-        
+        noDataLabel.alpha = 0
         print("selected date: ", date)
         getContentsListForDaily(date: date)
         
@@ -82,6 +84,9 @@ class DailyViewController: UIViewController, FSCalendarDelegate {
                     
                 }
                 print("today content list: ", self.todayContentList)
+                if self.todayContentList.count == 0 {
+                    self.noDataLabel.alpha = 1
+                }
                 self.dailyCarousel.reloadData()
             }
         }
