@@ -9,8 +9,10 @@ import UIKit
 import ScalingCarousel
 import FSCalendar
 
+class DailyCell: ScalingCarouselCell {}
 class DailyViewController: UIViewController, FSCalendarDelegate {
     
+    @IBOutlet weak var dailyCarousel: ScalingCarouselView!
     @IBOutlet weak var calendar: FSCalendar!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,11 +32,46 @@ class DailyViewController: UIViewController, FSCalendarDelegate {
         calendar.appearance.headerDateFormat = "YYYY년 M월"
     }
     
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        dailyCarousel.deviceRotated()
+    }
+    
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         // 아래 그날의 글들 보여주기
         print("selected date: ", date)
     }
     
     
+    
+}
+extension DailyViewController: UICollectionViewDataSource{
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = dailyCarousel.dequeueReusableCell(withReuseIdentifier: "dailyCell", for: indexPath)
+        
+        
+        if let dailyScalingCell = cell as? ScalingCarouselCell {
+            dailyScalingCell.contentView.backgroundColor = .gray
+            dailyScalingCell.cornerRadius = 50
+        }
+
+        DispatchQueue.main.async {
+            cell.setNeedsLayout()
+            cell.layoutIfNeeded()
+        }
+        
+        return cell
+    }
+    
+    
+}
+extension DailyViewController: UICollectionViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        dailyCarousel.didScroll()
+        
+    }
     
 }
