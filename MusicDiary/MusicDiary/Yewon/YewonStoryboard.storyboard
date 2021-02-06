@@ -21,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="144" width="414" height="618"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="k6W-WE-KgN">
-                                    <size key="itemSize" width="203" height="268"/>
+                                    <size key="itemSize" width="200" height="268"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -138,6 +138,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="es4-5H-NUp">
                                 <rect key="frame" x="349" y="832" width="45" height="30"/>
                                 <state key="normal" title="Delete"/>
+                                <connections>
+                                    <action selector="deleteDoc:" destination="JUz-EI-bcD" eventType="touchUpInside" id="UDg-pZ-W7k"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bvo-P4-59v">
                                 <rect key="frame" x="20" y="832" width="30" height="30"/>
@@ -203,6 +206,7 @@
                                 </constraints>
                             </imageView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="Uo7-R0-EQS"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
@@ -233,6 +237,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="96Z-Ag-2hd"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
