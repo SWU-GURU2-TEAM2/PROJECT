@@ -27,7 +27,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="carouselCell" id="V8O-iX-Tad" customClass="MainCell" customModule="MusicDiary" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="carouselCell" reuseIdentifier="carouselCell" id="V8O-iX-Tad" customClass="MainCell" customModule="MusicDiary" customModuleProvider="target">
                                         <rect key="frame" x="105.5" y="0.0" width="203" height="268"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="iCV-Go-Ppk">
@@ -67,8 +67,8 @@
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="203" height="268"/>
                                         <connections>
-                                            <outlet property="diaryIamage" destination="Wd1-Uq-q59" id="ChR-Qy-DrH"/>
-                                            <outlet property="diaryName" destination="Yoy-mq-mEZ" id="vfb-bg-JWU"/>
+                                            <outlet property="MainDiaryIamage" destination="Wd1-Uq-q59" id="zXe-ed-roq"/>
+                                            <outlet property="mainDiaryName" destination="Yoy-mq-mEZ" id="Ag9-38-3M1"/>
                                             <outlet property="mainView" destination="iCV-Go-Ppk" id="T7W-JC-hBZ"/>
                                         </connections>
                                     </collectionViewCell>
