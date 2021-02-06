@@ -40,6 +40,8 @@ class SearchViewController: UIViewController {
         //텍스트필드의 값 확인
         searchKeyword = searchTextField.text ?? ""
         if searchKeyword != "" {
+            searchKeyword = searchKeyword.replacingOccurrences(of: " ", with: "%20")
+            print(searchKeyword)
             //Alamofire로 필요한 정보 가져오기
             print("start Alamofire")
             switch songArtistSegment.selectedSegmentIndex {
