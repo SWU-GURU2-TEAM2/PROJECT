@@ -8,15 +8,21 @@
 import UIKit
 import ScalingCarousel
 import FSCalendar
+import Firebase
 
-class DailyCell: ScalingCarouselCell {}
+var currentDairyId = "IxLlj4mK2DKPIoBA9Qjp"
+class DailyCell: ScalingCarouselCell {
+    
+    @IBOutlet weak var cellView: UIView!
+    @IBOutlet weak var titleLabel: UILabel!
+}
 class DailyViewController: UIViewController, FSCalendarDelegate {
+    
     
     @IBOutlet weak var dailyCarousel: ScalingCarouselView!
     @IBOutlet weak var calendar: FSCalendar!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         calendar.delegate = self
         // 달력의 평일 날짜 색깔
         calendar.appearance.titleDefaultColor = .black
@@ -44,8 +50,31 @@ class DailyViewController: UIViewController, FSCalendarDelegate {
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         // 아래 그날의 글들 보여주기
         print("selected date: ", date)
+        getContentsListForDaily(date: date)
+        
     }
     
+    func getContentsListForDaily(date: Date) {
+        let db = Firestore.firestore()
+        let calendar = Calendar.current
+        db.collection("Diary").document("\(currentDairyId)").collection("Contents") .whereField("date", isGreaterThanOrEqualTo: calendar.startOfDay(for: date
+        )).getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                for document in querySnapshot!.documents {
+                    
+                    let getContent = document.data()
+                    //self.titleLabel.text = getContent["musicTitle"] as! String
+                    self.viewDidLoad()
+                    
+                    
+                   // print("\(document.documentID) => \(document.data())")
+                }
+            }
+        }
+
+    }
     
     
 }
@@ -55,7 +84,7 @@ extension DailyViewController: UICollectionViewDataSource{
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = dailyCarousel.dequeueReusableCell(withReuseIdentifier: "dailyCell", for: indexPath)
+        let cell = dailyCarousel.dequeueReusableCell(withReuseIdentifier: "dailyCell", for: indexPath) as! DailyCell
         
         
         if let dailyScalingCell = cell as? ScalingCarouselCell {

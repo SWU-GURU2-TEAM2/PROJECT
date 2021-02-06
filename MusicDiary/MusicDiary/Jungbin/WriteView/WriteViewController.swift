@@ -42,7 +42,7 @@ class WriteViewController:UIViewController, SendDataDelegate{
         ref = db.collection("Diary/IxLlj4mK2DKPIoBA9Qjp/Contents").addDocument(data: [
             "authorID": "\(newContent.authorID!)",
             "contentText":"\(newContent.conentText!)",
-            "date":"\(newContent.date!)",
+            "date":newContent.date!,
             "musicArtist":"\(newContent.musicArtist!)",
             "musicCoverUrl":"\(String(describing: newContent.musicCoverUrl))",
             "musicTitle":"\(newContent.musicTitle!)"

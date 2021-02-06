@@ -59,10 +59,28 @@
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="hjn-Cr-980">
                                             <rect key="frame" x="0.0" y="0.0" width="279" height="279"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rAP-YU-l4C">
+                                                    <rect key="frame" x="19.5" y="75" width="240" height="128"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V1M-6v-EqY">
+                                                            <rect key="frame" x="8" y="54" width="224" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                </view>
+                                            </subviews>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="279" height="279"/>
                                         <connections>
+                                            <outlet property="cellView" destination="rAP-YU-l4C" id="gBO-pX-3Nk"/>
                                             <outlet property="mainView" destination="hjn-Cr-980" id="9po-h8-ajM"/>
+                                            <outlet property="titleLabel" destination="V1M-6v-EqY" id="9Bq-Hg-qsa"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
