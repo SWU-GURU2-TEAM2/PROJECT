@@ -15,7 +15,7 @@ class DetailVC:UIViewController {
     @IBOutlet weak var singer: UILabel!
     @IBOutlet weak var songImage: UIImageView!
     @IBOutlet weak var contentText: UITextView!
-    
+    var contentData = [ContentData]()
     let db = Firestore.firestore()
     //var contentData = [ContentData]()
     
@@ -28,12 +28,11 @@ class DetailVC:UIViewController {
             if let document = document, document.exists {
                 let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
                 print("Document data: \(dataDescription)")
-                
-                
             } else {
                 print("Document does not exist")
             }
         }
+                
         
     }
     
@@ -60,6 +59,7 @@ class DetailVC:UIViewController {
         alertVC.addAction(action_delete)
         self.present(alertVC, animated: true, completion: nil)
     }
+    
 }
 
 class DetailSub1VC: DetailVC {
