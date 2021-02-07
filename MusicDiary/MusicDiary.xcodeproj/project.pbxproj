@@ -34,6 +34,7 @@
 		6A270A2E25C785B000434321 /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A270A2D25C785B000434321 /* SearchResultCell.swift */; };
 		6A5613B625C7097700EC48E3 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5613B525C7097700EC48E3 /* SearchViewController.swift */; };
 		6AC0A2C325C3EB4B0062E5A8 /* YujinStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AC0A2C225C3EB4B0062E5A8 /* YujinStoryboard.storyboard */; };
+		6AFEE11825CFC01D006138C8 /* AppSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFEE11725CFC01D006138C8 /* AppSettingViewController.swift */; };
 		96F07895E3D593A059CA9195 /* Pods_MusicDiary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBE53B96C43CC7DDF670EDB1 /* Pods_MusicDiary.framework */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +68,7 @@
 		6A270A2D25C785B000434321 /* SearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
 		6A5613B525C7097700EC48E3 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		6AC0A2C225C3EB4B0062E5A8 /* YujinStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = YujinStoryboard.storyboard; sourceTree = "<group>"; };
+		6AFEE11725CFC01D006138C8 /* AppSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettingViewController.swift; sourceTree = "<group>"; };
 		C224A880EDB4169CD521B377 /* Pods-MusicDiary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicDiary.release.xcconfig"; path = "Target Support Files/Pods-MusicDiary/Pods-MusicDiary.release.xcconfig"; sourceTree = "<group>"; };
 		F452ED1E05203C5301CDBCC9 /* Pods-MusicDiary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicDiary.debug.xcconfig"; path = "Target Support Files/Pods-MusicDiary/Pods-MusicDiary.debug.xcconfig"; sourceTree = "<group>"; };
 		FBE53B96C43CC7DDF670EDB1 /* Pods_MusicDiary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MusicDiary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -173,6 +175,7 @@
 				6A5613B525C7097700EC48E3 /* SearchViewController.swift */,
 				6A270A2D25C785B000434321 /* SearchResultCell.swift */,
 				6A00EFB125CC1F9100E09D7F /* MusicStructure.swift */,
+				6AFEE11725CFC01D006138C8 /* AppSettingViewController.swift */,
 			);
 			path = Yujin;
 			sourceTree = "<group>";
@@ -332,6 +335,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C0DC10A25C69F3C00D766FB /* SelectPageScrollView.swift in Sources */,
+				6AFEE11825CFC01D006138C8 /* AppSettingViewController.swift in Sources */,
 				6A2321E125C6F1E80079A482 /* IntroViewController.swift in Sources */,
 				5C93B37225C051400067A723 /* ViewController.swift in Sources */,
 				5C93B37825C051400067A723 /* MusicDiary.xcdatamodeld in Sources */,

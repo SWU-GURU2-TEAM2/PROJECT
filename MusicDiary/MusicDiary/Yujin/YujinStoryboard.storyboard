@@ -75,14 +75,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u7D-dU-BAk">
-                                <rect key="frame" x="184" y="634" width="135" height="97"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <segue destination="IPH-9v-jSQ" kind="presentation" modalPresentationStyle="fullScreen" id="bnR-WT-xYk"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="1sh-gj-JJH"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -165,18 +157,11 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="RfK-IP-Syg">
-                                <rect key="frame" x="2" y="49" width="83" height="35"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="RfK-IP-Syg" secondAttribute="height" multiplier="2:1" id="1lM-tG-zKy"/>
-                                </constraints>
-                                <segments>
-                                    <segment title="노래"/>
-                                    <segment title="가수"/>
-                                </segments>
-                            </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MrJ-09-Cb1">
                                 <rect key="frame" x="346" y="49" width="48" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="MrJ-09-Cb1" secondAttribute="height" multiplier="2:1" id="YYb-ct-T23"/>
+                                </constraints>
                                 <state key="normal" title="Search"/>
                                 <connections>
                                     <action selector="searchButtonPressed:" destination="IPH-9v-jSQ" eventType="touchUpInside" id="qo9-sz-fck"/>
@@ -193,16 +178,13 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="F10-QX-onl" firstAttribute="leading" secondItem="Say-IT-0HO" secondAttribute="leading" id="2XO-t5-kVK"/>
-                            <constraint firstItem="RfK-IP-Syg" firstAttribute="leading" secondItem="Say-IT-0HO" secondAttribute="leading" constant="2" id="36z-Wl-nqm"/>
+                            <constraint firstItem="HOL-qm-71F" firstAttribute="leading" secondItem="Gdu-Q0-s9v" secondAttribute="leading" constant="2" id="4NI-3X-i0D"/>
                             <constraint firstAttribute="trailingMargin" secondItem="cC7-r0-zRs" secondAttribute="trailing" constant="100" id="615-UR-Wo2"/>
                             <constraint firstItem="MrJ-09-Cb1" firstAttribute="top" secondItem="Say-IT-0HO" secondAttribute="top" constant="5" id="MML-ch-ShZ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="MrJ-09-Cb1" secondAttribute="trailing" constant="2" id="RkZ-tT-bIR"/>
                             <constraint firstItem="F10-QX-onl" firstAttribute="top" secondItem="MrJ-09-Cb1" secondAttribute="bottom" constant="5" id="WnT-iZ-Olt"/>
-                            <constraint firstItem="F10-QX-onl" firstAttribute="top" secondItem="RfK-IP-Syg" secondAttribute="bottom" constant="5" id="YUd-9j-gt0"/>
                             <constraint firstAttribute="bottomMargin" secondItem="cC7-r0-zRs" secondAttribute="bottom" constant="300" id="YaH-CJ-FHF"/>
-                            <constraint firstItem="HOL-qm-71F" firstAttribute="leading" secondItem="RfK-IP-Syg" secondAttribute="trailing" constant="2" id="dap-cT-wK8"/>
                             <constraint firstItem="cC7-r0-zRs" firstAttribute="leading" secondItem="Gdu-Q0-s9v" secondAttribute="leadingMargin" constant="100" id="iIb-AI-BtX"/>
-                            <constraint firstItem="RfK-IP-Syg" firstAttribute="top" secondItem="Say-IT-0HO" secondAttribute="top" constant="5" id="iRz-6d-7dp"/>
                             <constraint firstItem="F10-QX-onl" firstAttribute="top" secondItem="HOL-qm-71F" secondAttribute="bottom" constant="5" id="iyM-0s-Ntw"/>
                             <constraint firstItem="MrJ-09-Cb1" firstAttribute="leading" secondItem="HOL-qm-71F" secondAttribute="trailing" constant="2" id="s2i-Dk-VT5"/>
                             <constraint firstItem="HOL-qm-71F" firstAttribute="top" secondItem="Say-IT-0HO" secondAttribute="top" constant="5" id="w9c-rw-ccM"/>
@@ -213,7 +195,6 @@
                     <connections>
                         <outlet property="loadingIndicator" destination="cC7-r0-zRs" id="tPG-Wa-RDa"/>
                         <outlet property="searchTextField" destination="HOL-qm-71F" id="oz2-GK-w00"/>
-                        <outlet property="songArtistSegment" destination="RfK-IP-Syg" id="HGj-nK-o1N"/>
                         <outlet property="tableView" destination="F10-QX-onl" id="77g-4d-xkA"/>
                     </connections>
                 </viewController>
@@ -221,20 +202,20 @@
             </objects>
             <point key="canvasLocation" x="63.768115942028992" y="858.48214285714278"/>
         </scene>
-        <!--Search Result View Controller-->
-        <scene sceneID="sU8-cp-qQf">
+        <!--View Controller-->
+        <scene sceneID="5bn-08-STw">
             <objects>
-                <viewController storyboardIdentifier="SearchResultView" id="f2i-DU-VmF" customClass="SearchResultViewController" customModule="MusicDiary" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Hru-R1-1gH">
+                <viewController id="VVX-D9-LjD" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xi5-NT-rSx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="XNh-QP-bAz"/>
+                        <viewLayoutGuide key="safeArea" id="0ln-Jc-NQe"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1ud-YC-5nG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ljV-7B-ZAF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="854" y="858"/>
+            <point key="canvasLocation" x="64" y="1558"/>
         </scene>
     </scenes>
     <resources>
