@@ -43,13 +43,6 @@ class MainVC:UIViewController {
                 }
                 self.mainCarousel.reloadData()
             }
-            self.db.collection("Users").addSnapshotListener { (snapshot, error) in
-                if let error = error {
-                    print(error)
-                    return
-                }
-            }
-
         }
         //Diary>data
         db.collection("Diary").order(by: "date").getDocuments { (snapshot, error) in
@@ -59,13 +52,40 @@ class MainVC:UIViewController {
             }
             if let snapshot = snapshot {
                 for document in snapshot.documents {
-                                print("\(document.documentID) => \(document.data())")
+                    print("\(document.documentID) => \(document.data())")
                     self.diaryData.append(document)
-                    self.mainCarousel.reloadData()
-
+                }
+                self.mainCarousel.reloadData()
+            }
+        }
+        //change listener
+        db.collection("Diary").order(by: "date").addSnapshotListener { (snapshot, error) in
+            if let error = error {
+                print(error)
+                return
+            }
+            if let snapshot = snapshot {
+                for change in snapshot.documentChanges {
+                    print(change.document.data())
+                    let docID = change.document.documentID
+                    let document = change.document
+                    
+                    if self.newDiady(document) {
+                        self.diaryData.append(document)
+                        self.mainCarousel.reloadData()
+                    }
                 }
             }
         }
+    }
+    
+    func newDiady(_ diary_doc:QueryDocumentSnapshot) -> Bool {
+        for diary_data in diaryData {
+            if diary_data.documentID == diary_doc.documentID {
+                return false
+            }
+        }
+        return true
     }
         
     
@@ -77,7 +97,9 @@ class MainVC:UIViewController {
 
         ref = db.collection("Diary").addDocument(data: [
             "diaryImageUrl":"",
-            "diaryName":"test",
+            "diaryName":"test2",
+            "diaryMusicTitle":"",
+            "diaryMusicArtist":"",
             "memberList":[],
             "date":date
             //memberList에 currentUserId 들거갈 것 예상
@@ -102,11 +124,9 @@ class MainVC:UIViewController {
                     print("\(getDoc.documentID) => \(getDoc.data()["userDiaryList"])")
                     self.getDiaryList = getDoc.data()["userDiaryList"] as! [String]
                 }
-                self.mainCarousel.reloadData()
             }
         }
         
-        self.mainCarousel.reloadData()
     }
     
     @IBAction func moveToWrite(_ sender: UIButton) {
@@ -122,16 +142,14 @@ class MainVC:UIViewController {
 typealias CarouselDatasource = MainVC
 extension CarouselDatasource: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.getDiaryList.count
+        return getDiaryList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let carouselCell = collectionView.dequeueReusableCell(withReuseIdentifier: "carouselCell", for: indexPath) as! MainCell
-//        let document = diaryData[indexPath.row]
-//        let data = document.data()
-//        carouselCell.mainDiaryName.text = data["diaryName"] as! String
-//        //carouselCell.MainDiaryIamage.image = data["diaryImageUrl"] as! UIImage
-        
+        let diaryCount = diaryData[indexPath.row]
+        let data0Fdiary = diaryCount.data()
+        carouselCell.mainDiaryName.text = data0Fdiary["diaryName"] as! String
         
         carouselCell.setNeedsLayout()
         carouselCell.layoutIfNeeded()
