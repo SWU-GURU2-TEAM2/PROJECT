@@ -8,6 +8,8 @@
 import UIKit
 import ScalingCarousel
 import FirebaseFirestore
+import FirebaseAuth
+import FirebaseUI
 
 class MainCell: ScalingCarouselCell {
     @IBOutlet weak var MainDiaryIamage: UIImageView!
@@ -20,10 +22,7 @@ class MainVC:UIViewController {
     var diaryData = [QueryDocumentSnapshot]()
     var getDiaryList = [String]()
     @IBOutlet weak var mainCarousel: ScalingCarouselView!
-    
-    
-    
-    
+    let authUI = FUIAuth.defaultAuthUI()
     
     override func viewDidLoad() {
         super.viewDidLoad()
