@@ -11,7 +11,11 @@ import FSCalendar
 import Firebase
 
 var currentDairyId = "IxLlj4mK2DKPIoBA9Qjp"
-
+class DailyCell: UICollectionViewCell {
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var mainView: UIView!
+}
 class DailyViewController: UIViewController, FSCalendarDelegate {
     
     var todayContentList:[ContentData] = [ContentData()]
@@ -38,9 +42,6 @@ class DailyViewController: UIViewController, FSCalendarDelegate {
         UIView.animate(withDuration: 0.5, animations: {
             self.view.layoutIfNeeded()
         })
-        dailyCarousel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1).isActive = true
-        dailyCarousel.heightAnchor.constraint(equalToConstant: 100).isActive = true
-        dailyCarousel.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         
         
     }
@@ -85,7 +86,7 @@ class DailyViewController: UIViewController, FSCalendarDelegate {
                         conentText: getContent["contentText"] as! String,
                         musicTitle: getContent["musicTitle"] as! String,
                         musicArtist: getContent["musicArtist"] as! String,
-                        musicCoverUrl: URL(string: "\(getContent["musicCoverUrl"])"),
+                        musicCoverUrl: URL(string: (getContent["musicCoverUrl"]! as? String)!),
                         date: getContent["date"] as? Date)
                     self.todayContentList.append(newCD)
                     //print("\(document.documentID) => \(document.data())")
@@ -104,6 +105,7 @@ class DailyViewController: UIViewController, FSCalendarDelegate {
     
     
 }
+typealias DailyCSDelegate = DailyViewController
 extension DailyViewController: UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return todayContentList.count
@@ -111,16 +113,22 @@ extension DailyViewController: UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = dailyCarousel.dequeueReusableCell(withReuseIdentifier: "dailyCell", for: indexPath) as! DailyCell
+        print(self.todayContentList[indexPath.row].musicCoverUrl!)
         cell.titleLabel.text = todayContentList[indexPath.row].musicTitle
-        
-        if let dailyScalingCell = cell as? DailyCell {
-            dailyScalingCell.contentView.backgroundColor = .lightGray
-            dailyScalingCell.cornerRadius = 50
+        DispatchQueue.global().async { let data = try? Data(contentsOf: self.todayContentList[indexPath.row].musicCoverUrl!)
+            DispatchQueue.main.async {
+                cell.imageView.image = UIImage(data: data!)
+                cell.imageView.layer.masksToBounds = true
+                cell.imageView.layer.cornerRadius = 50
+            }
         }
+        //cell.mainView.frame.size.width = self.view.frame.size.width * 0.7
+        
+        cell.setNeedsLayout()
+        cell.layoutIfNeeded()
         
         DispatchQueue.main.async {
-            cell.setNeedsLayout()
-            cell.layoutIfNeeded()
+            
         }
         
         return cell
@@ -132,7 +140,8 @@ extension DailyViewController: UICollectionViewDelegate, UICollectionViewDelegat
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         dailyCarousel.didScroll()
         
-        guard let currentCenterIndex = dailyCarousel.currentCenterCellIndex?.row else { return }
+        guard let currentCenterIndex = dailyCarousel.currentCenterCellIndex?.row
+        else { return }
         
         print(String(describing: currentCenterIndex))
         
@@ -140,6 +149,10 @@ extension DailyViewController: UICollectionViewDelegate, UICollectionViewDelegat
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
+        
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: view.frame.width, height: view.frame.height)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
@@ -148,4 +161,3 @@ extension DailyViewController: UICollectionViewDelegate, UICollectionViewDelegat
     }
     
 }
-

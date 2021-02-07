@@ -12,6 +12,8 @@ struct DiaryStructure {
     var contentList = [ContentData]()
     var diaryName: String?
     var diaryImageUrl: URL?
+    var diaryMusicTitle:String?
+    var diaryMusicArtist: String?
     var memberList: [Int]?
     
 }
