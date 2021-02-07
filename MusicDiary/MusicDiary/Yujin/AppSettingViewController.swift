@@ -76,6 +76,19 @@ class AppSettingViewController: UIViewController {
     
     @IBAction func pushAlertSetted(_ sender: Any) {
         print("pushAlert")
+        //pushAlert Test
+        /*
+        let push = UNMutableNotificationContent()
+        push.title = "PushAlert"
+        push.subtitle = "subTitle"
+        push.body = "tempBody"
+        push.badge = 3
+        
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 3, repeats: false)
+        let request = UNNotificationRequest(identifier: "test", content: push, trigger: trigger)
+        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+         */
     }
+    
     
 }
