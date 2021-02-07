@@ -21,54 +21,64 @@
                                 <rect key="frame" x="0.0" y="194" width="414" height="518"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="k6W-WE-KgN">
-                                    <size key="itemSize" width="200" height="268"/>
+                                    <size key="itemSize" width="206" height="327"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="carouselCell" reuseIdentifier="carouselCell" id="V8O-iX-Tad" customClass="MainCell" customModule="MusicDiary" customModuleProvider="target">
-                                        <rect key="frame" x="105.5" y="0.0" width="203" height="268"/>
+                                        <rect key="frame" x="104" y="0.0" width="206" height="327"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="iCV-Go-Ppk">
-                                            <rect key="frame" x="0.0" y="0.0" width="203" height="268"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="206" height="327"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gY5-Fl-BN1">
-                                                    <rect key="frame" x="0.0" y="0.0" width="203" height="268"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="206" height="327"/>
                                                     <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Diary Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yoy-mq-mEZ">
-                                                    <rect key="frame" x="0.0" y="227" width="203" height="21"/>
+                                                    <rect key="frame" x="0.0" y="246" width="206" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Wd1-Uq-q59">
-                                                    <rect key="frame" x="40" y="40" width="123" height="123"/>
+                                                    <rect key="frame" x="40" y="40" width="126" height="126"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="Wd1-Uq-q59" secondAttribute="height" multiplier="1:1" id="N5e-tJ-Wf6"/>
                                                     </constraints>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fCz-Vz-2kg">
+                                                    <rect key="frame" x="0.0" y="277" width="206" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="gY5-Fl-BN1" secondAttribute="bottom" id="2vp-qt-k13"/>
                                                 <constraint firstAttribute="trailing" secondItem="Yoy-mq-mEZ" secondAttribute="trailing" id="5cM-VW-iHB"/>
                                                 <constraint firstItem="Wd1-Uq-q59" firstAttribute="top" secondItem="iCV-Go-Ppk" secondAttribute="top" constant="40" id="DgZ-Ke-UGN"/>
-                                                <constraint firstAttribute="bottom" secondItem="Yoy-mq-mEZ" secondAttribute="bottom" constant="20" id="Ia2-WL-sqE"/>
+                                                <constraint firstItem="fCz-Vz-2kg" firstAttribute="leading" secondItem="iCV-Go-Ppk" secondAttribute="leading" id="I1D-nL-Azu"/>
                                                 <constraint firstItem="Yoy-mq-mEZ" firstAttribute="leading" secondItem="iCV-Go-Ppk" secondAttribute="leading" id="K6V-qo-ucf"/>
                                                 <constraint firstItem="gY5-Fl-BN1" firstAttribute="top" secondItem="iCV-Go-Ppk" secondAttribute="top" id="N4n-OM-lr8"/>
                                                 <constraint firstAttribute="trailing" secondItem="Wd1-Uq-q59" secondAttribute="trailing" constant="40" id="QOO-6E-bKf"/>
                                                 <constraint firstAttribute="trailing" secondItem="gY5-Fl-BN1" secondAttribute="trailing" id="SYP-0e-Iq0"/>
                                                 <constraint firstItem="Wd1-Uq-q59" firstAttribute="leading" secondItem="iCV-Go-Ppk" secondAttribute="leading" constant="40" id="Y9I-4U-nQh"/>
+                                                <constraint firstItem="Yoy-mq-mEZ" firstAttribute="top" secondItem="Wd1-Uq-q59" secondAttribute="bottom" constant="80" id="bVY-OD-Jia"/>
                                                 <constraint firstItem="gY5-Fl-BN1" firstAttribute="leading" secondItem="iCV-Go-Ppk" secondAttribute="leading" id="qIS-Bw-GdO"/>
+                                                <constraint firstAttribute="trailing" secondItem="fCz-Vz-2kg" secondAttribute="trailing" id="wIc-hI-gWF"/>
+                                                <constraint firstItem="fCz-Vz-2kg" firstAttribute="top" secondItem="Yoy-mq-mEZ" secondAttribute="bottom" constant="10" id="yPw-Tf-RAN"/>
                                             </constraints>
                                         </collectionViewCellContentView>
-                                        <size key="customSize" width="203" height="268"/>
+                                        <size key="customSize" width="206" height="327"/>
                                         <connections>
-                                            <outlet property="MainDiaryIamage" destination="Wd1-Uq-q59" id="zXe-ed-roq"/>
+                                            <outlet property="mainDiaryImaage" destination="Wd1-Uq-q59" id="aBx-2E-IzD"/>
                                             <outlet property="mainDiaryName" destination="Yoy-mq-mEZ" id="Ag9-38-3M1"/>
+                                            <outlet property="mainStartDate" destination="fCz-Vz-2kg" id="9RA-TO-9zL"/>
                                             <outlet property="mainView" destination="iCV-Go-Ppk" id="T7W-JC-hBZ"/>
                                         </connections>
                                     </collectionViewCell>

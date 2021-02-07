@@ -12,12 +12,6 @@ import FirebaseFirestore
 import FirebaseAuth
 import FirebaseUI
 
-class MainCell: ScalingCarouselCell {
-    @IBOutlet weak var MainDiaryIamage: UIImageView!
-    @IBOutlet weak var mainDiaryName: UILabel!
-    
-}
-
 class MainVC:UIViewController {
     let db = Firestore.firestore()
     var diaryData = [QueryDocumentSnapshot]()
@@ -70,7 +64,7 @@ class MainVC:UIViewController {
                     let docID = change.document.documentID
                     let document = change.document
                     
-                    if self.newDiady(document) {
+                    if self.newDiary(document) {
                         self.diaryData.append(document)
                         self.mainCarousel.reloadData()
                     }
@@ -79,7 +73,7 @@ class MainVC:UIViewController {
         }
     }
     
-    func newDiady(_ diary_doc:QueryDocumentSnapshot) -> Bool {
+    func newDiary(_ diary_doc:QueryDocumentSnapshot) -> Bool {
         for diary_data in diaryData {
             if diary_data.documentID == diary_doc.documentID {
                 return false
@@ -139,6 +133,12 @@ class MainVC:UIViewController {
     }
 }
 
+class MainCell: ScalingCarouselCell {
+    @IBOutlet weak var mainDiaryImaage: UIImageView!
+    @IBOutlet weak var mainDiaryName: UILabel!
+    @IBOutlet weak var mainStartDate: UILabel!
+}
+
 typealias CarouselDatasource = MainVC
 extension CarouselDatasource: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -149,8 +149,13 @@ extension CarouselDatasource: UICollectionViewDataSource {
         let carouselCell = collectionView.dequeueReusableCell(withReuseIdentifier: "carouselCell", for: indexPath) as! MainCell
         let diaryCount = diaryData[indexPath.row]
         let data0Fdiary = diaryCount.data()
+        //diary name insert
         carouselCell.mainDiaryName.text = data0Fdiary["diaryName"] as! String
+        //date insert 0000년 00일 00일 형식으로 지정 필요
+        let starDate = data0Fdiary["date"]
+        //image insert
         
+        //carouselCell.mainStartDate.text = startDate
         carouselCell.setNeedsLayout()
         carouselCell.layoutIfNeeded()
         
