@@ -20,7 +20,8 @@ class WriteViewController:UIViewController, SendDataDelegate{
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillAppear(_:)), name: UIResponder.keyboardWillShowNotification , object: nil)
+//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillDisappear(_:)), name: UIResponder.keyboardWillHideNotification , object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -82,6 +83,12 @@ class WriteViewController:UIViewController, SendDataDelegate{
         newContent.musicCoverUrl = getMusic.musicCoverUrl
         
         
+    }
+    @objc func keyboardWillAppear(_ sender: NotificationCenter){
+        self.view.frame.origin.y -= 130
+    }
+    @objc func keyboardWillDisappear(_ sender: NotificationCenter){
+        self.view.frame.origin.y += 130
     }
 }
 

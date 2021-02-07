@@ -18,9 +18,11 @@ class DailyCell: ScalingCarouselCell {
 class DailyViewController: UIViewController, FSCalendarDelegate {
     
     var todayContentList:[ContentData] = [ContentData()]
+    var datesWithEvent = [Date(), Date()-86400]
     @IBOutlet weak var noDataLabel: UILabel!
     @IBOutlet weak var dailyCarousel: ScalingCarouselView!
     @IBOutlet weak var calendar: FSCalendar!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         noDataLabel.alpha = 0
@@ -33,8 +35,6 @@ class DailyViewController: UIViewController, FSCalendarDelegate {
         calendar.appearance.headerTitleColor = .black
         // 달력의 요일 글자 색깔
         calendar.appearance.weekdayTextColor = .black
-        // 년월에 흐릿하게 보이는 애들 없애기
-        calendar.appearance.headerMinimumDissolvedAlpha = 0
         //년 월 custom
         calendar.appearance.headerDateFormat = "YYYY년 M월"
         
@@ -48,6 +48,15 @@ class DailyViewController: UIViewController, FSCalendarDelegate {
         dailyCarousel.deviceRotated()
     }
     
+    func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, eventDefaultColorsFor date: Date) -> [UIColor]? {
+        if self.datesWithEvent.contains(date) {
+            calendar.reloadData()
+            return [UIColor.magenta, appearance.eventDefaultColor, UIColor.black]
+        }
+        calendar.reloadData()
+
+        return [appearance.eventDefaultColor]
+    }
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         // 아래 그날의 글들 보여주기
         noDataLabel.alpha = 0
@@ -60,6 +69,7 @@ class DailyViewController: UIViewController, FSCalendarDelegate {
     func getContentsListForDaily(date: Date) {
         let db = Firestore.firestore()
         let calendar = Calendar.current
+        
         self.todayContentList = []
         // .whereField("date", isLessThan: calendar.startOfDay(for: date)+86400)
         db.collection("Diary").document("\(currentDairyId)").collection("Contents") .whereField("date", isGreaterThanOrEqualTo: calendar.startOfDay(for: date
@@ -68,8 +78,8 @@ class DailyViewController: UIViewController, FSCalendarDelegate {
                 print("Error getting documents: \(err)")
             } else {
                 for document in querySnapshot!.documents {
+                    
                     let getContent = document.data()
-                    let appdelegate = AppDelegate()
                     let newCD = ContentData(
                         authorID: getContent["authorID"] as! String,
                         conentText: getContent["contentText"] as! String,
@@ -77,9 +87,8 @@ class DailyViewController: UIViewController, FSCalendarDelegate {
                         musicArtist: getContent["musicArtist"] as! String,
                         musicCoverUrl: URL(string: "\(getContent["musicCoverUrl"])"),
                         date: getContent["date"] as? Date)
-                    appdelegate.tempDiary.append(newCD)
                     self.todayContentList.append(newCD)
-                    print("\(document.documentID) => \(document.data())")
+                    //print("\(document.documentID) => \(document.data())")
                     
                     
                 }
