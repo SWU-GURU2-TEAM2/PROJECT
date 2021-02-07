@@ -13,7 +13,7 @@
 		5C0DC0EE25C67E2500D766FB /* WriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0DC0ED25C67E2500D766FB /* WriteViewController.swift */; };
 		5C0DC0F125C67E4F00D766FB /* DailyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0DC0F025C67E4F00D766FB /* DailyViewController.swift */; };
 		5C0DC10525C69DC800D766FB /* UserStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0DC10425C69DC800D766FB /* UserStructure.swift */; };
-		5C0DC10A25C69F3C00D766FB /* SelectPageScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0DC10925C69F3C00D766FB /* SelectPageScrollView.swift */; };
+		5C0DC10A25C69F3C00D766FB /* DailyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0DC10925C69F3C00D766FB /* DailyCell.swift */; };
 		5C2A1BA925CEE92F0044E10C /* EditViewControllerrrrr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2A1BA825CEE92E0044E10C /* EditViewControllerrrrr.swift */; };
 		5C2A1BE425CF9A320044E10C /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2A1BE325CF9A320044E10C /* EditViewController.swift */; };
 		5C93B36E25C051400067A723 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C93B36D25C051400067A723 /* AppDelegate.swift */; };
@@ -44,7 +44,7 @@
 		5C0DC0ED25C67E2500D766FB /* WriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteViewController.swift; sourceTree = "<group>"; };
 		5C0DC0F025C67E4F00D766FB /* DailyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyViewController.swift; sourceTree = "<group>"; };
 		5C0DC10425C69DC800D766FB /* UserStructure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStructure.swift; sourceTree = "<group>"; };
-		5C0DC10925C69F3C00D766FB /* SelectPageScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPageScrollView.swift; sourceTree = "<group>"; };
+		5C0DC10925C69F3C00D766FB /* DailyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyCell.swift; sourceTree = "<group>"; };
 		5C2A1BA825CEE92E0044E10C /* EditViewControllerrrrr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewControllerrrrr.swift; sourceTree = "<group>"; };
 		5C2A1BE325CF9A320044E10C /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 		5C93B36A25C051400067A723 /* MusicDiary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicDiary.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -98,7 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				5C0DC0F025C67E4F00D766FB /* DailyViewController.swift */,
-				5C0DC10925C69F3C00D766FB /* SelectPageScrollView.swift */,
+				5C0DC10925C69F3C00D766FB /* DailyCell.swift */,
 			);
 			path = DailyView;
 			sourceTree = "<group>";
@@ -340,7 +340,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C2A1BA925CEE92F0044E10C /* EditViewControllerrrrr.swift in Sources */,
-				5C0DC10A25C69F3C00D766FB /* SelectPageScrollView.swift in Sources */,
+				5C0DC10A25C69F3C00D766FB /* DailyCell.swift in Sources */,
 				6A2321E125C6F1E80079A482 /* IntroViewController.swift in Sources */,
 				5C93B37225C051400067A723 /* ViewController.swift in Sources */,
 				5C93B37825C051400067A723 /* MusicDiary.xcdatamodeld in Sources */,

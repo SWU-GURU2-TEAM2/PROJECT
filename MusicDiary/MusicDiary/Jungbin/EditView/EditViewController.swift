@@ -8,7 +8,7 @@
 import UIKit
 import Firebase
 
-var currentContentID = "9G2Dh6BvPGmsJIynqWtv"
+var currentContentID = "3QlbFquOKWsqCLOTDpTv"
 var newCD = ContentData()
 
 class EditViewController: UIViewController, SendDataDelegate {
@@ -19,7 +19,7 @@ class EditViewController: UIViewController, SendDataDelegate {
         DispatchQueue.global().async { let data = try? Data(contentsOf: self.getMusic.musicCoverUrl!)
             DispatchQueue.main.async { self.imageVIew.image = UIImage(data: data!) }
         }
-        self.viewDidLoad()
+        
     }
     
     @IBOutlet weak var titleLabel: UILabel!
@@ -61,16 +61,18 @@ class EditViewController: UIViewController, SendDataDelegate {
                 newCD.conentText = dataDescription!["contentText"] as? String
                 newCD.musicTitle = dataDescription!["musicTitle"] as? String
                 newCD.musicArtist = dataDescription!["musicArtist"] as? String
-                newCD.musicCoverUrl = URL(string: "http://i.maniadb.com/images/album/203/203697_1_f.png")
+                newCD.musicCoverUrl = URL(string: (dataDescription!["musicCoverUrl"]! as? String)!)
                 newCD.date = dataDescription!["date"] as? Date
-                
                 self.titleLabel.text = newCD.musicTitle
                 self.artistLabel.text = newCD.musicArtist
                 self.textView!.text = newCD.conentText
+                
+                //print("Document data: ", newURL)
+                
                 DispatchQueue.global().async { let data = try? Data(contentsOf: newCD.musicCoverUrl!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
                     DispatchQueue.main.async { self.imageVIew.image = UIImage(data: data!) }
                 }
-                print("Document data: \(newCD.musicCoverUrl)")
+                
             } else {
                 print("Document does not exist")
             }

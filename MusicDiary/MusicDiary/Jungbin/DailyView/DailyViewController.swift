@@ -11,10 +11,7 @@ import FSCalendar
 import Firebase
 
 var currentDairyId = "IxLlj4mK2DKPIoBA9Qjp"
-class DailyCell: ScalingCarouselCell {
-    
-    @IBOutlet weak var titleLabel: UILabel!
-}
+
 class DailyViewController: UIViewController, FSCalendarDelegate {
     
     var todayContentList:[ContentData] = [ContentData()]
@@ -41,6 +38,10 @@ class DailyViewController: UIViewController, FSCalendarDelegate {
         UIView.animate(withDuration: 0.5, animations: {
             self.view.layoutIfNeeded()
         })
+        dailyCarousel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1).isActive = true
+        dailyCarousel.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        dailyCarousel.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        
         
     }
     
@@ -112,7 +113,7 @@ extension DailyViewController: UICollectionViewDataSource{
         let cell = dailyCarousel.dequeueReusableCell(withReuseIdentifier: "dailyCell", for: indexPath) as! DailyCell
         cell.titleLabel.text = todayContentList[indexPath.row].musicTitle
         
-        if let dailyScalingCell = cell as? ScalingCarouselCell {
+        if let dailyScalingCell = cell as? DailyCell {
             dailyScalingCell.contentView.backgroundColor = .lightGray
             dailyScalingCell.cornerRadius = 50
         }
