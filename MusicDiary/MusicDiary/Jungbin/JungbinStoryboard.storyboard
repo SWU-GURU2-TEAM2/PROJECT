@@ -62,37 +62,60 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="rlN-NX-H7C" customClass="ScalingCarouselView" customModule="ScalingCarousel">
                                 <rect key="frame" x="0.0" y="507" width="414" height="285"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="VO2-eH-OjG">
-                                    <size key="itemSize" width="264" height="186"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="N96-zD-fjX">
+                                    <size key="itemSize" width="250" height="237"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
+                                <label key="backgroundView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="😓 작성된 일기가 없어요!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1Ga-ak-Gdm">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="285"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="dailyCell" reuseIdentifier="dailyCell" id="d1x-Oh-gMa" customClass="DailyCell" customModule="MusicDiary" customModuleProvider="target">
-                                        <rect key="frame" x="75" y="0.0" width="264" height="186"/>
+                                        <rect key="frame" x="82" y="0.0" width="250" height="237"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="hjn-Cr-980">
-                                            <rect key="frame" x="0.0" y="0.0" width="264" height="186"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="250" height="237"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="그룹 33" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z6i-g2-b4L">
+                                                    <rect key="frame" x="15" y="64" width="221" height="137"/>
+                                                </imageView>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OcY-8U-LUl">
+                                                    <rect key="frame" x="61" y="99" width="67" height="67"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="OcY-8U-LUl" secondAttribute="height" multiplier="1:1" id="E7V-Wx-Kxs"/>
+                                                        <constraint firstAttribute="width" constant="67" id="LsD-My-bjq"/>
+                                                        <constraint firstAttribute="height" constant="67" id="Wzv-C7-e3K"/>
+                                                    </constraints>
+                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V1M-6v-EqY">
-                                                    <rect key="frame" x="20" y="143" width="224" height="21"/>
+                                                    <rect key="frame" x="136" y="121" width="54" height="12"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OcY-8U-LUl">
-                                                    <rect key="frame" x="85" y="42" width="94" height="93"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
                                             </subviews>
-                                            <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="z6i-g2-b4L" secondAttribute="trailing" constant="14" id="3w9-sT-say"/>
+                                                <constraint firstAttribute="bottom" secondItem="OcY-8U-LUl" secondAttribute="bottom" constant="71" id="GgE-a6-Bgw"/>
+                                                <constraint firstItem="OcY-8U-LUl" firstAttribute="leading" secondItem="hjn-Cr-980" secondAttribute="leading" constant="61" id="J2z-8s-o6N"/>
+                                                <constraint firstItem="z6i-g2-b4L" firstAttribute="top" secondItem="hjn-Cr-980" secondAttribute="top" constant="64" id="Sxx-dD-31M"/>
+                                                <constraint firstItem="OcY-8U-LUl" firstAttribute="top" secondItem="hjn-Cr-980" secondAttribute="top" constant="99" id="YRV-So-4BG"/>
+                                                <constraint firstItem="z6i-g2-b4L" firstAttribute="leading" secondItem="hjn-Cr-980" secondAttribute="leading" constant="15" id="YVq-ec-j5d"/>
+                                                <constraint firstAttribute="bottom" secondItem="z6i-g2-b4L" secondAttribute="bottom" constant="36" id="hqe-QL-5Bf"/>
+                                            </constraints>
                                         </collectionViewCellContentView>
-                                        <size key="customSize" width="264" height="186"/>
+                                        <size key="customSize" width="250" height="237"/>
                                         <connections>
-                                            <outlet property="mainView" destination="hjn-Cr-980" id="9po-h8-ajM"/>
+                                            <outlet property="imageView" destination="OcY-8U-LUl" id="IXI-z3-K8k"/>
+                                            <outlet property="mainView" destination="hjn-Cr-980" id="EGm-SO-Qkh"/>
                                             <outlet property="titleLabel" destination="V1M-6v-EqY" id="kQo-NM-Vzy"/>
                                         </connections>
                                     </collectionViewCell>
@@ -102,12 +125,6 @@
                                     <outlet property="delegate" destination="ovr-HE-iz2" id="f1x-wS-hmD"/>
                                 </connections>
                             </collectionView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="😓 작성된 일기가 없어요!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ga-ak-Gdm">
-                                <rect key="frame" x="120" y="616" width="174" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GAl-Ck-bEM">
                                 <rect key="frame" x="348" y="816" width="46" height="30"/>
                                 <state key="normal" title="Edit"/>
@@ -120,11 +137,8 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="320-oe-fxE" firstAttribute="top" secondItem="mXS-M6-D5H" secondAttribute="top" constant="28" id="4NP-6o-wFd"/>
-                            <constraint firstItem="1Ga-ak-Gdm" firstAttribute="top" secondItem="320-oe-fxE" secondAttribute="bottom" constant="169" id="51H-Cx-NyE"/>
                             <constraint firstItem="rlN-NX-H7C" firstAttribute="top" secondItem="320-oe-fxE" secondAttribute="bottom" constant="60" id="Aj6-8X-Ch5"/>
-                            <constraint firstItem="mXS-M6-D5H" firstAttribute="trailing" secondItem="1Ga-ak-Gdm" secondAttribute="trailing" constant="120" id="CGf-9g-6MQ"/>
                             <constraint firstItem="mXS-M6-D5H" firstAttribute="bottom" secondItem="GAl-Ck-bEM" secondAttribute="bottom" constant="16" id="Eqn-rR-0mF"/>
-                            <constraint firstItem="q7G-p6-pjL" firstAttribute="top" secondItem="1Ga-ak-Gdm" secondAttribute="bottom" constant="163" id="Ffv-Qe-aPJ"/>
                             <constraint firstItem="rlN-NX-H7C" firstAttribute="leading" secondItem="mXS-M6-D5H" secondAttribute="leading" id="HbE-UI-TBq"/>
                             <constraint firstItem="320-oe-fxE" firstAttribute="leading" secondItem="mXS-M6-D5H" secondAttribute="leading" constant="20" id="RDm-5A-511"/>
                             <constraint firstItem="rlN-NX-H7C" firstAttribute="trailing" secondItem="mXS-M6-D5H" secondAttribute="trailing" id="Rga-AH-bmQ"/>
@@ -136,12 +150,11 @@
                             <constraint firstItem="mXS-M6-D5H" firstAttribute="trailing" secondItem="320-oe-fxE" secondAttribute="trailing" constant="20" id="kum-DE-1bn"/>
                             <constraint firstItem="q7G-p6-pjL" firstAttribute="bottom" secondItem="mXS-M6-D5H" secondAttribute="bottom" id="n3S-ce-72N"/>
                             <constraint firstItem="q7G-p6-pjL" firstAttribute="leading" secondItem="mXS-M6-D5H" secondAttribute="leading" constant="176" id="v6s-hY-HzE"/>
-                            <constraint firstItem="1Ga-ak-Gdm" firstAttribute="leading" secondItem="mXS-M6-D5H" secondAttribute="leading" constant="120" id="vgZ-pT-m6j"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="calendar" destination="320-oe-fxE" id="qSn-QQ-LUW"/>
-                        <outlet property="dailyCarousel" destination="rlN-NX-H7C" id="8Hk-9N-cna"/>
+                        <outlet property="dailyCarousel" destination="rlN-NX-H7C" id="bog-kJ-GA8"/>
                         <outlet property="noDataLabel" destination="1Ga-ak-Gdm" id="g0w-JO-h7b"/>
                     </connections>
                 </viewController>
@@ -393,6 +406,7 @@
     </scenes>
     <resources>
         <image name="a.book.closed.fill.ar" catalog="system" width="115" height="128"/>
+        <image name="그룹 33" width="408" height="281"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
