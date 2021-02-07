@@ -18,7 +18,6 @@ class IntroViewController: UIViewController, FUIAuthDelegate, UIGestureRecognize
     let authUI = FUIAuth.defaultAuthUI() //authUI
     let db = Firestore.firestore() //db
     var handle: AuthStateDidChangeListenerHandle! //handle
-    var currentUID:String! //currentUID
     
     //viewDidLoad
     override func viewDidLoad() {
@@ -51,7 +50,7 @@ class IntroViewController: UIViewController, FUIAuthDelegate, UIGestureRecognize
             //만약 로그인 했다면
             if let currentUser = auth.currentUser {
                 //currentUser 정보 넘겨주기
-                //로그인한 유저 -> 다음 뷰로 넘어감
+                //로그인한 유저 -> 기존 사용자 체크, 다음 뷰로 넘어감
                 let docRef = self.db.collection("Users").document("\(currentUser.uid)")
                 docRef.getDocument { (document, error) in
                     if let document = document, document.exists {
@@ -67,10 +66,8 @@ class IntroViewController: UIViewController, FUIAuthDelegate, UIGestureRecognize
                     }
                 }
                 
-                let vc = UIStoryboard(name: "YewonStoryboard", bundle: nil).instantiateViewController(identifier: "YewonMainView")
+                let vc = UIStoryboard(name: "YujinStoryboard", bundle: nil).instantiateViewController(identifier: "appSettingView")
                 vc.modalPresentationStyle = .fullScreen
-                self.currentUID = currentUser.uid
-                print(self.currentUID!)
                 self.present(vc, animated: true, completion:  nil)
             } else {
                 //로그인 안한 유저 -> 로그인 화면이 뜸
@@ -86,16 +83,4 @@ class IntroViewController: UIViewController, FUIAuthDelegate, UIGestureRecognize
             }//if else
         }//handle
     }//swipeGestured
-    
-    //logoutbtnTouched
-    @IBAction func logoutbtnTouched(_ sender: Any) {
-        print("logOut")
-        //로그아웃 시도
-        do {
-            try authUI?.signOut()
-        } catch {
-            print("logoutError")
-        }
-    }//logoutbtnTouched
-    
 }
