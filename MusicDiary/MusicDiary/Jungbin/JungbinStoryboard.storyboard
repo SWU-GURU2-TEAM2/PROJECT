@@ -310,6 +310,9 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="53g-z6-erA">
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="108"/>
+                                        <connections>
+                                            <action selector="tapSearchBtn:" destination="d7d-rI-jWH" eventType="touchUpInside" id="FRt-oY-wFC"/>
+                                        </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iTG-r2-AfO">
                                         <rect key="frame" x="258" y="24" width="60" height="60"/>
@@ -368,6 +371,9 @@
                                         <state key="normal" backgroundImage="a.book.closed.fill.ar" catalog="system">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="tapSaveBtn:" destination="d7d-rI-jWH" eventType="touchUpInside" id="B1O-Ga-pmU"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="haQ-Da-aHs">
                                         <rect key="frame" x="220" y="443" width="46" height="30"/>
@@ -396,6 +402,14 @@
                         </connections>
                     </view>
                     <navigationItem key="navigationItem" id="fK1-y9-cEK"/>
+                    <connections>
+                        <outlet property="artistLabel" destination="bqt-56-P18" id="orz-Ta-CL0"/>
+                        <outlet property="imageVIew" destination="iTG-r2-AfO" id="yrh-PK-NgS"/>
+                        <outlet property="musicView" destination="d22-Tk-9rd" id="22l-XN-Scz"/>
+                        <outlet property="textView" destination="B5y-dA-goS" id="Yi3-97-7Ee"/>
+                        <outlet property="titleLabel" destination="fLP-aJ-KBP" id="MKP-cv-zDH"/>
+                        <outlet property="writeView" destination="Aua-sT-HQA" id="qR6-iV-hLc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ep4-Kb-TsX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="Ccu-0Y-R72">

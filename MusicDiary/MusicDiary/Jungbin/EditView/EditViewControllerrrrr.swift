@@ -8,8 +8,7 @@
 //import UIKit
 //import Firebase
 //
-//var currentContentID = "ytGhBqaCnQAdq3feUqhI"
-//var newCD = ContentData()
+
 //
 //class EditViewControllerrrrr: UIViewController, SendDataDelegate {
 //    func sendData(data: MusicStruct) {
@@ -22,16 +21,8 @@
 //        self.viewDidLoad()
 //
 //    }
-//
-//    @IBOutlet weak var titleLabel: UILabel!
-//    @IBOutlet weak var artistLabel: UILabel!
-//    @IBOutlet weak var imageView: UIImageView!
-//    @IBOutlet weak var textView: UITextView!
-//    var getMusic:MusicStruct!
-//    let db = Firestore.firestore()
-//
-//    var ref: DocumentReference? = nil
-//    var docRef: DocumentReference? = nil
+
+
 //    override func viewDidLoad() {
 //        super.viewDidLoad()
 //        placeholderSetting()
@@ -50,35 +41,7 @@
 //
 //    }
 //
-//    func presentData() {
-//
-//        docRef =  db.collection("Diary").document("\(currentDairyId)").collection("Contents").document("\(currentContentID)")
-//        docRef!.getDocument { (document, error) in
-//            if let document = document, document.exists {
-//                let getContent = document.data()
-//                newCD = ContentData(
-//                    authorID: getContent!["authorID"] as! String,
-//                    conentText: getContent!["contentText"] as! String,
-//                    musicTitle: getContent!["musicTitle"] as! String,
-//                    musicArtist: getContent!["musicArtist"] as! String,
-//                    musicCoverUrl: URL(string: "\(getContent!["musicCoverUrl"])"),
-//                    date: getContent!["date"] as? Date)
-//                print(newCD)
-//                self.viewDidLoad()
-//
-//
-//            } else {
-//                print("Document does not exist")
-//            }
-//        }
-//
-//        //titleLabel.text = newCD.musicTitle
-//       // artistLabel.text = newCD.musicArtist
-//        textView!.text = newCD.conentText!
-////        DispatchQueue.global().async { let data = try? Data(contentsOf: newCD.musicCoverUrl!)
-////            DispatchQueue.main.async { self.imageView.image = UIImage(data: data!) }
-////        }
-//    }
+//    
 //
 //
 //    @IBAction func tapSaveBtn(_ sender: Any) {
@@ -108,9 +71,6 @@
 //
 //    }
 //
-//    @IBAction func tapView(_ sender: Any) {
-//        self.dismiss(animated: true)
-//    }
 //
 //    @objc func keyboardWillAppear(_ sender: NotificationCenter){
 //        self.view.frame.origin.y -= 130
@@ -120,29 +80,5 @@
 //    }
 //}
 //
-//extension EditViewController: UITextViewDelegate {
-//    func placeholderSetting() {
-//        textView.delegate = self // txtvReview가 유저가 선언한 outlet
-//        textView.text = "오늘의 감상, 기분, 일기를 기록하세요. 📝"
-//        textView.textColor = UIColor.lightGray
-//
-//    }
-//
-//
-//    // TextView Place Holder
-//    func textViewDidBeginEditing(_ textView: UITextView) {
-//        if textView.textColor == UIColor.lightGray {
-//            textView.text = nil
-//            textView.textColor = UIColor.black
-//        }
-//
-//    }
-//    // TextView Place Holder
-//    func textViewDidEndEditing(_ textView: UITextView) {
-//        if textView.text.isEmpty {
-//            textView.text = "오늘의 감상, 기분, 일기를 기록하세요. 📝"
-//            textView.textColor = UIColor.lightGray
-//        }
-//    }
-//}
+
 //

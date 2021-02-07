@@ -7,7 +7,7 @@
 
 import UIKit
 
-struct UserStructure {
+public struct UserStructure {
     var userName: String?
     var userId: String?
     var userImage: UIImage?
