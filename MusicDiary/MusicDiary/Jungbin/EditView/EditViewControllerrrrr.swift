@@ -45,22 +45,7 @@
 //
 //
 //    @IBAction func tapSaveBtn(_ sender: Any) {
-//        // EDIT
-//        let calendar = Calendar.current
-//
-//        self.docRef!.updateData( [
-//            "contentText":"\(textView.text!)",
-//            "musicArtist":"\(artistLabel.text!)",
-//            "musicCoverUrl":"\(self.getMusic.musicCoverUrl!.absoluteString)",
-//            "musicTitle":"\(titleLabel.text!)"
-//        ]) { err in
-//            if let err = err {
-//                print("Error adding document: \(err)")
-//            } else {
-//                print("Document updated with ID: \(self.docRef!.documentID)")
-//            }
-//        }
-//        self.dismiss(animated: true)
+
 //
 //    }
 //    @IBAction func goSearchBtn(_ sender: Any) {

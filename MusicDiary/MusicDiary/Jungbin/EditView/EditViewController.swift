@@ -14,10 +14,13 @@ var newCD = ContentData()
 class EditViewController: UIViewController, SendDataDelegate {
     func sendData(data: MusicStruct) {
         getMusic = data
-        titleLabel.text = getMusic.musicTitle
-        artistLabel.text = getMusic.musicArtist
+        
         DispatchQueue.global().async { let data = try? Data(contentsOf: self.getMusic.musicCoverUrl!)
-            DispatchQueue.main.async { self.imageVIew.image = UIImage(data: data!) }
+            DispatchQueue.main.async {
+                self.imageVIew.image = UIImage(data: data!)
+                self.titleLabel.text = self.getMusic.musicTitle
+                self.artistLabel.text = self.getMusic.musicArtist
+            }
         }
         
     }
@@ -40,6 +43,24 @@ class EditViewController: UIViewController, SendDataDelegate {
         
     }
     @IBAction func tapSaveBtn(_ sender: Any) {
+        // EDIT
+        let calendar = Calendar.current
+        var docRef = db.collection("Diary").document("\(currentDairyId)").collection("Contents").document("\(currentContentID)")
+
+        docRef.updateData( [
+            "contentText":"\(textView.text!)",
+            "musicArtist":"\(artistLabel.text!)",
+            "musicCoverUrl":String(describing: newContent.musicCoverUrl!),
+            "musicTitle":"\(titleLabel.text!)"
+        ]) { err in
+            if let err = err {
+                print("Error adding document: \(err)")
+            } else {
+                print("Document updated with ID: \(docRef.documentID)")
+            }
+        }
+        self.dismiss(animated: true)
+        
     }
     @IBAction func tapSearchBtn(_ sender: Any) {
         let board = UIStoryboard(name: "YujinStoryboard", bundle: nil)
@@ -56,6 +77,7 @@ class EditViewController: UIViewController, SendDataDelegate {
         docRef.getDocument { (document, error) in
             if let document = document, document.exists {
                 let dataDescription = document.data()
+                newContent.musicCoverUrl = URL(string: (dataDescription!["musicCoverUrl"]! as? String)!)
                 
                 newCD.authorID = dataDescription!["authorID"] as? String
                 newCD.conentText = dataDescription!["contentText"] as? String
