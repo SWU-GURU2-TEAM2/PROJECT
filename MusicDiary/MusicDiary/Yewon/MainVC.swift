@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import WebKit
 import ScalingCarousel
 import FirebaseFirestore
 import FirebaseAuth
@@ -20,12 +21,14 @@ class MainCell: ScalingCarouselCell {
 class MainVC:UIViewController {
     let db = Firestore.firestore()
     var diaryData = [QueryDocumentSnapshot]()
-    var getDiaryList = [String]()
+    var getDiaryList = [QueryDocumentSnapshot]()
     @IBOutlet weak var mainCarousel: ScalingCarouselView!
     let authUI = FUIAuth.defaultAuthUI()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.diaryData = [QueryDocumentSnapshot]()
+        self.getDiaryList = [QueryDocumentSnapshot]()
         
         //Users>diaryList
         db.collection("Users").getDocuments { (snapshot, error) in
@@ -35,11 +38,27 @@ class MainVC:UIViewController {
             }
             if let snapshot = snapshot {
                 for document in snapshot.documents {
-                                print("\(document.documentID) => \(document.data()["userDiaryList"])")
-                    self.getDiaryList = document.data()["userDiaryList"] as! [String]
+                    print("\(document.documentID) => \(document.data()["userDiaryList"])")
+                    self.getDiaryList.append(document.data()["userDiaryList"] as! QueryDocumentSnapshot)
                 }
                 self.mainCarousel.reloadData()
             }
+            self.db.collection("Users").addSnapshotListener { (snapshot, error) in
+                if let error = error {
+                    print(error)
+                    return
+                }
+                if let snapshot = snapshot {
+                    for change in snapshot.documentChanges {
+                        print(change.document.data()["userDiaryList"])
+//                        let docID = change.document.documentID
+//                        let document = change.document
+//                        self.getDiaryList = document.data()["userDiaryList"] as! [String]
+//                        self.mainCarousel.reloadData()
+                    }
+                }
+            }
+
         }
         //Diary>data
         db.collection("Diary").getDocuments { (snapshot, error) in
@@ -51,8 +70,9 @@ class MainVC:UIViewController {
                 for document in snapshot.documents {
                                 print("\(document.documentID) => \(document.data())")
                     self.diaryData.append(document)
+                    self.mainCarousel.reloadData()
+
                 }
-                self.mainCarousel.reloadData()
             }
         }
     }
@@ -62,11 +82,13 @@ class MainVC:UIViewController {
 
         //firebase에 다이어리 증가 + 유저 다이어리 리스트에도 추가 됨
         var ref: DocumentReference? = nil
+        let date = Date()
 
         ref = db.collection("Diary").addDocument(data: [
             "diaryImageUrl":"",
-            "diaryName":"",
-            "memberList":[]
+            "diaryName":"test",
+            "memberList":[],
+            "date":date
             //memberList에 currentUserId 들거갈 것 예상
         ]) { err in
             if let err = err {
@@ -78,7 +100,6 @@ class MainVC:UIViewController {
         db.collection("Users").document("TNrcZtxj42Mfqq2KRy1A").updateData([
             "userDiaryList": FieldValue.arrayUnion([ref!.documentID])
         ])
-        self.getDiaryList.append(ref!.documentID)
         self.mainCarousel.reloadData()
         
     }
@@ -101,10 +122,10 @@ extension CarouselDatasource: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let carouselCell = collectionView.dequeueReusableCell(withReuseIdentifier: "carouselCell", for: indexPath) as! MainCell
-        let document = diaryData[indexPath.row]
-        let data = document
-        carouselCell.mainDiaryName.text = data["diaryName"] as! String
-        //carouselCell.MainDiaryIamage.image = data["diaryImageUrl"] as! UIImage
+//        let document = diaryData[indexPath.row]
+//        let data = document.data()
+//        carouselCell.mainDiaryName.text = data["diaryName"] as! String
+//        //carouselCell.MainDiaryIamage.image = data["diaryImageUrl"] as! UIImage
         
         
         carouselCell.setNeedsLayout()
