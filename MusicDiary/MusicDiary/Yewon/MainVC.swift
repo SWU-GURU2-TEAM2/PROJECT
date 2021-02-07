@@ -21,14 +21,14 @@ class MainCell: ScalingCarouselCell {
 class MainVC:UIViewController {
     let db = Firestore.firestore()
     var diaryData = [QueryDocumentSnapshot]()
-    var getDiaryList = [QueryDocumentSnapshot]()
+    var getDiaryList = [String]()
     @IBOutlet weak var mainCarousel: ScalingCarouselView!
     let authUI = FUIAuth.defaultAuthUI()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.diaryData = [QueryDocumentSnapshot]()
-        self.getDiaryList = [QueryDocumentSnapshot]()
+        self.getDiaryList = [String]()
         
         //Users>diaryList
         db.collection("Users").getDocuments { (snapshot, error) in
@@ -37,9 +37,9 @@ class MainVC:UIViewController {
                 return
             }
             if let snapshot = snapshot {
-                for document in snapshot.documents {
-                    print("\(document.documentID) => \(document.data()["userDiaryList"])")
-                    self.getDiaryList.append(document.data()["userDiaryList"] as! QueryDocumentSnapshot)
+                for getDoc in snapshot.documents {
+                    print("\(getDoc.documentID) => \(getDoc.data()["userDiaryList"])")
+                    self.getDiaryList = getDoc.data()["userDiaryList"] as! [String]
                 }
                 self.mainCarousel.reloadData()
             }
@@ -48,20 +48,11 @@ class MainVC:UIViewController {
                     print(error)
                     return
                 }
-                if let snapshot = snapshot {
-                    for change in snapshot.documentChanges {
-                        print(change.document.data()["userDiaryList"])
-//                        let docID = change.document.documentID
-//                        let document = change.document
-//                        self.getDiaryList = document.data()["userDiaryList"] as! [String]
-//                        self.mainCarousel.reloadData()
-                    }
-                }
             }
 
         }
         //Diary>data
-        db.collection("Diary").getDocuments { (snapshot, error) in
+        db.collection("Diary").order(by: "date").getDocuments { (snapshot, error) in
             if let error = error {
                 print(error)
                 return
@@ -97,11 +88,25 @@ class MainVC:UIViewController {
                 print("Document added with ID: \(ref!.documentID)")
             }
         }
+        //diary추가하고 읽어와서 반영...
         db.collection("Users").document("TNrcZtxj42Mfqq2KRy1A").updateData([
             "userDiaryList": FieldValue.arrayUnion([ref!.documentID])
         ])
-        self.mainCarousel.reloadData()
+        db.collection("Users").getDocuments { (snapshot, error) in
+            if let error = error {
+                print(error)
+                return
+            }
+            if let snapshot = snapshot {
+                for getDoc in snapshot.documents {
+                    print("\(getDoc.documentID) => \(getDoc.data()["userDiaryList"])")
+                    self.getDiaryList = getDoc.data()["userDiaryList"] as! [String]
+                }
+                self.mainCarousel.reloadData()
+            }
+        }
         
+        self.mainCarousel.reloadData()
     }
     
     @IBAction func moveToWrite(_ sender: UIButton) {
