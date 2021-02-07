@@ -20,7 +20,8 @@ class WriteViewController:UIViewController, SendDataDelegate{
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillAppear(_:)), name: UIResponder.keyboardWillShowNotification , object: nil)
+//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillDisappear(_:)), name: UIResponder.keyboardWillHideNotification , object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -44,7 +45,7 @@ class WriteViewController:UIViewController, SendDataDelegate{
             "contentText":"\(newContent.conentText!)",
             "date":newContent.date!,
             "musicArtist":"\(newContent.musicArtist!)",
-            "musicCoverUrl":"\(newContent.musicCoverUrl?.absoluteString))",
+            "musicCoverUrl":String(describing: newContent.musicCoverUrl!),
             "musicTitle":"\(newContent.musicTitle!)"
         ]) { err in
             if let err = err {
@@ -83,9 +84,15 @@ class WriteViewController:UIViewController, SendDataDelegate{
         
         
     }
+    @objc func keyboardWillAppear(_ sender: NotificationCenter){
+        self.view.frame.origin.y -= 130
+    }
+    @objc func keyboardWillDisappear(_ sender: NotificationCenter){
+        self.view.frame.origin.y += 130
+    }
 }
 
-extension WriteSubVC2: UITextViewDelegate {
+extension WriteViewController: UITextViewDelegate {
     func placeholderSetting() {
         textView.delegate = self // txtvReview가 유저가 선언한 outlet
         textView.text = "오늘의 감상, 기분, 일기를 기록하세요. 📝"
