@@ -16,7 +16,6 @@ class SearchViewController: UIViewController {
     //values
     @IBOutlet weak var tableView: UITableView! //tableView
     @IBOutlet weak var searchTextField: UITextField! //searchTextField
-    @IBOutlet weak var songArtistSegment: UISegmentedControl! //songArtistSegment
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView! //loadingIndicator
     var musicData = [MusicStruct]() //musicData
     var searchKeyword: String = "" //searchKeyword
@@ -46,60 +45,43 @@ class SearchViewController: UIViewController {
             let convertedUrl = URL(string: encodedString)!
             //Alamofire로 필요한 정보 가져오기
             print("start Alamofire")
-            switch songArtistSegment.selectedSegmentIndex {
-            case 0:
-                AF.request(convertedUrl, encoding: URLEncoding.httpBody, headers: nil).responseData { [self] (response) in
-                    print("response SONG")
-                    //song 검색결과에서 데이터 저장
-                    if let data = response.data {
-                        let xml = XML.parse(data)
-                        print("songDataLoaded")
-                        //전체 검색 결과가 0개면 출력 안함.
-                        //현재 한국어 검색 X, 띄어쓰기 포함하면 X
-                        if let totalResult = Int(xml["rss", "channel", "total"].text!), totalResult  != 0{
-                            for index in 0...totalResult - 1 {
-                                let musicID = xml["rss", "channel", "item", index].attributes["id"]
-                                let musicName = xml["rss", "channel", "item", index, "title"].text
-                                let artist = xml["rss", "channel", "item", index, "maniadb:artist", "name"].text
-                                let id = Int(musicID!)
-                                //musicCover가 있으면 넣고 아니면 없게
-                                if let musicCover = xml["rss", "channel", "item", index, "maniadb:album", "image"].text{
-                                    let url = URL(string: musicCover)
-                                    musicData.append(MusicStruct(musicTitle: musicName!, musicArtist: artist!, musicCoverUrl: url, musicLyrics: nil, musicID: id!))
-                                } else {
-                                    musicData.append(MusicStruct(musicTitle: musicName!, musicArtist: artist!, musicCoverUrl: nil, musicLyrics: nil, musicID: id!))
-                                }
-                                //print(musicData[index].musicID)
-                                let indexPath = IndexPath(item: index, section: 0)
-                                tableView.performBatchUpdates({
-                                    self.tableView.setContentOffset(self.tableView.contentOffset, animated: false)
-                                    tableView.insertRows(at: [indexPath], with: .none)
-                                }, completion: nil)
-                            }//for
-                        } else {
-                            musicData.append(MusicStruct(musicTitle: "검색 결과가 없습니다.", musicArtist: "", musicCoverUrl: nil, musicLyrics: nil, musicID: nil))
-                            tableView.insertRows(at: [IndexPath(item: 0, section: 0)], with: .none)
-                        }//totalResult
-                        //tableView.reloadData()
-                    }//data
-                    self.loadingIndicator.stopAnimating()
-                }//AF.request
-                
-            case 1:
-                AF.request("http://www.maniadb.com/api/search/\(searchKeyword)/?sr=artist&display=100&key=jgkyj@naver.com&v=0.5", encoding: URLEncoding.httpBody, headers: nil).responseData { (response) in
-                    print("response ARTIST")
-                    //artist 검색결과에서 데이터 저장
-                    if let data = response.data {
-                        let xml = XML.parse(data)
-                        print("artistDataLoaded")
-                        //구조가 가수가 부른 노래들 여러개 -> 노래 정보를 다시 가져와서 따야됨.
-                        //논의 필요!
-                    }
-                }
-            default:
-                //segment라서 해당 없음.
-                print("nonSelected")
-            }
+            AF.request(convertedUrl, encoding: URLEncoding.httpBody, headers: nil).responseData { [self] (response) in
+                print("response SONG")
+                //song 검색결과에서 데이터 저장
+                if let data = response.data {
+                    let xml = XML.parse(data)
+                    print("songDataLoaded")
+                    //전체 검색 결과가 0개면 출력 안함.
+                    //현재 한국어 검색 X, 띄어쓰기 포함하면 X
+                    if let totalResult = Int(xml["rss", "channel", "total"].text!), totalResult  != 0{
+                        for index in 0...totalResult - 1 {
+                            let musicID = xml["rss", "channel", "item", index].attributes["id"]
+                            let musicName = xml["rss", "channel", "item", index, "title"].text
+                            let artist = xml["rss", "channel", "item", index, "maniadb:artist", "name"].text
+                            let id = Int(musicID!)
+                            //musicCover가 있으면 넣고 아니면 없게
+                            if let musicCover = xml["rss", "channel", "item", index, "maniadb:album", "image"].text{
+                                let url = URL(string: musicCover)
+                                musicData.append(MusicStruct(musicTitle: musicName!, musicArtist: artist!, musicCoverUrl: url, musicLyrics: nil, musicID: id!))
+                            } else {
+                                musicData.append(MusicStruct(musicTitle: musicName!, musicArtist: artist!, musicCoverUrl: nil, musicLyrics: nil, musicID: id!))
+                            }
+                            //print(musicData[index].musicID)
+                            let indexPath = IndexPath(item: index, section: 0)
+                            tableView.performBatchUpdates({
+                                self.tableView.setContentOffset(self.tableView.contentOffset, animated: false)
+                                tableView.insertRows(at: [indexPath], with: .none)
+                            }, completion: nil)
+                        }//for
+                    } else {
+                        musicData.append(MusicStruct(musicTitle: "검색 결과가 없습니다.", musicArtist: "", musicCoverUrl: nil, musicLyrics: nil, musicID: nil))
+                        tableView.insertRows(at: [IndexPath(item: 0, section: 0)], with: .none)
+                    }//totalResult
+                    //tableView.reloadData()
+                }//data
+                self.loadingIndicator.stopAnimating()
+            }//AF.request
+            
         }
     }//searchButtonPressed
     
@@ -161,12 +143,3 @@ extension SearchViewController: UITableViewDelegate{
 //        print(selectedMusicData.musicCoverUrl)
     }//didSelectRowAt
 }//SearchViewController
-
-//SearchResultViewController
-class SearchResultViewController: UIViewController {
-    
-    //노래 검색 결과만 필요할까봐 만들어둔 것. 필요없으면 추후 삭제 요망.
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-}

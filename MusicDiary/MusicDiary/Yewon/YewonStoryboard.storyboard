@@ -21,13 +21,13 @@
                                 <rect key="frame" x="0.0" y="144" width="414" height="618"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="k6W-WE-KgN">
-                                    <size key="itemSize" width="203" height="268"/>
+                                    <size key="itemSize" width="200" height="268"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="carouselCell" id="V8O-iX-Tad" customClass="MainCell" customModule="MusicDiary" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="carouselCell" reuseIdentifier="carouselCell" id="V8O-iX-Tad" customClass="MainCell" customModule="MusicDiary" customModuleProvider="target">
                                         <rect key="frame" x="105.5" y="0.0" width="203" height="268"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="iCV-Go-Ppk">
@@ -67,8 +67,8 @@
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="203" height="268"/>
                                         <connections>
-                                            <outlet property="diaryIamage" destination="Wd1-Uq-q59" id="ChR-Qy-DrH"/>
-                                            <outlet property="diaryName" destination="Yoy-mq-mEZ" id="vfb-bg-JWU"/>
+                                            <outlet property="MainDiaryIamage" destination="Wd1-Uq-q59" id="zXe-ed-roq"/>
+                                            <outlet property="mainDiaryName" destination="Yoy-mq-mEZ" id="Ag9-38-3M1"/>
                                             <outlet property="mainView" destination="iCV-Go-Ppk" id="T7W-JC-hBZ"/>
                                         </connections>
                                     </collectionViewCell>
@@ -134,13 +134,13 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aXJ-zR-uo3">
                                 <rect key="frame" x="187" y="832" width="40" height="30"/>
                                 <state key="normal" title="Share"/>
-                                <connections>
-                                    <action selector="test:" destination="JUz-EI-bcD" eventType="touchUpInside" id="R3Z-gI-ngh"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="es4-5H-NUp">
                                 <rect key="frame" x="349" y="832" width="45" height="30"/>
                                 <state key="normal" title="Delete"/>
+                                <connections>
+                                    <action selector="deleteDoc:" destination="JUz-EI-bcD" eventType="touchUpInside" id="UDg-pZ-W7k"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bvo-P4-59v">
                                 <rect key="frame" x="20" y="832" width="30" height="30"/>
@@ -177,10 +177,10 @@
             </objects>
             <point key="canvasLocation" x="1066.6666666666667" y="-3.3482142857142856"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail Sub1VC-->
         <scene sceneID="Jyf-gh-DRx">
             <objects>
-                <viewController id="1bL-Mh-PeU" sceneMemberID="viewController">
+                <viewController id="1bL-Mh-PeU" customClass="DetailSub1VC" customModule="MusicDiary" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XoH-7H-G4F">
                         <rect key="frame" x="0.0" y="0.0" width="374" height="173"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -206,17 +206,23 @@
                                 </constraints>
                             </imageView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="Uo7-R0-EQS"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <outlet property="singer" destination="x3a-Mb-7FP" id="hko-uy-jCN"/>
+                        <outlet property="songImage" destination="Cdp-bO-KJc" id="OTa-mj-79i"/>
+                        <outlet property="songTitle" destination="ixO-Qv-gSZ" id="C2o-yk-Ph9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="66D-o0-UDS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1802.8985507246377" y="-131.58482142857142"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail Sub2VC-->
         <scene sceneID="4wR-AE-uzJ">
             <objects>
-                <viewController id="lPK-Bx-uAr" sceneMemberID="viewController">
+                <viewController id="lPK-Bx-uAr" customClass="DetailSub2VC" customModule="MusicDiary" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jTq-wb-k8D">
                         <rect key="frame" x="0.0" y="0.0" width="374" height="390"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -231,8 +237,12 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="96Z-Ag-2hd"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <outlet property="contentText" destination="0YS-dd-ZaP" id="Fog-g1-xMf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m4r-h0-t6y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

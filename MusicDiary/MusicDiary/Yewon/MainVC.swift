@@ -10,15 +10,15 @@ import ScalingCarousel
 import FirebaseFirestore
 
 class MainCell: ScalingCarouselCell {
-    @IBOutlet weak var diaryIamage: UIImageView!
-    @IBOutlet weak var diaryName: UILabel!
+    @IBOutlet weak var MainDiaryIamage: UIImageView!
+    @IBOutlet weak var mainDiaryName: UILabel!
+    
 }
 
 class MainVC:UIViewController {
     let db = Firestore.firestore()
-    var diaryData = [DiaryStructure]()
-    var diaryList = [QueryDocumentSnapshot]()
-
+    var diaryData = [QueryDocumentSnapshot]()
+    var getDiaryList = [String]()
     @IBOutlet weak var mainCarousel: ScalingCarouselView!
     
     
@@ -28,6 +28,7 @@ class MainVC:UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //Users>diaryList
         db.collection("Users").getDocuments { (snapshot, error) in
             if let error = error {
                 print(error)
@@ -36,12 +37,25 @@ class MainVC:UIViewController {
             if let snapshot = snapshot {
                 for document in snapshot.documents {
                                 print("\(document.documentID) => \(document.data()["userDiaryList"])")
-                    self.diaryList.append(document) //여기를 어떻게 하지요...?
-            }
+                    self.getDiaryList = document.data()["userDiaryList"] as! [String]
+                }
                 self.mainCarousel.reloadData()
+            }
         }
-    }
-        
+        //Diary>data
+        db.collection("Diary").getDocuments { (snapshot, error) in
+            if let error = error {
+                print(error)
+                return
+            }
+            if let snapshot = snapshot {
+                for document in snapshot.documents {
+                                print("\(document.documentID) => \(document.data())")
+                    self.diaryData.append(document)
+                }
+                self.mainCarousel.reloadData()
+            }
+        }
     }
         
     
@@ -65,7 +79,8 @@ class MainVC:UIViewController {
         db.collection("Users").document("TNrcZtxj42Mfqq2KRy1A").updateData([
             "userDiaryList": FieldValue.arrayUnion([ref!.documentID])
         ])
-        
+        self.getDiaryList.append(ref!.documentID)
+        self.mainCarousel.reloadData()
         
     }
     
@@ -82,11 +97,15 @@ class MainVC:UIViewController {
 typealias CarouselDatasource = MainVC
 extension CarouselDatasource: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.diaryList.count
+        return self.getDiaryList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let carouselCell = collectionView.dequeueReusableCell(withReuseIdentifier: "carouselCell", for: indexPath) as! MainCell
+        let document = diaryData[indexPath.row]
+        let data = document
+        carouselCell.mainDiaryName.text = data["diaryName"] as! String
+        //carouselCell.MainDiaryIamage.image = data["diaryImageUrl"] as! UIImage
         
         
         carouselCell.setNeedsLayout()
