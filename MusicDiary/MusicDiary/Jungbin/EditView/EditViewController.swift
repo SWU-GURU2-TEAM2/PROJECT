@@ -38,6 +38,7 @@ class EditViewController: UIViewController, SendDataDelegate {
     override func viewDidLoad() {
        
         super.viewDidLoad()
+        
         presentData()
         //placeholderSetting()
         

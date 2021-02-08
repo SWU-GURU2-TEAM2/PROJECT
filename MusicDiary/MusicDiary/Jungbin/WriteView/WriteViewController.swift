@@ -16,13 +16,22 @@ class WriteViewController:UIViewController, SendDataDelegate{
     @IBOutlet weak var artistLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var underView: UIView!
+    @IBOutlet weak var topView: UIView!
     var getMusic:MusicStruct!
 
     override func viewDidLoad() {
+        
         super.viewDidLoad()
+        imageView.layer.cornerRadius = imageView.frame.width / 2
+        imageView.clipsToBounds = true
+        topView.backgroundColor = UIColor(patternImage: UIImage(named: "Write_topBG")!)
+
+        underView.backgroundColor = UIColor(patternImage: UIImage(named: "Write_underBG")!)
 //        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillAppear(_:)), name: UIResponder.keyboardWillShowNotification , object: nil)
 //        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillDisappear(_:)), name: UIResponder.keyboardWillHideNotification , object: nil)
     }
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

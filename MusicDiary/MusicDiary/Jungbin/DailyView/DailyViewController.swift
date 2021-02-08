@@ -6,28 +6,29 @@
 //
 
 import UIKit
-import ScalingCarousel
 import FSCalendar
 import Firebase
 
 var currentDairyId = "IxLlj4mK2DKPIoBA9Qjp"
-class DailyCell: UICollectionViewCell {
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var mainView: UIView!
-}
+
 class DailyViewController: UIViewController, FSCalendarDelegate {
     
     var todayContentList:[ContentData] = [ContentData()]
     var datesWithEvent = [Date(), Date()-86400]
     @IBOutlet weak var noDataLabel: UILabel!
-    @IBOutlet weak var dailyCarousel: ScalingCarouselView!
     @IBOutlet weak var calendar: FSCalendar!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var goDetailBtn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        imageView.layer.cornerRadius = imageView.frame.width / 2
+        imageView.clipsToBounds = true
         noDataLabel.alpha = 0
+        titleLabel.alpha = 0
         calendar.delegate = self
+        //calendar.appearance.backgroundColors =
         getContentsListForDaily(date: Date())
         
         calendar.appearance.titleDefaultColor = .black
@@ -37,17 +38,18 @@ class DailyViewController: UIViewController, FSCalendarDelegate {
         // 달력의 요일 글자 색깔
         calendar.appearance.weekdayTextColor = .black
         //년 월 custom
-        calendar.appearance.headerDateFormat = "YYYY년 M월"
-        
-        UIView.animate(withDuration: 0.5, animations: {
-            self.view.layoutIfNeeded()
-        })
-        
-        
+        calendar.appearance.headerDateFormat = "MMM"
+        calendar.appearance.caseOptions = FSCalendarCaseOptions.weekdayUsesSingleUpperCase
+        calendar.appearance.headerMinimumDissolvedAlpha = 0.0
+        calendar.backgroundColor = UIColor.white.withAlphaComponent(0)
+    
     }
     
-    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-        dailyCarousel.deviceRotated()
+    @IBAction func goDetail(_ sender: Any) {
+        print("go detail")
+    }
+    func calendar(_ calendar: FSCalendar, imageFor date: Date) -> UIImage? {
+        return UIImage(contentsOfFile: "Daily_calendarHeader")
     }
     
     func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, eventDefaultColorsFor date: Date) -> [UIColor]? {
@@ -56,7 +58,7 @@ class DailyViewController: UIViewController, FSCalendarDelegate {
             return [UIColor.magenta, appearance.eventDefaultColor, UIColor.black]
         }
         calendar.reloadData()
-
+        
         return [appearance.eventDefaultColor]
     }
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
@@ -95,69 +97,32 @@ class DailyViewController: UIViewController, FSCalendarDelegate {
                 }
                 print("today content list: ", self.todayContentList)
                 if self.todayContentList.count == 0 {
-                    self.noDataLabel.alpha = 1
+                    
+                    DispatchQueue.main.async {
+                        self.noDataLabel.alpha = 1
+                        self.titleLabel.alpha = 0
+                        self.imageView.alpha = 0
+                        self.goDetailBtn.isEnabled = false
+                    }
                 }
-                self.dailyCarousel.reloadData()
+                
+                
+                else {
+                    DispatchQueue.global().async { let data = try? Data(contentsOf: self.todayContentList[0].musicCoverUrl!)
+                        DispatchQueue.main.async {
+                            self.goDetailBtn.isEnabled = true
+                            self.titleLabel.alpha = 1
+                            self.titleLabel.text = self.todayContentList[0].musicTitle
+                            self.imageView.image = UIImage(data: data!)
+                            
+                        }
+                    }
+                    
+                }
             }
         }
         
     }
     
-    
-}
-typealias DailyCSDelegate = DailyViewController
-extension DailyViewController: UICollectionViewDataSource{
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return todayContentList.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = dailyCarousel.dequeueReusableCell(withReuseIdentifier: "dailyCell", for: indexPath) as! DailyCell
-        print(self.todayContentList[indexPath.row].musicCoverUrl!)
-        cell.titleLabel.text = todayContentList[indexPath.row].musicTitle
-        DispatchQueue.global().async { let data = try? Data(contentsOf: self.todayContentList[indexPath.row].musicCoverUrl!)
-            DispatchQueue.main.async {
-                cell.imageView.image = UIImage(data: data!)
-                cell.imageView.layer.masksToBounds = true
-                cell.imageView.layer.cornerRadius = 50
-            }
-        }
-        //cell.mainView.frame.size.width = self.view.frame.size.width * 0.7
-        
-        cell.setNeedsLayout()
-        cell.layoutIfNeeded()
-        
-        DispatchQueue.main.async {
-            
-        }
-        
-        return cell
-    }
-    
-    
-}
-extension DailyViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        dailyCarousel.didScroll()
-        
-        guard let currentCenterIndex = dailyCarousel.currentCenterCellIndex?.row
-        else { return }
-        
-        print(String(describing: currentCenterIndex))
-        
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 0
-        
-    }
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.width, height: view.frame.height)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        
-        return 0
-    }
     
 }
