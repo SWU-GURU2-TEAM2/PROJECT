@@ -19,6 +19,7 @@ class DailyViewController: UIViewController, FSCalendarDelegate {
     @IBOutlet weak var calendar: FSCalendar!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
+
     @IBOutlet weak var goDetailBtn: UIButton!
     
     override func viewDidLoad() {
@@ -111,6 +112,7 @@ class DailyViewController: UIViewController, FSCalendarDelegate {
                     DispatchQueue.global().async { let data = try? Data(contentsOf: self.todayContentList[0].musicCoverUrl!)
                         DispatchQueue.main.async {
                             self.goDetailBtn.isEnabled = true
+
                             self.titleLabel.alpha = 1
                             self.titleLabel.text = self.todayContentList[0].musicTitle
                             self.imageView.image = UIImage(data: data!)

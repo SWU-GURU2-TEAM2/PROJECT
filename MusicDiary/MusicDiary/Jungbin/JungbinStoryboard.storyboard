@@ -16,6 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+<<<<<<< HEAD
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cYE-9a-C0d">
                                 <rect key="frame" x="50" y="622" width="314" height="160"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -24,6 +25,15 @@
                                     <action selector="goDetail:" destination="ovr-HE-iz2" eventType="touchUpInside" id="qnd-Zp-VTK"/>
                                 </connections>
                             </button>
+=======
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Daily_page" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vfh-y5-Kpg">
+                                <rect key="frame" x="50.5" y="622" width="313" height="160"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="313" id="4vy-0D-Mtd"/>
+                                    <constraint firstAttribute="height" constant="160" id="N76-6i-fGw"/>
+                                </constraints>
+                            </imageView>
+>>>>>>> 75dc1d53d2a192f296ce1b7545439abf11afb133
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IbN-vm-OAh">
                                 <rect key="frame" x="76" y="648" width="108" height="108"/>
                                 <constraints>
@@ -31,7 +41,11 @@
                                     <constraint firstAttribute="height" constant="108" id="eFc-Vw-oxM"/>
                                 </constraints>
                             </imageView>
+<<<<<<< HEAD
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gv6-so-eqH">
+=======
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gv6-so-eqH">
+>>>>>>> 75dc1d53d2a192f296ce1b7545439abf11afb133
                                 <rect key="frame" x="207" y="692" width="41.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -108,6 +122,16 @@
                                 <rect key="frame" x="18" y="44" width="51" height="51"/>
                                 <state key="normal" backgroundImage="Daily_home"/>
                             </button>
+<<<<<<< HEAD
+=======
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cYE-9a-C0d">
+                                <rect key="frame" x="50" y="622" width="314" height="160"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="goDetail:" destination="ovr-HE-iz2" eventType="touchUpInside" id="qnd-Zp-VTK"/>
+                                </connections>
+                            </button>
+>>>>>>> 75dc1d53d2a192f296ce1b7545439abf11afb133
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="😓 작성된 일기가 없어요!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jHm-dy-ctp">
                                 <rect key="frame" x="0.0" y="688" width="414" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -123,7 +147,13 @@
                             <constraint firstItem="320-oe-fxE" firstAttribute="top" secondItem="mXS-M6-D5H" secondAttribute="top" constant="148" id="4NP-6o-wFd"/>
                             <constraint firstItem="ZbY-AK-8Dn" firstAttribute="centerY" secondItem="JXe-zS-NlE" secondAttribute="centerY" id="DMx-58-TYc"/>
                             <constraint firstItem="mXS-M6-D5H" firstAttribute="bottom" secondItem="GAl-Ck-bEM" secondAttribute="bottom" constant="16" id="Eqn-rR-0mF"/>
+<<<<<<< HEAD
                             <constraint firstItem="JXe-zS-NlE" firstAttribute="leading" secondItem="mXS-M6-D5H" secondAttribute="leading" constant="18" id="GdH-qR-fNT"/>
+=======
+                            <constraint firstItem="q7G-p6-pjL" firstAttribute="top" secondItem="vfh-y5-Kpg" secondAttribute="bottom" constant="37" id="GE1-ZI-u1W"/>
+                            <constraint firstItem="JXe-zS-NlE" firstAttribute="leading" secondItem="mXS-M6-D5H" secondAttribute="leading" constant="18" id="GdH-qR-fNT"/>
+                            <constraint firstItem="Gv6-so-eqH" firstAttribute="centerY" secondItem="vfh-y5-Kpg" secondAttribute="centerY" id="JFg-d6-ygQ"/>
+>>>>>>> 75dc1d53d2a192f296ce1b7545439abf11afb133
                             <constraint firstItem="JXe-zS-NlE" firstAttribute="baseline" secondItem="ZbY-AK-8Dn" secondAttribute="baseline" id="K2v-q1-Zwv"/>
                             <constraint firstItem="ZbY-AK-8Dn" firstAttribute="baseline" secondItem="JXe-zS-NlE" secondAttribute="baseline" id="NO8-gR-OtI"/>
                             <constraint firstItem="320-oe-fxE" firstAttribute="leading" secondItem="mXS-M6-D5H" secondAttribute="leading" constant="20" id="RDm-5A-511"/>
@@ -133,17 +163,30 @@
                             <constraint firstItem="mXS-M6-D5H" firstAttribute="trailing" secondItem="ZbY-AK-8Dn" secondAttribute="trailing" constant="17" id="bSh-fa-cVk"/>
                             <constraint firstItem="Gv6-so-eqH" firstAttribute="leading" secondItem="IbN-vm-OAh" secondAttribute="trailing" constant="23" id="d1G-R4-cRi"/>
                             <constraint firstItem="mXS-M6-D5H" firstAttribute="trailing" secondItem="GAl-Ck-bEM" secondAttribute="trailing" constant="20" id="d5I-7P-eL3"/>
+<<<<<<< HEAD
                             <constraint firstItem="JXe-zS-NlE" firstAttribute="top" secondItem="mXS-M6-D5H" secondAttribute="top" id="dYc-2l-0Gp"/>
                             <constraint firstItem="JXe-zS-NlE" firstAttribute="firstBaseline" secondItem="ZbY-AK-8Dn" secondAttribute="firstBaseline" id="f7R-Jf-RfU"/>
                             <constraint firstItem="IbN-vm-OAh" firstAttribute="top" secondItem="320-oe-fxE" secondAttribute="bottom" constant="81" id="gJV-gi-MmT"/>
                             <constraint firstAttribute="bottom" secondItem="320-oe-fxE" secondAttribute="bottom" constant="329" id="i3g-kh-boP"/>
                             <constraint firstItem="mXS-M6-D5H" firstAttribute="trailing" secondItem="320-oe-fxE" secondAttribute="trailing" constant="20" id="kum-DE-1bn"/>
+=======
+                            <constraint firstItem="vfh-y5-Kpg" firstAttribute="centerX" secondItem="jHm-dy-ctp" secondAttribute="centerX" id="dL9-fw-1Zf"/>
+                            <constraint firstItem="JXe-zS-NlE" firstAttribute="top" secondItem="mXS-M6-D5H" secondAttribute="top" id="dYc-2l-0Gp"/>
+                            <constraint firstItem="JXe-zS-NlE" firstAttribute="firstBaseline" secondItem="ZbY-AK-8Dn" secondAttribute="firstBaseline" id="f7R-Jf-RfU"/>
+                            <constraint firstAttribute="bottom" secondItem="320-oe-fxE" secondAttribute="bottom" constant="329" id="i3g-kh-boP"/>
+                            <constraint firstItem="mXS-M6-D5H" firstAttribute="trailing" secondItem="320-oe-fxE" secondAttribute="trailing" constant="20" id="kum-DE-1bn"/>
+                            <constraint firstItem="IbN-vm-OAh" firstAttribute="centerY" secondItem="vfh-y5-Kpg" secondAttribute="centerY" id="noM-mW-9s5"/>
+>>>>>>> 75dc1d53d2a192f296ce1b7545439abf11afb133
                             <constraint firstItem="IbN-vm-OAh" firstAttribute="leading" secondItem="mXS-M6-D5H" secondAttribute="leading" constant="76" id="qEK-NY-6Nj"/>
                             <constraint firstItem="ZbY-AK-8Dn" firstAttribute="centerX" secondItem="GAl-Ck-bEM" secondAttribute="centerX" id="zCH-LH-o4z"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="calendar" destination="320-oe-fxE" id="qSn-QQ-LUW"/>
+<<<<<<< HEAD
+=======
+                        <outlet property="dailyPageBG" destination="vfh-y5-Kpg" id="FMe-U4-jHM"/>
+>>>>>>> 75dc1d53d2a192f296ce1b7545439abf11afb133
                         <outlet property="goDetailBtn" destination="cYE-9a-C0d" id="qUJ-7l-5am"/>
                         <outlet property="imageView" destination="IbN-vm-OAh" id="6SM-wf-7x3"/>
                         <outlet property="noDataLabel" destination="jHm-dy-ctp" id="kf5-pg-EhO"/>
@@ -163,22 +206,37 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Write_musicCircle" translatesAutoresizingMaskIntoConstraints="NO" id="7YT-05-IPu">
+<<<<<<< HEAD
                                 <rect key="frame" x="76" y="53" width="265" height="265"/>
+=======
+                                <rect key="frame" x="76" y="53" width="262" height="262"/>
+>>>>>>> 75dc1d53d2a192f296ce1b7545439abf11afb133
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="7YT-05-IPu" secondAttribute="height" multiplier="1:1" id="V8L-hr-XcZ"/>
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XM1-UX-iz3">
+<<<<<<< HEAD
                                 <rect key="frame" x="93" y="70" width="232" height="232"/>
+=======
+                                <rect key="frame" x="93" y="70" width="229" height="229"/>
+>>>>>>> 75dc1d53d2a192f296ce1b7545439abf11afb133
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="XM1-UX-iz3" secondAttribute="height" multiplier="1:1" id="UA1-Mu-GmY"/>
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GxM-Hv-SBS">
+<<<<<<< HEAD
                                 <rect key="frame" x="63" y="184" width="291" height="131"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mpc-8o-fZb">
                                         <rect key="frame" x="50" y="77" width="233" height="21"/>
+=======
+                                <rect key="frame" x="63" y="184" width="288" height="131"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mpc-8o-fZb">
+                                        <rect key="frame" x="47" y="77" width="233" height="21"/>
+>>>>>>> 75dc1d53d2a192f296ce1b7545439abf11afb133
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="mpc-8o-fZb" secondAttribute="height" multiplier="233:21" id="rlg-Wi-73X"/>
                                             <constraint firstAttribute="height" constant="21" id="t1Z-9l-e0w"/>
@@ -198,7 +256,11 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vye-xS-v5Q">
+<<<<<<< HEAD
                                         <rect key="frame" x="50" y="106" width="233" height="17"/>
+=======
+                                        <rect key="frame" x="47" y="106" width="233" height="17"/>
+>>>>>>> 75dc1d53d2a192f296ce1b7545439abf11afb133
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="vye-xS-v5Q" secondAttribute="height" multiplier="233:17" id="Iba-wg-EG7"/>
                                         </constraints>
@@ -207,13 +269,21 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="제목" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hl0-JT-TQn">
+<<<<<<< HEAD
                                         <rect key="frame" x="8" y="77" width="33" height="21"/>
+=======
+                                        <rect key="frame" x="8" y="77" width="30" height="21"/>
+>>>>>>> 75dc1d53d2a192f296ce1b7545439abf11afb133
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="가수" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QtR-eN-iSU">
+<<<<<<< HEAD
                                         <rect key="frame" x="8" y="104" width="33" height="21"/>
+=======
+                                        <rect key="frame" x="8" y="104" width="30" height="21"/>
+>>>>>>> 75dc1d53d2a192f296ce1b7545439abf11afb133
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -253,7 +323,11 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ybs-pF-mdf">
+<<<<<<< HEAD
                                 <rect key="frame" x="63" y="323" width="291" height="454"/>
+=======
+                                <rect key="frame" x="63" y="323" width="288" height="454"/>
+>>>>>>> 75dc1d53d2a192f296ce1b7545439abf11afb133
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" keyboardDismissMode="interactive" text="enter your memo..." translatesAutoresizingMaskIntoConstraints="NO" id="LkU-8t-w53">
                                         <rect key="frame" x="17" y="8" width="255" height="413"/>

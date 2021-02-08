@@ -1,7 +1,11 @@
 {
   "images" : [
     {
+<<<<<<< HEAD:MusicDiary/MusicDiary/Assets.xcassets/Daily_page.imageset/Contents.json
       "filename" : "그룹 41.png",
+=======
+      "filename" : "그룹 41.png",
+>>>>>>> 75dc1d53d2a192f296ce1b7545439abf11afb133:MusicDiary/MusicDiary/Assets.xcassets/AppSetting_LogoutBar.imageset/Contents.json
       "idiom" : "universal",
       "scale" : "1x"
     },
