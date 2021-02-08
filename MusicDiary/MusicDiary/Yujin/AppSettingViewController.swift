@@ -13,7 +13,6 @@ class AppSettingViewController: UIViewController {
     
     //values
     @IBOutlet weak var userName: UILabel!
-    @IBOutlet weak var userID: UILabel!
     let authUI = FUIAuth.defaultAuthUI()
     let db = Firestore.firestore()
     
@@ -21,7 +20,6 @@ class AppSettingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let currentUser = authUI?.auth?.currentUser
-        userID.text = "\(currentUser!.uid)"
         let docRef = db.collection("Users").document("\(currentUser!.uid)")
         docRef.getDocument { (document, error) in
             if let document = document, document.exists {
@@ -75,14 +73,6 @@ class AppSettingViewController: UIViewController {
         self.present(alert, animated: false, completion: nil)
 
     }//changeUserName
-    
-    //copyUID
-    @IBAction func copyUID(_ sender: Any) {
-        print("copied")
-        let currentUser = authUI?.auth?.currentUser
-        UIPasteboard.general.string = "\(currentUser!.uid)"
-        print(UIPasteboard.general.string)
-    }
     
     
 }
