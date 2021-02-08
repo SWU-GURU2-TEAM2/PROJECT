@@ -32,6 +32,7 @@
 		6A270A2A25C77BE300434321 /* spongeBob.gif in Resources */ = {isa = PBXBuildFile; fileRef = 6A270A2925C77BE300434321 /* spongeBob.gif */; };
 		6A270A2E25C785B000434321 /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A270A2D25C785B000434321 /* SearchResultCell.swift */; };
 		6A5613B625C7097700EC48E3 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5613B525C7097700EC48E3 /* SearchViewController.swift */; };
+		6A8ADD4725D0CA2C00652AF8 /* AppSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFEE11725CFC01D006138C8 /* AppSettingViewController.swift */; };
 		6AC0A2C325C3EB4B0062E5A8 /* YujinStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AC0A2C225C3EB4B0062E5A8 /* YujinStoryboard.storyboard */; };
 		96F07895E3D593A059CA9195 /* Pods_MusicDiary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBE53B96C43CC7DDF670EDB1 /* Pods_MusicDiary.framework */; };
 /* End PBXBuildFile section */
@@ -346,6 +347,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A8ADD4725D0CA2C00652AF8 /* AppSettingViewController.swift in Sources */,
 				6A2321E125C6F1E80079A482 /* IntroViewController.swift in Sources */,
 				5C93B37225C051400067A723 /* ViewController.swift in Sources */,
 				5C93B37825C051400067A723 /* MusicDiary.xcdatamodeld in Sources */,
