@@ -76,6 +76,7 @@ class AppSettingViewController: UIViewController {
 
     }//changeUserName
     
+    /*
     //copyUID
     @IBAction func copyUID(_ sender: Any) {
         print("copied")
@@ -84,5 +85,5 @@ class AppSettingViewController: UIViewController {
         print(UIPasteboard.general.string)
     }
     
-    
+    */
 }

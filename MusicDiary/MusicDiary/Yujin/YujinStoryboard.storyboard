@@ -223,9 +223,6 @@
                                 <rect key="frame" x="360" y="269" width="40" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Copy" image="AppSetting_IDCopyIcon"/>
-                                <connections>
-                                    <action selector="copyUID:" destination="VVX-D9-LjD" eventType="touchUpInside" id="J6g-pg-KCv"/>
-                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이름" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tjm-NO-nG9">
                                 <rect key="frame" x="138" y="215" width="214" height="46"/>
